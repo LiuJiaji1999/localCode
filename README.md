@@ -5,4 +5,5 @@
 提示443 链接超时的解决
 - https://blog.csdn.net/zpf1813763637/article/details/128340109
 
-
+- sudo vi /etc/hosts
+添加了 ping github.com的IP地址
