@@ -3,42 +3,8 @@ import cv2
 import random
 import os
 
-for _ in range(1000):
-    # 每次循环随机选择一组增强方法
-    random_augmentations = [
-        A.RandomBrightnessContrast(brightness_limit=0.3, contrast_limit=0.3, p=1),
-        A.RandomRotate90(p=1),
-        A.GaussianBlur(p=1), # 高斯模糊
-        A.GaussNoise(var_limit=(400, 450),mean=0,p=1),  # 高斯噪声
-        A.Rotate(limit=45, interpolation=0, border_mode=0, p=1),
-        A.Rotate(limit=30, interpolation=0, border_mode=0, p=1),
-        A.Rotate(limit=75, interpolation=0, border_mode=0, p=1),
-        A.Rotate(limit=120, interpolation=0, border_mode=0, p=1),
-        A.RGBShift(r_shift_limit=50, g_shift_limit=50, b_shift_limit=50, p=1),
-        A.ColorJitter(p=1),  # 随机改变图像的亮度、对比度、饱和度、色调
-        A.Downscale(p=1),  # 随机缩小和放大来降低图像质量
-        A.HorizontalFlip(p=0.5), # 水平翻转
-
-        A.Emboss(p=0.2),  # 压印输入图像并将结果与原始图像叠加
-        A.CLAHE(clip_limit=2.0, tile_grid_size=(4, 4), p=0.8),  # 直方图均衡
-        A.Equalize(p=0.8),  # 均衡图像直方图
-        A.ChannelShuffle(p=0.3),# 随机排列通道
-        
-        A.RandomFog(fog_coef_lower=0.1),
-        A.RandomRain(p=0.3), 
-        A.RandomSnow(),
-
-    ]
-    # 随机选择增强方法
-    selected_augmentations = random.sample(random_augmentations, k=1) # k = min(len(random_augmentations), num_augmentations)
-    # 创建增强策略
-    transform = A.Compose(selected_augmentations, 
-                          bbox_params=A.BboxParams(format='yolo',label_fields=['class_names']))
-
-'''p 表示调整的概率'''
 
 #  多文件处理
-
 image_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/images/"
 bboxes_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/labels/defect_txt/"
 
@@ -58,25 +24,60 @@ def getcls_bbox(yolofile):
     #         if len(token) > 0:
     #             sents.append(token)
     # print(sents)
-        for i in range(5):
-            class_names = [tokens[0]]
-            x_center = float(tokens[1])
-            y_center = float(tokens[2])
-            w = float(tokens[3])
-            h = float(tokens[4])
-            bboxes = [x_center,y_center,w,h]
+        class_names = [tokens[0]]
+        x_center = float(tokens[1])
+        y_center = float(tokens[2])
+        w = float(tokens[3])
+        h = float(tokens[4])
+        bboxes = [x_center,y_center,w,h]
     return class_names,bboxes
 
 
 # image_list = []
 img_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/albuimg/'
 txt_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/albutxt/'
-for i in range(2):
+for i in range(3):
     for filename in os.listdir(image_path):
         # 获取文件名前缀 的 2个方法
         os.path.splitext(filename)[0]
         prefix, _ = filename.split('.', 1)
         # print(prefix)
+
+        for _ in range(1000):
+        # 每次循环随机选择一组增强方法
+        #  p 表示调整的概率
+            random_augmentations = [
+                A.RandomBrightnessContrast(brightness_limit=0.3, contrast_limit=0.3, p=1),
+                A.RandomRotate90(p=1),
+                A.GaussianBlur(p=1), # 高斯模糊
+                A.GaussNoise(var_limit=(400, 450),mean=0,p=1),  # 高斯噪声
+                A.Rotate(limit=45, interpolation=0, border_mode=0, p=1),
+                A.Rotate(limit=30, interpolation=0, border_mode=0, p=1),
+                A.Rotate(limit=75, interpolation=0, border_mode=0, p=1),
+                A.Rotate(limit=120, interpolation=0, border_mode=0, p=1),
+                A.RGBShift(r_shift_limit=50, g_shift_limit=50, b_shift_limit=50, p=1),
+                A.ColorJitter(p=1),  # 随机改变图像的亮度、对比度、饱和度、色调
+                A.Downscale(p=1),  # 随机缩小和放大来降低图像质量
+                A.HorizontalFlip(p=0.5), # 水平翻转
+
+                A.Emboss(p=0.2),  # 压印输入图像并将结果与原始图像叠加
+                A.CLAHE(clip_limit=2.0, tile_grid_size=(4, 4), p=0.8),  # 直方图均衡
+                A.Equalize(p=0.8),  # 均衡图像直方图
+                A.ChannelShuffle(p=0.3),# 随机排列通道
+                
+                A.RandomFog(fog_coef_lower=0.1),
+                A.RandomRain(p=0.3), 
+                A.RandomSnow(),
+
+            ]
+            # 随机选择增强方法
+            selected_augmentations = random.sample(random_augmentations, k=1) # k = min(len(random_augmentations), num_augmentations)
+            # print(selected_augmentations)
+            # 创建增强策略
+            transform = A.Compose(selected_augmentations, 
+                                bbox_params=A.BboxParams(format='yolo',label_fields=['class_names']))
+            # print(transform)
+
 
         if filename.endswith(".jpg") or filename.endswith(".png"):
             image = cv2.imread(os.path.join(image_path, filename))
@@ -87,6 +88,7 @@ for i in range(2):
             # print(class_names)
             # print(bboxes)
             transformed = transform(image=image,bboxes=bboxes,class_names=class_names)
+            print(transform)
             transformed_image = transformed["image"]
             transformed_bboxes = transformed['bboxes']
             t_bbox = list(transformed_bboxes[0])
