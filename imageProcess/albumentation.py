@@ -22,29 +22,28 @@ def getcls_bbox(yolofile):
         line = line.strip() # 消除空行
         tokens = line.split(' ') # 消除空格
         # print(tokens)
-        for token in tokens:
-            if len(token) > 0:
-                sents.append(token)
+        sents.append(tokens)
+    # print(sents)
     for i in range(len(sents)):
-        class_names = [tokens[0]]
-        x_center = float(tokens[1])
-        y_center = float(tokens[2])
-        w = float(tokens[3])
-        h = float(tokens[4])
+        # print(sents[i])
+        class_names = [sents[i][0]]
+        x_center = float(sents[i][1])
+        y_center = float(sents[i][2])
+        w = float(sents[i][3])
+        h = float(sents[i][4])
         bboxes = [x_center,y_center,w,h]
         
         class_names_list.append(class_names)
         bboxes_list.append(bboxes)
 
-    print(bboxes_list)
 
     return class_names_list,bboxes_list
 
 
 # image_list = []
-img_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/img/'
-txt_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/txt/'
-for i in range(1):
+img_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/albuimg/'
+txt_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/albutxt/'
+for loop in range(2):
     for filename in os.listdir(image_path):
         # 获取文件名前缀 的 2个方法
         os.path.splitext(filename)[0]
@@ -86,31 +85,27 @@ for i in range(1):
                                 bbox_params=A.BboxParams(format='yolo',label_fields=['class_names']))
             # print(transform)
 
-
         if filename.endswith(".jpg") or filename.endswith(".png"):
             image = cv2.imread(os.path.join(image_path, filename))
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             # image_list.append(image)
-            class_names,bboxes = getcls_bbox(prefix + '.txt')
-            bboxes = [bboxes]
-            # print(class_names)
-            # print(bboxes)
-            transformed = transform(image=image,bboxes=bboxes,class_names=class_names)
-            # print(transform)
-            transformed_image = transformed["image"]
-            transformed_bboxes = transformed['bboxes']
-            t_bbox = list(transformed_bboxes[0])
-            # print(t_bbox)
-        #     cv2.imwrite(img_save_path + prefix + '_' + str(i) + 'albu.jpg',transformed_image)
-        #     albu_txt = open(txt_save_path + prefix + '_' + str(i) + 'albu.txt' ,'w')
-        #     albu_txt.write(str(class_names[0])+" "+str(t_bbox[0])+" "+str(t_bbox[1])+" "+str(t_bbox[2])+" "+str(t_bbox[3])+'\n')
-
-        # albu_txt.close()
-
-
-
-
-
+            class_names_lists,bboxes_lists = getcls_bbox(prefix + '.txt')
+            # print(len(bboxes_lists))
+            for i in range(len(bboxes_lists)):
+                class_names = class_names_lists[i]
+                bboxes = [bboxes_lists[i]]
+                # print(class_names)
+                # print(bboxes)
+                transformed = transform(image=image,bboxes=bboxes,class_names=class_names)
+                # print(transform)
+                transformed_image = transformed["image"]
+                transformed_bboxes = transformed['bboxes']
+                t_bbox = list(transformed_bboxes[0])
+                print('trans:',t_bbox)
+                # print('trans:',t_bbox[0])
+                cv2.imwrite(img_save_path + prefix + '_' + str(loop) + 'albu.jpg',transformed_image)
+                with open(txt_save_path + prefix + '_' + str(loop) + 'albu.txt' ,'a') as albu_txt: # 追加写入，不覆盖原内容
+                    albu_txt.write(str(class_names[0])+" "+str(t_bbox[0])+" "+str(t_bbox[1])+" "+str(t_bbox[2])+" "+str(t_bbox[3])+'\n')
 
 
 #####  单文件
