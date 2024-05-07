@@ -5,8 +5,8 @@ import os
 
 
 #  多文件处理
-image_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/images/"
-bboxes_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/labels/defect_txt/"
+image_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/img/"
+bboxes_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/txt/"
 
 # 获取txt
 def getcls_bbox(yolofile):
@@ -15,28 +15,36 @@ def getcls_bbox(yolofile):
         # f = open('test.txt','r')
         lines = f.readlines()
         # print(lines)
-    # sents = []
+    sents = []
+    class_names_list = []
+    bboxes_list = []
     for line in lines:
         line = line.strip() # 消除空行
         tokens = line.split(' ') # 消除空格
         # print(tokens)
-    #     for token in tokens:
-    #         if len(token) > 0:
-    #             sents.append(token)
-    # print(sents)
+        for token in tokens:
+            if len(token) > 0:
+                sents.append(token)
+    for i in range(len(sents)):
         class_names = [tokens[0]]
         x_center = float(tokens[1])
         y_center = float(tokens[2])
         w = float(tokens[3])
         h = float(tokens[4])
         bboxes = [x_center,y_center,w,h]
-    return class_names,bboxes
+        
+        class_names_list.append(class_names)
+        bboxes_list.append(bboxes)
+
+    print(bboxes_list)
+
+    return class_names_list,bboxes_list
 
 
 # image_list = []
-img_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/albuimg/'
-txt_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/CPLID/Defective_Insulators/albutxt/'
-for i in range(3):
+img_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/img/'
+txt_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/txt/'
+for i in range(1):
     for filename in os.listdir(image_path):
         # 获取文件名前缀 的 2个方法
         os.path.splitext(filename)[0]
@@ -88,16 +96,16 @@ for i in range(3):
             # print(class_names)
             # print(bboxes)
             transformed = transform(image=image,bboxes=bboxes,class_names=class_names)
-            print(transform)
+            # print(transform)
             transformed_image = transformed["image"]
             transformed_bboxes = transformed['bboxes']
             t_bbox = list(transformed_bboxes[0])
             # print(t_bbox)
-            cv2.imwrite(img_save_path + prefix + '_' + str(i) + 'albu.jpg',transformed_image)
-            albu_txt = open(txt_save_path + prefix + '_' + str(i) + 'albu.txt' ,'w')
-            albu_txt.write(str(class_names[0])+" "+str(t_bbox[0])+" "+str(t_bbox[1])+" "+str(t_bbox[2])+" "+str(t_bbox[3])+'\n')
+        #     cv2.imwrite(img_save_path + prefix + '_' + str(i) + 'albu.jpg',transformed_image)
+        #     albu_txt = open(txt_save_path + prefix + '_' + str(i) + 'albu.txt' ,'w')
+        #     albu_txt.write(str(class_names[0])+" "+str(t_bbox[0])+" "+str(t_bbox[1])+" "+str(t_bbox[2])+" "+str(t_bbox[3])+'\n')
 
-        albu_txt.close()
+        # albu_txt.close()
 
 
 
