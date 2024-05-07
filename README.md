@@ -7,3 +7,5 @@
 
 - sudo vi /etc/hosts
 添加了 ping github.com的IP地址
+
+本地代码
