@@ -67,7 +67,7 @@ for loop in range(10):
                 A.Downscale(p=1),  # 随机缩小和放大来降低图像质量
                 A.HorizontalFlip(p=0.5), # 水平翻转
 
-                A.Emboss(p=0.2),  # 压印输入图像并将结果与原始图像叠加
+                # A.Emboss(p=0.2),  # 压印输入图像并将结果与原始图像叠加         容易有多个标注！
                 A.CLAHE(clip_limit=2.0, tile_grid_size=(4, 4), p=0.8),  # 直方图均衡
                 A.Equalize(p=0.8),  # 均衡图像直方图
                 A.ChannelShuffle(p=0.3),# 随机排列通道
@@ -75,6 +75,10 @@ for loop in range(10):
                 A.RandomFog(fog_coef_lower=0.1),
                 A.RandomRain(p=0.3), 
                 A.RandomSnow(),
+
+                # A.RandomCrop
+                # 博主说是因为随机裁剪，导致报错IndexError，list索引超值，
+                # 但我自己使用时，未使用裁剪 还是会报错？？？？？？？
 
             ]
             # 随机选择增强方法
@@ -107,7 +111,7 @@ for loop in range(10):
                     print(filename)
                     print(bboxes)
                     print(transformed_bboxes)
-                    
+
                 print('trans:',t_bbox)
                 # print('trans:',t_bbox[0])
                 cv2.imwrite(img_save_path + prefix + '_' + str(loop) + 'albu.jpg',transformed_image)
