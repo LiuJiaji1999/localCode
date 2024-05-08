@@ -43,7 +43,7 @@ def getcls_bbox(yolofile):
 # image_list = []
 img_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/albuimg/'
 txt_save_path = '/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/imageProcess/albutxt/'
-for loop in range(2):
+for loop in range(10):
     for filename in os.listdir(image_path):
         # 获取文件名前缀 的 2个方法
         os.path.splitext(filename)[0]
@@ -100,7 +100,14 @@ for loop in range(2):
                 # print(transform)
                 transformed_image = transformed["image"]
                 transformed_bboxes = transformed['bboxes']
-                t_bbox = list(transformed_bboxes[0])
+                # t_bbox = list(transformed_bboxes[0])
+                try:
+                    t_bbox = list(transformed_bboxes[0])
+                except IndexError:
+                    print(filename)
+                    print(bboxes)
+                    print(transformed_bboxes)
+                    
                 print('trans:',t_bbox)
                 # print('trans:',t_bbox[0])
                 cv2.imwrite(img_save_path + prefix + '_' + str(loop) + 'albu.jpg',transformed_image)
