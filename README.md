@@ -9,3 +9,6 @@
 添加了 ping github.com的IP地址
 
 添加本地代码
+
+
+测试。服务器突然push不行了
