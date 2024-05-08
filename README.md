@@ -10,5 +10,5 @@
 
 添加本地代码
 
-
-测试。服务器突然push不行了
+# Git:execute git fail
+commit中存在大文件，出现的错误
