@@ -17,3 +17,8 @@ commit中存在大文件，出现的错误
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | pin| 0-defect-6011 | 1-rust-2000 |2-uninstal-1832| 6579 | 1880 | 940 | 
 | Einsulator | 3-burn-475 | 4-defect-508 | 5-dirty-440 | 951 | 272 | 137 | 
+
+
+
+###### command useless
+      python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --project runs/train
