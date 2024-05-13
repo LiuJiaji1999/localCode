@@ -23,3 +23,29 @@ commit中存在大文件，出现的错误
 
 ###### command useless
       python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --project runs/train
+
+# github🔗
+    ssh -T git@github.com
+    cd .git
+    ls
+    cat config 
+    ###
+        [core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        [remote "origin"]
+            url = https://github.com/LiuJiaji1999/power.git
+            fetch = +refs/heads/*:refs/remotes/origin/*
+        [branch "main"]
+            remote = origin
+            merge = refs/heads/main
+    ###
+    vim config 
+        url = git@github.com:LiuJiaji1999/power.git
+
+    cd ~/.ssh
+    ls
+    cat id_ras.pub # github设置中的remote-ssh
+    
