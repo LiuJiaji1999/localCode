@@ -12,6 +12,7 @@
 
 # Git:execute git fail
 commit中存在大文件，出现的错误
+表格制作
                                             |image number|
 | sample | clsId- | clsName- | instanceNum | train | test | val | 
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
