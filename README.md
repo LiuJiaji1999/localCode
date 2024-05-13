@@ -12,7 +12,7 @@
 
 # Git:execute git fail
 commit中存在大文件，出现的错误
-
+                                            |image number|
 | sample | clsId- | clsName- | instanceNum | train | test | val | 
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | pin| 0-defect-6011 | 1-rust-2000 |2-uninstal-1832| 6579 | 1880 | 940 | 
