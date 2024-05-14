@@ -10,7 +10,7 @@
 
 添加本地代码
 
-# Git:execute git fail
+## Git:execute git fail
 commit中存在大文件，出现的错误
 表格制作
                                             |image number|
@@ -19,7 +19,12 @@ commit中存在大文件，出现的错误
 | pin| 0-defect-6011 | 1-rust-2000 |2-uninstal-1832| 6579 | 1880 | 940 | 
 | Einsulator | 3-burn-475 | 4-defect-508 | 5-dirty-440 | 951 | 272 | 137 | 
 
+## 神经网络可视化工具汇总
+- https://cloud.tencent.com/developer/article/2333299
 
+· 直接导入权重pt文件即可显示网络结构(网页在线版)，https://github.com/lutzroeder/Netron?tab=readme-ov-file
+
+· 自己画图时，可参考的形状：https://docs.google.com/presentation/d/11mR1nkIR9fbHegFkcFq8z9oDQ5sjv8E3JJp1LfLGKuk/edit#slide=id.g78327f1586_217_712
 
 ###### command useless
       python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --project runs/train
@@ -58,3 +63,4 @@ commit中存在大文件，出现的错误
 - M：Modified
 
     表示该文件已被修改。当对已跟踪的文件进行了修改后，文件的状态会从A（Added）变为M（Modified）。这意味着该文件在上一次提交之后发生了变化，但尚未被添加到暂存区。
+
