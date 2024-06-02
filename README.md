@@ -10,6 +10,19 @@
 
 添加本地代码
 
+# linux服务器提示git 
+-   提示22端口不能用了，修改如下：
+    ssh -T git@github.com  # 报错
+    ssh -T -p 443 git@ssh.github.com  #成功
+    vim ~/.ssh/config
+        Host github.com 
+            Hostname ssh.github.com 
+            Port 443
+    cat ~/.ssh/config
+    ssh -T git@github.com
+        Hi LiuJiaji1999! You've successfully authenticated, but GitHub does not provide shell access.
+
+
 ## Git:execute git fail
 commit中存在大文件，出现的错误
 表格制作
@@ -64,7 +77,9 @@ commit中存在大文件，出现的错误
 
     表示该文件已被修改。当对已跟踪的文件进行了修改后，文件的状态会从A（Added）变为M（Modified）。这意味着该文件在上一次提交之后发生了变化，但尚未被添加到暂存区。
 
+
+
 ## 文件大小
 🙅 backbone、注意力机制、loss
 
-push shibai 
+
