@@ -10,7 +10,8 @@
 
 添加本地代码
 
-# linux服务器提示git 
+# linux服务器提示git  连接失败，没有仓库
+
 -   提示22端口不能用了，修改如下：
     ssh -T git@github.com  # 报错
     ssh -T -p 443 git@ssh.github.com  #成功
