@@ -1,6 +1,22 @@
-# gittest
-测试是否push？
-具体步骤在goodnotes上有标明！
+# 神经网络可视化工具汇总
+- https://cloud.tencent.com/developer/article/2333299
+
+· 直接导入权重pt文件即可显示网络结构(网页在线版)，https://github.com/lutzroeder/Netron?tab=readme-ov-file
+
+· 自己画图时，可参考的形状：https://docs.google.com/presentation/d/11mR1nkIR9fbHegFkcFq8z9oDQ5sjv8E3JJp1LfLGKuk/edit#slide=id.g78327f1586_217_712
+
+# command useless
+```
+python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --project runs/train
+```
+# 目标检测
+🙅 backbone、注意力机制、loss
+
+除非是顶会新提的结构，可以结合
+
+# git-test
+
+`具体步骤在goodnotes上有标明！
 
 提示443 链接超时的解决
 - https://blog.csdn.net/zpf1813763637/article/details/128340109
@@ -8,24 +24,23 @@
 - sudo vi /etc/hosts
 添加了 ping github.com的IP地址
 
-添加本地代码
-
-# linux服务器提示git  连接失败，没有仓库
+## linux服务器提示git  连接失败，没有仓库
 
 -   提示22端口不能用了，修改如下：
+```
     ssh -T git@github.com  # 报错
     ssh -T -p 443 git@ssh.github.com  #成功
     vim ~/.ssh/config
-        Host github.com 
+        <!-- Host github.com 
             Hostname ssh.github.com 
-            Port 443
+            Port 443 -->
     cat ~/.ssh/config
     ssh -T git@github.com
-        Hi LiuJiaji1999! You've successfully authenticated, but GitHub does not provide shell access.
-
+```
 
 ## Git:execute git fail
 commit中存在大文件，出现的错误
+
 表格制作
                                             |image number|
 | sample | clsId- | clsName- | instanceNum | train | test | val | 
@@ -33,17 +48,9 @@ commit中存在大文件，出现的错误
 | pin| 0-defect-6011 | 1-rust-2000 |2-uninstal-1832| 6579 | 1880 | 940 | 
 | Einsulator | 3-burn-475 | 4-defect-508 | 5-dirty-440 | 951 | 272 | 137 | 
 
-## 神经网络可视化工具汇总
-- https://cloud.tencent.com/developer/article/2333299
 
-· 直接导入权重pt文件即可显示网络结构(网页在线版)，https://github.com/lutzroeder/Netron?tab=readme-ov-file
-
-· 自己画图时，可参考的形状：https://docs.google.com/presentation/d/11mR1nkIR9fbHegFkcFq8z9oDQ5sjv8E3JJp1LfLGKuk/edit#slide=id.g78327f1586_217_712
-
-###### command useless
-      python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --project runs/train
-
-# github🔗
+## github🔗
+```
     ssh -T git@github.com
     cd .git
     ls
@@ -67,7 +74,8 @@ commit中存在大文件，出现的错误
     cd ~/.ssh
     ls
     cat id_ras.pub # github设置中的remote-ssh
-    
+```
+
 - A：Added
         
     表示该文件是新添加的文件，已经被Git跟踪，并且将会包含在下一次的提交中。当使用git add命令将新文件添加到暂存区后，文件的状态会从U（Untracked）变为A（Added）。
@@ -80,7 +88,5 @@ commit中存在大文件，出现的错误
 
 
 
-## 文件大小
-🙅 backbone、注意力机制、loss
 
 
