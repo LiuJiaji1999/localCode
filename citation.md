@@ -19,6 +19,8 @@
 
     ·GPU 的内存带宽的值取决于内存和计算核心之间的数据传输速度，以及这两个部分之间总线中单独并行链路的数量。
 
+    英伟达 RTX A4000 芯片规格:A4000 芯片配备 16 GB 的 GDDR6 显存、256 位显存接口（GPU 和 VRAM 之间总线上的独立链路数量），因为这些与显存相关的特性，所以A4000 内存带宽可以达到 448 GB/s。
+
 4. Latency and Throughput 延迟和吞吐量
     
     深度学习领域延迟 Latency 和吞吐量 Throughput的一般解释,CPU 是低延迟低吞吐量处理器；GPU 是高延迟高吞吐量处理器。   
@@ -91,17 +93,17 @@
 
 #### 轻量级网络模型部署总结
 
-    * 在阅读和理解经典的轻量级网络 mobilenet 系列、MobileDets、shufflenet 系列、cspnet、vovnet、repvgg 等论文的基础上，做了以下总结：
+* 在阅读和理解经典的轻量级网络 mobilenet 系列、MobileDets、shufflenet 系列、cspnet、vovnet、repvgg 等论文的基础上，做了以下总结：
 
-    * 低算力设备-手机移动端 cpu 硬件，考虑 mobilenetv1(深度可分离卷机架构-低 FLOPs)、低 FLOPs 和 低MAC的shuffletnetv2（channel_shuffle 算子在推理框架上可能不支持）。
+* 低算力设备-手机移动端 cpu 硬件，考虑 mobilenetv1(深度可分离卷机架构-低 FLOPs)、低 FLOPs 和 低MAC的shuffletnetv2（channel_shuffle 算子在推理框架上可能不支持）。
 
-    * 专用 asic 硬件设备-npu 芯片（地平线 x3/x4 等、海思 3519、安霸cv22 等），目标检测问题考虑 cspnet 网络(减少重复梯度信息)、repvgg（直连架构-部署简单，网络并行度高有利于发挥 GPU 算力，量化后有掉点风险） 。
+* 专用 asic 硬件设备-npu 芯片（地平线 x3/x4 等、海思 3519、安霸cv22 等），目标检测问题考虑 cspnet 网络(减少重复梯度信息)、repvgg（直连架构-部署简单，网络并行度高有利于发挥 GPU 算力，量化后有掉点风险） 。
 
-    * 英伟达 gpu 硬件-t4 芯片，考虑 repvgg 网络（类 vgg 卷积架构-高并行度带来高速度、单路架构省显存/内存）。
+* 英伟达 gpu 硬件-t4 芯片，考虑 repvgg 网络（类 vgg 卷积架构-高并行度带来高速度、单路架构省显存/内存）。
 
-    * MobileNet block (深度可分离卷积 block, depthwise separable convolution block)在有加速功能的硬件（专用硬件设计-NPU 芯片）上比较没有效率。
+* MobileNet block (深度可分离卷积 block, depthwise separable convolution block)在有加速功能的硬件（专用硬件设计-NPU 芯片）上比较没有效率。
 
-    * 除非芯片厂商做了定制优化来提高深度可分离卷积 block 的计算效率，比如地平线机器人 x3 芯片对深度可分离卷积 block 做了定制优化。
+* 除非芯片厂商做了定制优化来提高深度可分离卷积 block 的计算效率，比如地平线机器人 x3 芯片对深度可分离卷积 block 做了定制优化。
 
     下表是 MobileNetv2 和 ResNet50 在一些常见 NPU 芯片平台上做的性能测试结果。
 ![Alt text](image-1.png)
