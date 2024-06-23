@@ -1,3 +1,18 @@
+# yolov8-pyqt
+```
+conda create -n mmcv python=3.9
+conda activate mmcv
+pip install torch torchvision torchaudio
+conda install -c openmmlab mmcv-full
+pip install PyQt5
+
+cd yolo-pyqt
+# yolov8n.yaml : [device :-1] 
+python run_gui.py
+```
+
+![Alt text](./image/image-3.png)
+![Alt text](./image/image-4.png)
 
 # 神经网络可视化工具汇总
 - https://cloud.tencent.com/developer/article/2333299
@@ -15,7 +30,7 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 
 除非是顶会新提的结构，可以结合
 
-![Alt text](image-2.png)
+![Alt text](./image/image-2.png)
 
 # git-test
 
