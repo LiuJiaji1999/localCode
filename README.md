@@ -15,6 +15,8 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 
 除非是顶会新提的结构，可以结合
 
+![Alt text](image-2.png)
+
 # git-test
 
 `具体步骤在goodnotes上有标明！
