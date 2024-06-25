@@ -1,13 +1,25 @@
+# 稠密和稀疏处理
+- 在计算机视觉领域，稠密(dense )和稀疏(sparse)通常用来描述图像处理中的两种不同的数据处理方式。
+
+·稠密处理：指对图像中的每个像素都进行操作，通常用于需要对整个图像进行分析或处理的任务，例如图像识别、图像分割等。在稠密处理中，需要对每个像素进行操作，以获得完整的图像信息。这种方式可以提供更精确的结果，但也需要更多的计算资源和时间。
+
+·稀疏处理：指只对图像中的一部分像素进行操作，通常用于对图像进行特征提取或关键点检测等任务。在稀疏处理中，只对图像中的一部分像素进行操作，通常是具有特定特征或重要性的像素。这种方式可以减少计算量和加快处理速度，但可能会牺牲一些信息的精确度.
+
+
 # yolov8-pyqt
+- 与训练环境一致
 ```
 conda create -n mmcv python=3.9
 conda activate mmcv
 pip install torch torchvision torchaudio
 conda install -c openmmlab mmcv-full
 pip install PyQt5
-
+```
+- 开始运行
+```
+把ultralytics目录搬过来，防止找不到包！
 cd yolo-pyqt
-# yolov8n.yaml : [device :-1] 
+# yolov8n.yaml : [device :cpu] 
 python run_gui.py
 ```
 
