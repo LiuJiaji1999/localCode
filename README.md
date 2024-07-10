@@ -1,4 +1,3 @@
-
 ## [人工智能名词字典](https://zhuanlan.zhihu.com/p/671175717)
 
 ## 稠密和稀疏处理
@@ -57,18 +56,21 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 
 ## git-test
 
-`具体步骤在goodnotes上有标明！
+** 具体步骤在goodnotes上有标明！
 
-提示443 链接超时的解决
+- fatal: unable to access 'XX': Failed to connect to github.com port 443: 连接超时
 
-- <https://blog.csdn.net/zpf1813763637/article/details/128340109>
+[解决方式参考](https://blog.csdn.net/zpf1813763637/article/details/128340109)
 
-- sudo vi /etc/hosts
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+
+sudo vi /etc/hosts
 添加了 ping github.com的IP地址
+```
 
-### linux服务器提示git  连接失败，没有仓库
-
-- 提示22端口不能用了，修改如下：
+- 提示22端口不能用了 , 连接失败，没有仓库
 
 ```bash
 ssh -T git@github.com  # 报错
@@ -81,18 +83,13 @@ cat ~/.ssh/config
 ssh -T git@github.com
 ```
 
-### Git:execute git fail
+- Git:execute git fail
 
+```text
 commit中存在大文件，出现的错误
+```
 
-表格制作
-                                            |image number|
-| sample | clsId- | clsName- | instanceNum | train | test | val |
-| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| pin| 0-defect-6011 | 1-rust-2000 |2-uninstal-1832| 6579 | 1880 | 940 |
-| Einsulator | 3-burn-475 | 4-defect-508 | 5-dirty-440 | 951 | 272 | 137 |
-
-#### github🔗
+## github🔗
 
 ```bash
 ssh -T git@github.com
@@ -123,12 +120,18 @@ cat id_ras.pub # github设置中的remote-ssh
 git reset HEAD~2
 ```
 
+```text
 - A：Added
-
     表示该文件是新添加的文件，已经被Git跟踪，并且将会包含在下一次的提交中。当使用git add命令将新文件添加到暂存区后，文件的状态会从U（Untracked）变为A（Added）。
 - U：Untracked
-
     表示该文件是未被Git跟踪的文件，Git不会自动将其包含在版本控制中。这意味着该文件不会被提交到版本库中，也不会被包含在Git的快照中。如果希望Git开始跟踪该文件，需要使用git add命令将其添加到暂存区，然后文件的状态会从U（Untracked）变为A（Added）。
 - M：Modified
-
     表示该文件已被修改。当对已跟踪的文件进行了修改后，文件的状态会从A（Added）变为M（Modified）。这意味着该文件在上一次提交之后发生了变化，但尚未被添加到暂存区。
+```
+
+表格制作
+                                            |image number|
+| sample | clsId- | clsName- | instanceNum | train | test | val |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| pin| 0-defect-6011 | 1-rust-2000 |2-uninstal-1832| 6579 | 1880 | 940 |
+| Einsulator | 3-burn-475 | 4-defect-508 | 5-dirty-440 | 951 | 272 | 137 |

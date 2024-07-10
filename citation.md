@@ -109,7 +109,3 @@ https://mp.weixin.qq.com/s/iGplKYgUfjt5V-1TcNpDuA
 
     下表是 MobileNetv2 和 ResNet50 在一些常见 NPU 芯片平台上做的性能测试结果。
 ![Alt text](image-1.png)
-
-
-
-
