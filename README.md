@@ -25,7 +25,7 @@ pip install PyQt5
 ```bash
 把ultralytics目录搬过来，防止找不到包！
 cd yolo-pyqt
-# yolov8n.yaml : [device :cpu] 
+# yolov8m.yaml : [device :cpu] 
 python run_gui.py
 ```
 
