@@ -165,7 +165,8 @@ https://blog.csdn.net/qq_38856939/article/details/123333383
 # 在git那里，右键选择 
 
 ```
-![Alt text](image.png)
+
+![Alt text](./image/close-repository.png)
 
 
 ```text
