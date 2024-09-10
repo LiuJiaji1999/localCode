@@ -159,8 +159,9 @@ cat id_ras.pub # github设置中的remote-ssh
 # 撤销 提交历史 ，回退2次
 git reset HEAD~2
 
-# 出现分支不同的问题
-https://blog.csdn.net/qq_38856939/article/details/123333383
+# 出现分支不同的问题 https://blog.csdn.net/qq_38856939/article/details/123333383
+git fetch origin
+git rebase origin/main
 
 # 在git那里，右键选择 
 
