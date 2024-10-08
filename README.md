@@ -132,6 +132,17 @@ commit中存在大文件，出现的错误
 ### github🔗
 
 ```bash
+git init
+git add README.md
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Wang-Phil/test.git
+git push -u origin main
+```
+
+```bash
 ssh -T git@github.com
 cd .git
 ls
