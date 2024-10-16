@@ -68,8 +68,9 @@ python run_gui.py
             self.close() # 登录使命完成，关闭自己
     ```
 
-
-
+### 深度学习-直观表示
+- CNN、Transformer等：https://poloclub.github.io/cnn-explainer/#article-input
+- 大模型：https://bbycroft.net/llm
 
 
 ### 神经网络可视化工具汇总
