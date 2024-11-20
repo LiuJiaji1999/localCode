@@ -1,3 +1,15 @@
+### vscode的debug
+```bash
+python 解释器在右下角；
+版本不要变，否则没法breakpoint debug
+Extensions 版本问题：
+Vscode: 1.85.2 (Universal)
+python: v2024.2.1
+pylance: v2024.3.2
+python debugger: v2024.0.0
+```
+
+
 ### 横纵坐标【铝管压痕检测】
 ```text
 1. 横坐标（X轴）
@@ -69,18 +81,19 @@ python run_gui.py
     ```
 
 ### 深度学习-直观表示
+```text
 - CNN、Transformer等：https://poloclub.github.io/cnn-explainer/#article-input
 - 大模型：https://bbycroft.net/llm
-
+```
 
 ### 神经网络可视化工具汇总
-
+```text
 - <https://cloud.tencent.com/developer/article/2333299>
 
 · 直接导入权重pt文件即可显示网络结构(网页在线版)，<https://github.com/lutzroeder/Netron?tab=readme-ov-file>
 
 · 自己画图时，可参考的形状：<https://docs.google.com/presentation/d/11mR1nkIR9fbHegFkcFq8z9oDQ5sjv8E3JJp1LfLGKuk/edit#slide=id.g78327f1586_217_712>
-
+```
 
 ### command useless
 ```bash
