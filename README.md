@@ -1,3 +1,87 @@
+### python 运算
+```bash
+1.标量乘法 * ： 对 标量或同类数据类型 的逐元素相乘。
+    # 标量乘法
+    a = 3
+    b = 5
+    print(a * b)  # 输出：15
+    # 对列表（非 Numpy）进行重复扩展
+    lst = [1, 2, 3]
+    print(lst * 2)  # 输出：[1, 2, 3, 1, 2, 3]
+
+2.数组逐元素乘法 * ： 对 两个同维度的数组或矩阵 逐元素相乘。  
+    # 逐元素相乘
+    A = np.array([[1, 2], [3, 4]])
+    B = np.array([[5, 6], [7, 8]])
+    result = A * B
+    print(result)
+    # 输出：
+    # [[ 5 12]
+    #  [21 32]]
+
+3.矩阵乘法 @ ：表示矩阵乘法或向量点积（从 Python 3.5 开始支持）。
+    # 矩阵乘法
+    C = A @ B
+    print(C)
+    # 矩阵乘法的计算规则：
+    # [[1*5 + 2*7, 1*6 + 2*8],
+    #  [3*5 + 4*7, 3*6 + 4*8]]
+    # 输出：
+    # [[19 22]
+    #  [43 50]]
+
+4.点积 (np.dot) : 用于计算向量的点积、矩阵乘积或高维数组的缩减操作。
+    # 向量点积
+    v1 = np.array([1, 2, 3])
+    v2 = np.array([4, 5, 6])
+
+    dot_product = np.dot(v1, v2)
+    print(dot_product)  # 输出：32
+    # 计算过程：1*4 + 2*5 + 3*6 = 32
+
+    # 矩阵乘法（与 @ 等价）
+    matrix_product = np.dot(A, B)
+    print(matrix_product)
+
+5.矩阵乘积 (np.matmul): 用于矩阵与矩阵、矩阵与向量的乘法，等价于 @ 运算符。
+    # 矩阵乘法
+    matrix_product = np.matmul(A, B)
+    print(matrix_product)
+    # 等价于：
+    print(A @ B)
+
+6.广播机制乘法 (Numpy *) :  数组与标量、数组与低维数组进行逐元素乘法，并自动扩展维度。
+    # 数组与标量
+    array = np.array([[1, 2], [3, 4]])
+    print(array * 2)
+    # 输出：
+    # [[2 4]
+    #  [6 8]]
+
+    # 数组与一维数组
+    row_vector = np.array([1, 2])
+    broadcast_result = array * row_vector
+    print(broadcast_result)
+    # 输出：
+    # [[1 4]
+    #  [3 8]]
+
+7.Hadamard 乘积: 两个矩阵逐元素乘积（与 * 运算符等价，常用于机器学习）。
+    # 两个矩阵逐元素乘积
+    hadamard = A * B
+    print(hadamard)
+
+总结
+    使用场景决定运算方式：
+        简单逐元素运算：*
+        矩阵操作和点积：@ 或 np.dot/np.matmul
+        广播机制：* 自动扩展。
+    推荐习惯：对于矩阵操作，优先使用 @，更符合直观的数学表达方式。
+
+```
+![Alt text](image/compute.png)
+
+
 ### vscode的debug
 ```bash
 python 解释器在右下角；
