@@ -15,7 +15,13 @@ segmentation：目标的分割信息，多边形格式描述了目标的边界�
 iscrowd：
     0 表示该目标是单独的目标。
     1 表示目标为稠密目标（如一群人），通常用 RLE 格式存储分割信息。
+
+## 标注工具，直接终端输入命令
+labelImg： 矩形框标注
+labelme: 多边形标注
 ```
+![Alt text](image/labelme.png)
+![Alt text](image/labelimg.png)
 
 ### 《数字图像处理》
 https://www.imageprocessingplace.com/index.htm
