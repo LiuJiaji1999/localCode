@@ -3,6 +3,11 @@ https://www.imageprocessingplace.com/index.htm
 ![Alt text](image/fcn.png)
 ![Alt text](image/cnn.png)
 
+### 时域频域
+![Alt text](image/时域和频域.webp)
+![Alt text](image/时域频域.jpeg)
+
+
 ### 基础概念
 ```text
 单个视频帧：一张图片

@@ -1,14 +1,11 @@
 # 轻量级模型设计与部署总结 
 
-https://mp.weixin.qq.com/s/iGplKYgUfjt5V-1TcNpDuA
+· https://mp.weixin.qq.com/s/iGplKYgUfjt5V-1TcNpDuA
 
 #### 关键词定义及理解
 1. 计算量
-
     <strong>FLOPs：</strong> floating point operations 指的是浮点运算次数，理解为计算量，可以用来衡量算法/模型时间的复杂度。
-    
     <strong>FLOPS：</strong>（全部大写），Floating-point Operations Per Second，每秒所执行的浮点运算次数，理解为计算速度, 是一个衡量硬件性能/模型速度的指标，即一个芯片的算力。
-    
     <strong>MACCs：</strong> multiply-accumulate operations，乘-加操作次数，MACCs 大约是 FLOPs 的一半。将 w[0]∗x[0]+... 视为一个乘法累加或 1 个 MACC。
     
 2. 内存访问代价 MAC
@@ -49,7 +46,7 @@ https://mp.weixin.qq.com/s/iGplKYgUfjt5V-1TcNpDuA
     GPU 设计了更多的晶体管（transistors）用于数据处理（data process）而不是数据缓冲（data caching）和流控（flow control），因此 GPU 很适合做高度并行计算（highly parallel computations）。同时，GPU 提供比 CPU 更高的指令吞吐量和内存带宽（instruction throughput and memory bandwidth）。
 
     CPU 和 GPU 的直观对比图如下所示：
-    ![Alt text](image.png)
+    ![Alt text](image/image.png)
 
     最后简单总结下英伟达 GPU 架构的一些特点:
 
@@ -108,4 +105,5 @@ https://mp.weixin.qq.com/s/iGplKYgUfjt5V-1TcNpDuA
 * 除非芯片厂商做了定制优化来提高深度可分离卷积 block 的计算效率，比如地平线机器人 x3 芯片对深度可分离卷积 block 做了定制优化。
 
     下表是 MobileNetv2 和 ResNet50 在一些常见 NPU 芯片平台上做的性能测试结果。
-![Alt text](image-1.png)
+
+![Alt text](image/image-1.png)
