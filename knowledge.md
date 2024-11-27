@@ -1,3 +1,22 @@
+### 图像分割
+```bash
+{   
+    "id": 16,
+    "image_id": 14,
+    "category_id": 1,
+    "bbox": [239,0,77.829,414.895],
+    "area": 32290.851,
+    "segmentation": [[253.449,10.958,]],   
+    "iscrowd": 0
+}
+bbox：目标的矩形边界框，格式为 [x, y, width, height]。
+area：分割区域的面积（像素个数）。
+segmentation：目标的分割信息，多边形格式描述了目标的边界。
+iscrowd：
+    0 表示该目标是单独的目标。
+    1 表示目标为稠密目标（如一群人），通常用 RLE 格式存储分割信息。
+```
+
 ### 《数字图像处理》
 https://www.imageprocessingplace.com/index.htm
 ![Alt text](image/fcn.png)
