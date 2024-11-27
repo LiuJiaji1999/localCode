@@ -2,7 +2,6 @@ import numpy as np
 import ot
 from torch import cdist
 import torch
-import ot
 
 def compute_swd(features_1, features_2):
     """
