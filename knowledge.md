@@ -20,8 +20,8 @@ iscrowd：
 labelImg： 矩形框标注
 labelme: 多边形标注
 ```
-![Alt text](image/labelme.png)
-![Alt text](image/labelimg.png)
+<img src="image/labelme.png" alt="LabelImg" width="500" height="300">
+<img src="image/labelimg.png" alt="LabelImg" width="500" height="300">
 
 ### 《数字图像处理》
 https://www.imageprocessingplace.com/index.htm
@@ -30,7 +30,7 @@ https://www.imageprocessingplace.com/index.htm
 
 ### 时域频域
 ![Alt text](image/时域和频域.webp)
-![Alt text](image/时域频域.jpeg)
+<img src="image/时域频域.jpeg" alt="LabelImg" width="250" height="250">
 
 
 ### 基础概念
@@ -57,7 +57,12 @@ H264 H265，压缩相似帧的手段
 
 
 ### python 运算
+![Alt text](image/compute.png)
+
 ```bash
+矩阵：np.dot = np.matmul = @
+     * ❍✕  = ☉ Hadamard
+
 1.标量乘法 * ： 对 标量或同类数据类型 的逐元素相乘。
     # 标量乘法
     a = 3
@@ -69,8 +74,10 @@ H264 H265，压缩相似帧的手段
 
 2.数组逐元素乘法 * ： 对 两个同维度的数组或矩阵 逐元素相乘。  
     # 逐元素相乘
-    A = np.array([[1, 2], [3, 4]])
-    B = np.array([[5, 6], [7, 8]])
+    A = np.array([[1, 2], 
+                  [3, 4]])
+    B = np.array([[5, 6], 
+                  [7, 8]])
     result = A * B
     print(result)
     # 输出：
@@ -110,7 +117,8 @@ H264 H265，压缩相似帧的手段
 
 6.广播机制乘法 (Numpy *) :  数组与标量、数组与低维数组进行逐元素乘法，并自动扩展维度。
     # 数组与标量
-    array = np.array([[1, 2], [3, 4]])
+    array = np.array([[1, 2], 
+                      [3, 4]])
     print(array * 2)
     # 输出：
     # [[2 4]
@@ -137,7 +145,6 @@ H264 H265，压缩相似帧的手段
     推荐习惯：对于矩阵操作，优先使用 @，更符合直观的数学表达方式。
 
 ```
-![Alt text](image/compute.png)
 
 
 ### vscode的debug
