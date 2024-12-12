@@ -4,6 +4,7 @@
 
 ## DreamBooth
 
+CVPR 2023
 官方论文： [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)  
 Dreambooth on Stable Diffusion： https://github.com/XavierXiao/Dreambooth-Stable-Diffusion   
 HF 链接： https://huggingface.co/docs/diffusers/training/dreambooth   

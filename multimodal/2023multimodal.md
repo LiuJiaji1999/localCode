@@ -6,6 +6,7 @@
 
 # EVA
 
+CVPR 2023
 EVA: Exploring the Limits of Masked Visual Representation Learning at Scale
 
 受模型缩放在 NLP 中的成功启发，我们如果能够将这种成功从语言翻译成视觉则很有吸引力，即扩大以视觉为中心的基础模型，有利于视觉和多模态下游任务。在视觉里面也有 MIM 方法，
