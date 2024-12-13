@@ -313,7 +313,7 @@ git config --global --get http.proxy
 git config --global --get https.proxy
 
 sudo vi /etc/hosts
-添加了 ping github.com的IP地址
+添加了 ping github.com的IP地址 : PING github.com (127.0.0.1)
 ```
 
 ```bash
