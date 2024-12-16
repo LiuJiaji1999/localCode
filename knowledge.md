@@ -192,7 +192,6 @@ H264 H265，压缩相似帧的手段
 
 ```
 
-
 ### vscode的debug
 ```bash
 python 解释器在右下角；
@@ -203,7 +202,6 @@ Extensions 版本问题：
     pylance: v2024.3.2
     python debugger: v2024.0.0
 ```
-
 
 ### 横纵坐标【铝管压痕检测】
 ```text
@@ -308,9 +306,19 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 ** 具体步骤在goodnotes上有标明！
 - fatal: unable to access 'XX': Failed to connect to github.com port 443: 连接超时
 [解决方式参考](https://blog.csdn.net/zpf1813763637/article/details/128340109)
-
+# 查看代理
 git config --global --get http.proxy
 git config --global --get https.proxy
+# 配置代理
+## socks5 
+git config --global http.proxy socks5 127.0.0.1:7890
+git config --global https.proxy socks5 127.0.0.1:7890
+## http
+git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+# 取消全局代理 服务器的才能push/pull上去
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 
 sudo vi /etc/hosts
 添加了 ping github.com的IP地址 : PING github.com (127.0.0.1)
@@ -318,7 +326,6 @@ sudo vi /etc/hosts
 
 ```bash
 - 提示22端口不能用了 , 连接失败，没有仓库
-
 ssh -T git@github.com  # 报错
 ssh -T -p 443 git@ssh.github.com  #成功
 vim ~/.ssh/config
@@ -329,10 +336,9 @@ cat ~/.ssh/config
 ssh -T git@github.com
 ```
 
-```text
+```shell
 - Git:execute git fail
-
-commit中存在大文件，出现的错误
+commit中存在大文件，出现的错误 
 ```
 
 ### github🔗
@@ -343,15 +349,19 @@ commit中存在大文件，出现的错误
 ```
 
 ```bash
-git init
-git add README.md
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Wang-Phil/test.git
-git push -u origin main
+Github官网: 手动 new repositories
+vscode : ner folder
+cd XXX-folder
+    git init
+    # git config --global user.email "you@example.com"
+    # git config --global user.name "Your Name"
+    git remote add origin https://github.com/Wang-Phil/test.git
+    编辑项目文件
+    git add . (到源代码管理器下 进行 commit -> publish branch 默认main主分支，)
+    git commit -m "add"
+    git push origin https://github.com/Wang-Phil/test.git
 ```
+![Alt text](./image/git-option.jpg)
 
 ```bash
 ssh -T git@github.com
