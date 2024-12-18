@@ -1,3 +1,7 @@
+### 马尔可夫链
+https://www.zhihu.com/question/26665048/answer/1696549744
+石溪
+
 ### Transerform OD
 ```text
 《大白话》
