@@ -350,6 +350,7 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 
 ### git-test
 ```bash
+服务器老报错！
 ** 具体步骤在goodnotes上有标明！
 - fatal: unable to access 'XX': Failed to connect to github.com port 443: 连接超时
 [解决方式参考](https://blog.csdn.net/zpf1813763637/article/details/128340109)
