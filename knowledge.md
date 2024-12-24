@@ -420,12 +420,12 @@ commit中存在大文件，出现的错误
 ```
 
 ### github🔗
+###### 忽略./DS_Store文件
 ```text
-忽略./DS_Store文件
 参考1：https://blog.csdn.net/Happy_lifer/article/details/136062961
 参考2：https://retompi.com/archived-blog/posts/2019/12/08/ignore-ds-store-globally.html
 ```
-
+###### 代码关联github
 ```bash
 Github官网: 手动 new repositories
 vscode : ner folder
