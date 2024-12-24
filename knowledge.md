@@ -382,6 +382,7 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 ```bash
 服务器老报错！
 ** 具体步骤在goodnotes上有标明！
+
 - fatal: unable to access 'XX': Failed to connect to github.com port 443: 连接超时
 [解决方式参考](https://blog.csdn.net/zpf1813763637/article/details/128340109)
 # 查看代理
@@ -398,8 +399,10 @@ git config --global https.proxy 127.0.0.1:7890
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 
+- fatal: unable to access 'XX': Failed to connect to github.com port 443: 拒绝连接
 sudo vi /etc/hosts
-添加了 ping github.com的IP地址 : PING github.com (127.0.0.1)
+140.82.114.3 github.com
+# 添加了 ping github.com的IP地址 : PING github.com (127.0.0.1)
 ```
 
 ```bash
