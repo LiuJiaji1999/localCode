@@ -378,49 +378,6 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 ```
 ![Alt text](./image/image-2.png)
 
-### git-test
-```bash
-服务器老报错！
-** 具体步骤在goodnotes上有标明！
-
-- fatal: unable to access 'XX': Failed to connect to github.com port 443: 连接超时
-[解决方式参考](https://blog.csdn.net/zpf1813763637/article/details/128340109)
-# 查看代理
-git config --global --get http.proxy
-git config --global --get https.proxy
-# 配置代理
-## socks5 
-git config --global http.proxy socks5 127.0.0.1:7890
-git config --global https.proxy socks5 127.0.0.1:7890
-## http
-git config --global http.proxy 127.0.0.1:7890
-git config --global https.proxy 127.0.0.1:7890
-# 取消全局代理 服务器的才能push/pull上去
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-
-- fatal: unable to access 'XX': Failed to connect to github.com port 443: 拒绝连接
-sudo vi /etc/hosts
-140.82.114.3 github.com
-# 添加了 ping github.com的IP地址 : PING github.com (127.0.0.1)
-```
-
-```bash
-- 提示22端口不能用了 , 连接失败，没有仓库
-ssh -T git@github.com  # 报错
-ssh -T -p 443 git@ssh.github.com  #成功
-vim ~/.ssh/config
-    <!-- Host github.com 
-        Hostname ssh.github.com 
-        Port 443 -->
-cat ~/.ssh/config
-ssh -T git@github.com
-```
-
-```shell
-- Git:execute git fail
-commit中存在大文件，出现的错误 
-```
 
 ### github🔗
 ###### 忽略./DS_Store文件
@@ -444,33 +401,75 @@ cd XXX-folder
 ```
 ![Alt text](./image/git-option.jpg)
 
-```bash
-ssh -T git@github.com
-cd .git
-ls
-cat config 
-###
-    [core]
-    repositoryformatversion = 0
-    filemode = true
-    bare = false
-    logallrefupdates = true
-    [remote "origin"]
-        url = https://github.com/LiuJiaji1999/power.git
-        fetch = +refs/heads/*:refs/remotes/origin/*
-    [branch "main"]
-        remote = origin
-        merge = refs/heads/main
-###
-vim config 
-    url = git@github.com:LiuJiaji1999/power.git
 
+###### git-question
+```bash
+服务器老报错！
+** 具体步骤在goodnotes上有标明！
+
+1. fatal: unable to access 'XX': Failed to connect to github.com port 443: 拒绝连接
+    sudo vi /etc/hosts
+    140.82.112.3 github.com # 服务器查询
+    140.82.114.3 github.com # 本地查询
+    # 添加了 ping github.com的IP地址 : PING github.com (127.0.0.1)
+
+2. fatal: unable to access 'XX': Failed to connect to github.com port 443: 连接超时
+[解决方式参考](https://blog.csdn.net/zpf1813763637/article/details/128340109)
+    # 查看代理
+    git config --global --get http.proxy
+    git config --global --get https.proxy
+    # 配置代理
+    ## socks5 
+    git config --global http.proxy socks5 127.0.0.1:7890
+    git config --global https.proxy socks5 127.0.0.1:7890
+    ## http
+    git config --global http.proxy 127.0.0.1:7890
+    git config --global https.proxy 127.0.0.1:7890
+    # 取消全局代理 服务器的才能push/pull上去
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+
+    ssh -T git@github.com  # 成功，执行下来的步骤
+    cd .git
+    ls
+    cat config 
+    ###
+        [core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        [remote "origin"]
+            url = https://github.com/LiuJiaji1999/power.git
+            fetch = +refs/heads/*:refs/remotes/origin/*
+        [branch "main"]
+            remote = origin
+            merge = refs/heads/main
+    ###
+    vim config 
+        url = git@github.com:LiuJiaji1999/power.git
+
+3. 提示22端口不能用了 , 连接失败，没有仓库
+    ssh -T git@github.com  # 报错
+    ssh -T -p 443 git@ssh.github.com  #成功
+    vim ~/.ssh/config
+        <!-- Host github.com 
+            Hostname ssh.github.com 
+            Port 443 -->
+    cat ~/.ssh/config
+    ssh -T git@github.com
+
+
+4. Git:execute git fail
+commit中存在大文件，出现的错误 
+    # 撤销 提交历史 ，回退2次
+    git reset HEAD~2
+```
+
+```bash
 cd ~/.ssh
 ls
 cat id_ras.pub # github设置中的remote-ssh
-
-# 撤销 提交历史 ，回退2次
-git reset HEAD~2
 
 # 出现分支不同的问题 https://blog.csdn.net/qq_38856939/article/details/123333383
 git fetch origin
