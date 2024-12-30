@@ -1,3 +1,10 @@
+### 系统设计
+```text
+可参考：System list、https://mbd.pub/o/bread/Z52Tk5ds
+本地部署：smart-medicince
+```
+
+
 ### Machine learning
 ```text
 石溪的知乎回答：https://www.zhihu.com/question/26665048/answer/1696549744
