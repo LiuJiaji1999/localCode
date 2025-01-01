@@ -58,7 +58,7 @@ $$
             用处：协方差的绝对值受变量尺度影响，不能直接比较不同变量之间的相关程度
 ```
 $$
-\operatorname{Cov}(X, Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]
+Cov(X,Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]
 $$
 ```
 多元正态分布 (Multivariate Normal Distribution) ：对于多个变量，正态分布可以推广到多元正态分布，其参数包括：  
@@ -81,7 +81,7 @@ $$
 | **均值**    | μ         | 数据的平均值                    | $\mu = \mathbb{E}[X]$                         |
 | **方差**    | σ²        | 数据与均值之间的偏差的平方的均值  | $\sigma^2 = \mathbb{E}[(X - \mu)^2]$          |
 | **标准差**  | σ         | 方差的平方根                    | $\sigma = \sqrt{\sigma^2}$                   |
-| **协方差**  | Cov(X,Y)  | 两个变量之间的线性相关性          | $\operatorname{Cov}(X, Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]$|
+| **协方差**  | Cov(X,Y)  | 两个变量之间的线性相关性          | $Cov(X,Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]$|
 
 ---
 
