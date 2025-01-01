@@ -22,24 +22,26 @@
         ·均值（Mean）：是数据的中心趋势，表示数据的平均值。对于高斯分布，它位于对称中心，决定分布的平移位置。
             用处：图像标准化-对图像像素值进行归一化时，通常减去均值以使数据中心化。
 ```
-$\mu = \mathbb{E}[X] = \frac{1}{N} \sum_{i=1}^{N} x_i $
+$
+\mu = \mathbb{E}[X] = \frac{1}{N} \sum_{i=1}^{N} x_i 
+$
 
-其中 $x_i $ 是数据点，$ N $ 是数据总数。
+其中 $ x_i  $ 是数据点，$ N $ 是数据总数。
 ```
         ·标准差（Standard Deviation）：是数据的分散程度，表示数据偏离均值的平均距离。
             用处：噪声建模-高斯噪声以标准差控制噪声的强度。
                  数据标准化-通过除以标准差，消除不同特征值的量纲差异。
 ```
-  $
-  \sigma = \sqrt{\sigma^2} = \sqrt{\mathbb{E}[(X - \mu)^2]} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2} 
-  $
+$
+\sigma = \sqrt{\sigma^2} = \sqrt{\mathbb{E}[(X - \mu)^2]} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2} 
+$
 ```
         ·方差（Variance）σ²：是标准差的平方，表示数据的整体波动程度。在高斯分布中，方差越大，分布越宽。
             用处：特征选择-分析图像特征的方差，剔除低方差的无关特征。分布特征提取- 在聚类（如 GMM）中，方差用于描述簇的紧密程度。
 ```
-  $
-  \sigma^2 = \mathbb{E}[(X - \mu)^2] = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
-  $
+$
+\sigma^2 = \mathbb{E}[(X - \mu)^2] = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
+$
 ```
 
 在计算机视觉中，数据呈现高斯分布的主要优势体现在：
@@ -55,9 +57,9 @@ $\mu = \mathbb{E}[X] = \frac{1}{N} \sum_{i=1}^{N} x_i $
         ·协方差 (Covariance, Cov(X, Y))：两个随机变量之间的线性相关性。
             用处：协方差的绝对值受变量尺度影响，不能直接比较不同变量之间的相关程度
 ```
-  $
-  \operatorname{Cov}(X, Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]
-  $ 
+$
+\operatorname{Cov}(X, Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]
+$ 
 ```
 多元正态分布 (Multivariate Normal Distribution) ：对于多个变量，正态分布可以推广到多元正态分布，其参数包括：  
 - 均值向量 (Mean Vector, μ)：描述每个变量的均值。  
@@ -65,10 +67,12 @@ $\mu = \mathbb{E}[X] = \frac{1}{N} \sum_{i=1}^{N} x_i $
 ```
 对于维度为 $ d$ 的多元正态分布：
 
-$f(x) = \frac{1}{(2\pi)^{d/2} |\Sigma|^{1/2}} \exp\left(-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)\right)$
+$
+f(x) = \frac{1}{(2\pi)^{d/2} |\Sigma|^{1/2}} \exp\left(-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)\right)
+$
 
-- $ \mu$ 是均值向量 $(\mu_1, \mu_2, ..., \mu_d) $
-- $ \Sigma$ 是协方差矩阵
+- $\mu $ 是均值向量 $ (\mu_1, \mu_2, ..., \mu_d) $
+- $\Sigma$ 是协方差矩阵
 
 ##### 📊 总结表格
 
