@@ -89,9 +89,16 @@ $$
 ```text
 《大白话》
 ```
-### 拖拽式界面设计
+
+### 原型设计
+```text
+·Axure RP：https://www.axure.com，可导出html，30天免费！B站有教程
+    Macos管家https://16pan.com/s/share4e512e7cfd；
+    github也有教程；
+墨刀：纯前端浏览
 官网：https://webflow.com/
 官网：https://wordpress.org/themes/
+```
 
 ### ndarry
 ```bash
