@@ -446,9 +446,9 @@ cd XXX-folder
     # 取消全局代理 服务器的才能push/pull上去
     git config --global --unset http.proxy
     git config --global --unset https.proxy
-
+    ---------------------------------------------
     ssh -T git@github.com  # 成功，执行下来的步骤
-    cd .git
+    cd /特定目录下/.git
     ls
     cat config 
     ###
