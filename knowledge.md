@@ -2,7 +2,7 @@
 ```text
 可参考：System list、https://mbd.pub/o/bread/Z52Tk5ds
 本地部署：smart-medicince
-写法：北邮博士论文，尽管两张系统图，但内容值得参考；
+写法：北邮博士论文，尽管两张系统图，但内容值得参考（结合AI算法+未来展望）；
 ```
 
 ### 数据相关性分析
