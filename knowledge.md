@@ -5,6 +5,11 @@
 写法：北邮博士论文，尽管两张系统图，但内容值得参考（结合AI算法+未来展望）；
 ```
 
+### linux命令突然 OOM
+```text
+https://blog.csdn.net/Castlehe/article/details/122936585
+```
+
 ### 数据相关性分析
 ```text
 https://blog.csdn.net/sinat_36192944/article/details/143994818
