@@ -4,6 +4,10 @@
 本地部署：smart-medicince
 写法：北邮博士论文，尽管两张系统图，但内容值得参考（结合AI算法+未来展望）；
 ```
+### GeForce RTX 3090, 4090, A10, A40, A100, A800, L20, L40 显卡性能对比
+```text
+https://juejin.cn/post/7428197475964272690
+```
 
 ### linux命令突然 OOM
 ```text
