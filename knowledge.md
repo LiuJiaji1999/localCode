@@ -481,7 +481,7 @@ cd XXX-folder
     git add . (到源代码管理器下 进行 commit -> publish branch 默认main主分支，)
     git commit -m "add"
     git push origin https://github.com/Wang-Phil/test.git
-
+git status --ignored #查看被忽略的文件
 ```
 ![Alt text](./image/git-option.jpg)
 
