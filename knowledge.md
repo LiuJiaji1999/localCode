@@ -481,9 +481,22 @@ cd XXX-folder
     git add . (到源代码管理器下 进行 commit -> publish branch 默认main主分支，)
     git commit -m "add"
     git push origin https://github.com/Wang-Phil/test.git
+
 ```
 ![Alt text](./image/git-option.jpg)
 
+```text
+绿色：已暂存（staged）但未提交。
+蓝色：已修改但未暂存。
+灰色：被忽略或已提交且无更改。
+
+- A：Added
+    表示该文件是新添加的文件，已经被Git跟踪，并且将会包含在下一次的提交中。当使用git add命令将新文件添加到暂存区后，文件的状态会从U（Untracked）变为A（Added）。
+- U：Untracked
+    表示该文件是未被Git跟踪的文件，Git不会自动将其包含在版本控制中。这意味着该文件不会被提交到版本库中，也不会被包含在Git的快照中。如果希望Git开始跟踪该文件，需要使用git add命令将其添加到暂存区，然后文件的状态会从U（Untracked）变为A（Added）。
+- M：Modified
+    表示该文件已被修改。当对已跟踪的文件进行了修改后，文件的状态会从A（Added）变为M（Modified）。这意味着该文件在上一次提交之后发生了变化，但尚未被添加到暂存区。
+```
 
 ###### git-question
 ```bash
@@ -564,14 +577,7 @@ git rebase origin/main
 ![Alt text](./image/close-repository.png)
 
 
-```text
-- A：Added
-    表示该文件是新添加的文件，已经被Git跟踪，并且将会包含在下一次的提交中。当使用git add命令将新文件添加到暂存区后，文件的状态会从U（Untracked）变为A（Added）。
-- U：Untracked
-    表示该文件是未被Git跟踪的文件，Git不会自动将其包含在版本控制中。这意味着该文件不会被提交到版本库中，也不会被包含在Git的快照中。如果希望Git开始跟踪该文件，需要使用git add命令将其添加到暂存区，然后文件的状态会从U（Untracked）变为A（Added）。
-- M：Modified
-    表示该文件已被修改。当对已跟踪的文件进行了修改后，文件的状态会从A（Added）变为M（Modified）。这意味着该文件在上一次提交之后发生了变化，但尚未被添加到暂存区。
-```
+
 
 · 表格制作示例
                                         
