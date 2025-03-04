@@ -23,9 +23,38 @@ import torch
 # xc = xm.transpose(1, 2) @ xm 
 # print(xc)
 
+# import torch
+# tensor = torch.tensor([[1, 2, 3, 4, 5, 6],
+#                        [7, 8, 9, 10, 11, 12]])
+# print(tensor[..., 4:])
+# print(tensor[..., -4:])
+# print(tensor[..., :-4])
+
+
 import torch
-tensor = torch.tensor([[1, 2, 3, 4, 5, 6],
-                       [7, 8, 9, 10, 11, 12]])
-print(tensor[..., 4:])
-print(tensor[..., -4:])
-print(tensor[..., :-4])
+import numpy as np
+# 假设 targets 是一个包含多个 PyTorch 张量的列表
+targets = [
+    torch.tensor([[1, 2], [3, 4]]),
+    torch.tensor([[5, 6], [7, 8]])
+]
+
+# 使用 torch.cat 拼接张量，然后转换为 NumPy 数组
+result = torch.cat(targets, 0).numpy()
+print(result)
+print(result.shape) # (4, 2)
+# [[1 2]
+#  [3 4]
+#  [5 6]
+#  [7 8]]
+
+
+# 使用 np.array 直接转换为 NumPy 数组
+result = np.array(targets)
+print(result)
+print(result.shape) # (2,2,2)
+# [[[1 2]
+#   [3 4]]
+
+#  [[5 6]
+#   [7 8]]]
