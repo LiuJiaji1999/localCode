@@ -1,3 +1,38 @@
+### v5 v8检测代码解释
+```shell
+import torch
+
+# 假设有 3 个 anchor，每个网格单元 5 个预测值 (x, y, w, h, confidence)
+y = torch.randn(1, 3, 5, 5, 5)  # (batch, anchor, grid_h, grid_w, 5)
+
+xy, wh, conf = y.split((2, 2, 1), 4)  # 在最后一个维度上拆分
+print(xy.shape)   # (1, 3, 5, 5, 2) -> x, y
+print(wh.shape)   # (1, 3, 5, 5, 2) -> w, h
+print(conf.shape) # (1, 3, 5, 5, 1) -> 置信度
+
+# 假设 batch=2，每个网格有 3 个 anchor，特征图大小 5x5，每个框有 85 个参数
+bs, anchors, grid_h, grid_w, no = 2, 3, 5, 5, 85
+# 创建一个随机 tensor，形状是 (2, 3, 5, 5, 85)
+y = torch.randn(bs, anchors, grid_h, grid_w, no)
+# 重新 reshape，转换成 (batch_size, total_predictions, no)
+y = y.view(bs, -1, no)
+print(y.shape)  # 输出: (2, 75, 85)
+
+
+torch.cat(z, 1) 的作用 类似于 NumPy 的 np.concatenate()。
+    z 是一个包含多个张量的列表，每个张量的形状类似：（batch_size, num_predictions_per_level, num_features）
+    维度1 ，实际第二个维度，进行拼接，(b,chw)
+z[0] -> (batch_size, 300, num_features)  # 低分辨率大感受野
+z[1] -> (batch_size, 1200, num_features) # 中等分辨率
+z[2] -> (batch_size, 4800, num_features) # 高分辨率小目标
+(torch.cat(z, 1)) -> (batch_size, 300 + 1200 + 4800, num_features)
+
+
+```
+
+
+
+
 ### 系统设计
 ```text
 可参考：System list、https://mbd.pub/o/bread/Z52Tk5ds
@@ -200,7 +235,19 @@ print(data[:, :-1])
 # [[1 2]
 #  [4 5]
 #  [7 8]]
-
+                       0,  1, 2, 3, 4, 5
+                       -6 -5 -4 -3 -2 -1
+tensor = torch.tensor([[1, 2, 3, 4, 5, 6],
+                       [7, 8, 9, 10, 11, 12]])
+print(tensor[..., 4:]) # 从第 4 个索引开始提取后续所有元素。
+# tensor([[ 5,  6],
+#         [11, 12]])
+print(tensor[..., -4:]) # 从倒数第 4 个索引开始提取最后 4 个元素。
+# tensor([[ 3,  4,  5,  6],
+#         [ 9, 10, 11, 12]])
+print(tensor[..., :-4])
+# tensor([[1, 2],
+#         [7, 8]])
 ```
 
 ### 图像分割
