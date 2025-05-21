@@ -106,7 +106,8 @@ def compare_columns_3(docx_column, pdf_column1, pdf_column2):
     return docx_in_pdf1_not_pdf2
 
 # 文件路径
-docx_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/oil.docx"
+# docx_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/oildata.doc"
+oilpdf_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/oildata.pdf"
 pdf_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/keji.pdf"
 # 示例 PDF 文件路径
 beidapdf_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/beida.pdf"
@@ -116,7 +117,10 @@ beidapdf_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/beida
 column_name = "期刊名称"
 
 # 提取 油田 word  数据
-docx_list = extract_column_from_docx(docx_path, column_name)
+# docx_list = extract_column_from_docx(docx_path, column_name)
+# 提取 科技核心 中的文本
+oiltext_data = extract_text_from_pdf(oilpdf_path)
+oilpdf_column = extract_journal_names(oiltext_data)
 
 # 提取 科技核心 中的文本
 text_data = extract_text_from_pdf(pdf_path)
@@ -126,14 +130,17 @@ pdf_column = extract_journal_names(text_data)
 chinese_journals = extract_chinese_journals_from_pdf(beidapdf_path)
 
 # print('油田核心',docx_list)
-print('油田核心 共 ',len(docx_list))
+# print('油田核心 共 ',len(docx_list))
+oilpdf_list = flatten_and_merge(oilpdf_column)
+print('油田核心 共 ',len(oilpdf_list))
 pdf_list = flatten_and_merge(pdf_column)
 # print('科技核心',pdf_list)
+
 print('科技核心 共 ',len(pdf_list))
 print('北大核心 共 ',len(chinese_journals))
 
 # 对比结果
-result = compare_columns_3(docx_list, pdf_list, chinese_journals)
+result = compare_columns_3(oilpdf_list, pdf_list, chinese_journals)
 
 
 # 输出结果
@@ -153,25 +160,25 @@ print("交集已保存到 'result.xlsx' 文件中。")
 '''
 必须得用word另存为docx才可以
 '''
-# import os
+import os
 
-# docx_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/oil.docx"
+docx_path = "/Users/rl/Documents/PhD_student/Untitled_Folder/knowledge/oildata.doc"
 
-# # 检查文件是否存在
-# if not os.path.exists(docx_path):
-#     print(f"File not found: {docx_path}")
-# else:
-#     print("File exists. Verifying content...")
-#     try:
-#         from docx import Document
-#         document = Document(docx_path)
-#         print("Word document loaded successfully!")
-#     except Exception as e:
-#         print(f"Error loading document: {e}")
+# 检查文件是否存在
+if not os.path.exists(docx_path):
+    print(f"File not found: {docx_path}")
+else:
+    print("File exists. Verifying content...")
+    try:
+        from docx import Document
+        document = Document(docx_path)
+        print("Word document loaded successfully!")
+    except Exception as e:
+        print(f"Error loading document: {e}")
 
-# import zipfile
+import zipfile
 
-# if not zipfile.is_zipfile(docx_path):
-#     print("Error: File is not a valid .docx file.")
-# else:
-#     print("File is a valid .docx file.")
+if not zipfile.is_zipfile(docx_path):
+    print("Error: File is not a valid .docx file.")
+else:
+    print("File is a valid .docx file.")
