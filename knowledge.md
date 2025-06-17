@@ -1,3 +1,72 @@
+#### 小波变换（Wavelet Transform）
+```bash
+在图像处理中是一种多尺度分析工具，通过局部化时频特性，克服了傅里叶变换在非平稳信号分析中的局限性。以下是其原理、目的及应用的详细说明：
+一、小波变换的原理
+ 1. 数学基础
+   - 小波函数：
+```
+   由母小波（Mother Wavelet）\(\psi(t)\)通过平移和缩放生成：
+\[
+\psi_{a,b}(t) = \frac{1}{\sqrt{a}} \psi\left(\frac{t-b}{a}\right)
+\]
+其中，\(a\)为尺度参数（控制频率），\(b\)为平移参数（控制位置）。
+
+```bash
+   - 离散小波变换（DWT）：对图像进行多级分解，常用滤波器组（如Haar、Daubechies）实现。
+2. 图像处理中的实现
+   - 二维DWT：对图像的行和列分别进行一维小波分解，生成4个子带：
+     - LL（低频近似）：保留图像的主要结构。
+     - LH（水平细节）：捕捉水平方向边缘。
+     - HL（垂直细节）：捕捉垂直方向边缘。
+     - HH（对角线细节）：捕捉对角线方向高频信息。
+   - 多级分解：对LL子带递归分解，形成金字塔结构（如3级分解）。
+
+二、小波变换的目的
+1. 多分辨率分析：同时提供图像的全局概览（低频）和局部细节（高频），适应不同任务需求。
+2. 时频局部化：在空间域和频率域均具有局部化能力，适合分析非平稳信号（如边缘、纹理）。
+3. 数据压缩与去噪：高频子带（LH/HL/HH）可被阈值化（如硬阈值、软阈值），去除噪声或压缩数据。
+4. 特征提取：小波系数可作为纹理分类、边缘检测的特征。
+
+三、在图像处理中的典型应用
+1. 图像压缩（JPEG 2000）
+   - 原理：保留低频子带（LL），量化高频子带（利用人眼对高频不敏感的特性）。
+   - 优势：比JPEG（基于DCT）更抗块效应，支持渐进传输。
+2. 图像去噪
+   - 步骤：
+     1. 对图像进行DWT分解。
+     2. 对高频子带应用阈值（如VisuShrink、BayesShrink）。
+     3. 逆变换重构图像。
+   - 效果：保留边缘的同时抑制噪声。
+3. 边缘检测，利用高频子带（LH/HL）增强边缘信息，结合模极大值法检测边缘。
+4. 图像融合：对不同图像的频带进行选择性融合（如红外与可见光图像的LL子带加权平均）。
+5. 纹理分析：统计小波子带能量或系数分布，用于纹理分类（如Gabor小波）。
+
+四、小波基的选择
+不同小波基适用于不同任务：
+- Haar：简单、计算快，适合边缘检测。
+- Daubechies（dbN）：紧支撑，平衡时频性能（常用db4、db8）。
+- Symlets：近似对称，减少相位失真。
+- Biorthogonal：线性相位，适合图像压缩。
+
+五、实例演示（Python代码）
+import pywt
+import cv2
+import numpy as np
+# 读取图像并转为灰度
+image = cv2.imread('lena.jpg', 0).astype(np.float32)
+# 2级小波分解（使用Daubechies小波）
+coeffs = pywt.wavedec2(image, 'db2', level=2)
+LL, (LH, HL, HH), (LH2, HL2, HH2) = coeffs
+# 阈值去噪（硬阈值）
+threshold = 20
+LH = pywt.threshold(LH, threshold, mode='hard')
+HL = pywt.threshold(HL, threshold, mode='hard')
+HH = pywt.threshold(HH, threshold, mode='hard')
+# 重构图像
+denoised_image = pywt.waverec2([LL, (LH, HL, HH), (LH2, HL2, HH2)], 'db2')
+```
+
+
 ### CUDA （Compute Unified Device Architecture） 理解
 ```text
 英伟达（NVIDIA）公司开发的并行计算平台和编程模型。它允许开发者使用NVIDIA的GPU（图形处理单元）来执行计算任务，而不仅仅是传统的图形渲染任务。
