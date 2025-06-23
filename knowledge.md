@@ -1,4 +1,4 @@
-#### 小波变换（Wavelet Transform）
+### 小波变换（Wavelet Transform）
 ```bash
 在图像处理中是一种多尺度分析工具，通过局部化时频特性，克服了傅里叶变换在非平稳信号分析中的局限性。以下是其原理、目的及应用的详细说明：
 一、小波变换的原理
@@ -357,8 +357,9 @@ labelme: 多边形标注
 <img src="image/labelimg.png" alt="LabelImg" width="500" height="300">
 
 ### 《数字图像处理》
+```bash
 https://www.imageprocessingplace.com/index.htm
-
+```
 ![Alt text](image/fcn.png)
 ![Alt text](image/cnn.png)
 
@@ -368,7 +369,7 @@ https://www.imageprocessingplace.com/index.htm
 
 
 ### 基础概念
-```text
+```shell
 单个视频帧：一张图片
     ·分辨率 resolution：
         图像的长宽像素大小，说法各异，视频分辨率一般是16:9，所以1080一般指 1920*1080；
@@ -388,7 +389,6 @@ H264 H265，压缩相似帧的手段
     ·B帧：需要根据前一个和后一个I帧或P帧计算最终图像；（数据量小）
     `GOP：一组完整的视频帧，开头必为I帧，一般是对直播等流媒体设置的，缓解网络导致的花屏，大小一般为帧率的1-2倍；
 ```
-
 
 ### python 运算
 ![Alt text](image/compute.png)
