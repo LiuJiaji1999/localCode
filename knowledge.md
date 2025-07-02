@@ -1,3 +1,5 @@
+[toc]
+
 ### 小波变换（Wavelet Transform）
 ```bash
 在图像处理中是一种多尺度分析工具，通过局部化时频特性，克服了傅里叶变换在非平稳信号分析中的局限性。以下是其原理、目的及应用的详细说明：
@@ -119,8 +121,9 @@ z[2] -> (batch_size, 4800, num_features) # 高分辨率小目标
 写法：北邮博士论文，尽管两张系统图，但内容值得参考（结合AI算法+未来展望）；
 ```
 
-### GeForce RTX 3090, 4090, A10, A40, A100, A800, L20, L40 显卡性能对比
+### GeForce RTX 显卡性能对比
 ```text
+3090, 4090, A10, A40, A100, A800, L20, L40 
 https://juejin.cn/post/7428197475964272690
 ```
 
@@ -589,6 +592,28 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 ```
 ![Alt text](./image/image-2.png)
 
+
+### linux因无法进入图形化界面如何登录校园网
+```bash
+/knowledge/portal 客户端，通过scp传到服务器上
+ssh登录
+1.将程序包放到linux系统目录下赋予执行权限
+    scp -r /Users/rl/Documents/PhD-student/Untitled_Folder/knowledge/portal lenovo@121.195.169.36:~
+    chmod +x portal
+2.执行程序
+    ./portal
+3.根据提示输入url
+    https://e.ncepu.edu.cn/srun_portal_pc?ac_id=23
+4.输入上网账号和密码
+测试   ping www.baidu.com
+
+登出
+1.执行程序
+    执行./portal
+2.弹出Do you want to sign out?(y/N)
+    选择y退出客户端
+测试  ping www.baidu.com
+```
 
 ### github🔗
 ###### 忽略./DS_Store文件
