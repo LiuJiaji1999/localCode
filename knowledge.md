@@ -598,8 +598,9 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 ![Alt text](./image/image-2.png)
 
 
-### linux因无法进入图形化界面如何登录校园网
+### 校园网Linux版客户端
 ```bash
+linux无法进入图形化界面，即使更换密码也是重复登录！（未解决💡）
 /knowledge/portal 客户端，通过scp传到服务器上
 ssh登录
 1.将程序包放到linux系统目录下赋予执行权限
