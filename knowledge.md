@@ -276,7 +276,9 @@ $$
 ### Transerform OD
 ```text
 <Transformer do Object Detection.pdf>
+<Solving Transformer by Hand A Step-by-Step Math Example.pdf>
 《大白话》
+Q是提问，K是标签，V是答案；通过Q和K的匹配，决定从V中拿多少答案出来。
 ```
 
 ### 原型设计
