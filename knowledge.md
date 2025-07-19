@@ -343,6 +343,7 @@ print(tensor[..., :-4])
 
 ### 图像分割
 ```bash
+原值为 png/jpg 形式的二值掩码图像，但可通过脚本转换为 YOLO格式标签，详见 https://docs.ultralytics.com/zh/datasets/segment/#visualize-dataset-annotations
 {   
     "id": 16,
     "image_id": 14,
