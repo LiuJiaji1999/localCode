@@ -1,6 +1,6 @@
 [toc]
 
-⛔️不能提交 token
+⛔️不能提交 huggingface中的 token，带密码口令的不可以
 
 ### 小波变换（Wavelet Transform）
 ```bash
@@ -279,8 +279,10 @@ $$
 <Transformer do Object Detection.pdf>
 <Solving Transformer by Hand A Step-by-Step Math Example.pdf>
 《大白话》
+大模型理解transformer架构：https://mp.weixin.qq.com/s/Kmuj9xAft3P7L84Gtmy-3w 
 Q是提问，K是标签，V是答案；通过Q和K的匹配，决定从V中拿多少答案出来。
 ```
+![Alt text](./image/qkv.png)
 
 ### 原型设计
 ```text
