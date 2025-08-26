@@ -42,8 +42,8 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
     ·这个目前没有电子版😥，但书如下图所示，因为可以和2.1并行学习，同一类知识可共同参考，个人感觉这本书的概念稍微抽象些。
 上述的分类、回归、聚类等机器学习算法基本都是python中的已有库函数，只要熟悉库函数的输入输出，编程中可直接调库使用。
 ```
-
 ![Alt text](./image/machinelearning.png)
+
 
 ```bash
 3.1 《深度学习》俗称花书，计划4～5周  ##作为参考书，常看常新
