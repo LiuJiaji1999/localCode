@@ -715,7 +715,7 @@ git status --ignored #查看被忽略的文件
     ssh -T -p 443 git@ssh.github.com  #成功
     vim ~/.ssh/config
         <!-- Host github.com 
-            Hostname ssh.github.com 
+            Hostname github.com 
             Port 443 -->
     cat ~/.ssh/config
     ssh -T git@github.com
