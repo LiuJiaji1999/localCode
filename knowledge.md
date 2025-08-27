@@ -710,7 +710,7 @@ git status --ignored #查看被忽略的文件
     vim config 
         url = git@github.com:LiuJiaji1999/power.git
 
-3. 提示22端口不能用了 , 连接失败，没有仓库
+3. ssh: connect to host github.com port 22: Operation timed out , fatal: Could not read from remote repository.
     ssh -T git@github.com  # 报错
     ssh -T -p 443 git@ssh.github.com  #成功
     vim ~/.ssh/config

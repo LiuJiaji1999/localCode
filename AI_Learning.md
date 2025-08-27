@@ -59,8 +59,8 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
 
 4 特定书籍(根据研究方向选择对应书籍)
  CV: 《Digital Image Processing 4th Edition R》冈萨雷斯.pdf
- 迁移学习:《迁移学习》杨强、《迁移学习导论》王晋东 https://github.com/jindongwang/transferlearning
- *NLP: 《》等
+ 迁移学习:《迁移学习》杨强、《迁移学习导论》王晋东 【作者主页 https://github.com/jindongwang/transferlearning】
+ *NLP: 《自然语言处理入门》何晗等【作者主页 https://hankcs.com/】
  *LLM: 《》等
 ```
 
