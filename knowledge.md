@@ -604,9 +604,10 @@ python train.py --yaml ultralytics/cfg/models/v8/yolov8-dyhead.yaml  --info --pr
 ![Alt text](./image/image-2.png)
 
 
-### 校园网Linux版客户端
+### Linux服务器错误
 ```bash
-linux无法进入图形化界面，即使更换密码也是重复登录！（未解决💡）
+1️⃣linux无法进入图形化界面，即使更换密码也是重复登录！（未解决💡）
+# 校园网连接
 /knowledge/portal 客户端，通过scp传到服务器上
 ssh登录
 1.将程序包放到linux系统目录下赋予执行权限
@@ -625,6 +626,10 @@ ssh登录
 2.弹出Do you want to sign out?(y/N)
     选择y退出客户端
 测试  ping www.baidu.com
+
+2️⃣ ssh显示错误，突然远程不上
+本地ping不通服务器，且服务器ping.www.baidu.com显示DNS解析域名错误！
+关机重启📴
 ```
 
 ### github🔗
