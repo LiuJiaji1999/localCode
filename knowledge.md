@@ -728,8 +728,8 @@ git status --ignored #查看被忽略的文件
 
 4. Git:execute git fail
 commit中存在大文件，出现的错误 
-    # 撤销 提交历史 ，回退2次
-    git reset HEAD~2 # 这个命令，老bug，网上找就好
+    # 撤销 提交历史 ，回退1次
+    git reset HEAD~1 # 这个命令，老bug，网上找就好
 ```
 
 ```bash
