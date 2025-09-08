@@ -51,7 +51,9 @@ $F_{b,v}^{l}\in R^{C \times H \times W}$
 
 $g_{b,v}^{l}= GAP\left ( F_{b,v}^{l} \right )\in R^{C},l\in L_{g}=\left\{ 10\right\}$
 
-$s_{b}^{l}\left ( v,v^{'} \right )=\left< g_{b,v}^{l},g_{b,v^{'}}^{l}\right>=\frac{\left ( g_{b,v}^{l} \right )^{T}g_{b,v^{'}}^{l}}{\left\| g_{b,v}^{l}\right\|_{2} \left\|g_{b,v^{'}}^{l} \right\|_{2}},v,v^{'}\in \left\{ 1,...,V\right\}$
+$\hat{g}_{b,v}^{l}$
+
+$s_{b}^{l}\left ( v,v^{'} \right )=\left< \hat{g}_{b,v}^{l},\hat{g}_{b,v^{'}}^{l}\right>=\frac{\left ( g_{b,v}^{l} \right )^{T}g_{b,v^{'}}^{l}}{\left\| g_{b,v}^{l}\right\|_{2} \left\|g_{b,v^{'}}^{l} \right\|_{2}},v,v^{'}\in \left\{ 1,...,V\right\}$
 
 $s_{global}^{l}=\frac{1}{BV\left ( V-1 \right )}\sum_{b=1}^{B}\sum_{v,v^{'}=1,v\neq v^{'}}^{V}s_{b}^{l}\left ( v,v^{'} \right )$
 
@@ -72,10 +74,10 @@ $p_{b,v,p}^{l}$
 
 $\hat{p}_{b,v,p}^{l}$
 
-$s_{b}^{l,p}\left ( v,v^{'} \right )=\left< p_{b,v,p}^{l},\hat{p}_{b,v^{'},p}^{l}\right>,v,v^{'}\in \left\{ 1,...,V\right\} $
+$s_{b}^{l,p}\left ( v,v^{'} \right )=\left< \hat{p}_{b,v,p}^{l},\hat{p}_{b,v^{'},p}^{l}\right>,v,v^{'}\in \left\{ 1,...,V\right\} $
 
 $s_{local}^{l}=\frac{1}{P}\sum_{p=1}^{P}\left [\frac{1}{BV\left ( V-1 \right )}\sum_{b=1}^{B}\sum_{v,v^{'}=1,v\neq v^{'}}^{V}s_{b}^{l,p}\left ( v,v^{'} \right )\right ]$
 
-$L_{local}=\sum_{l\in L_{l}}^{}s_{local}^{l} $
+$L_{local}=\sum_{l\in L_{l}}^{}s_{local}^{l,p} $
 
 $Loss=L_{det}+L_{global}+L_{local}$
