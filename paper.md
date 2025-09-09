@@ -111,6 +111,8 @@ $I_{o},I_{f},I_{n},I_{s},I_{a},I_{c}$
 ```bash
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
 
 # table1
 \begin{table}[]
@@ -222,15 +224,14 @@ Method & FPS(f*s-1) & Params(M) & FLOPs(G) \\ \midrule
 Faster R-CNN & 33.2 & 41.4 & 199.9 \\
 RetinaNet & 34.3 & 36.4 & 198.0 \\
 GFL & 24.1 & 32.3 & 197.0 \\
-TOOD & 42.0 & 19.0 & 142.0 \\
-DETR &  &  &  \\
-Deformable-DETR &  &  &  \\
-RT-DETR & 146.7 & 38.6 & 57.0 \\
-YOLOv8 & 217.8 & 49.6 & 79.1 \\
+TOOD & 42.0 & \textbf{19.0} & 142.0 \\
+Deformable-DETR & 25.5 & 40.8 & 185.0 \\
+DINO & 19.8 & 47.6 & 263.0 \\
+YOLOv8 & \textbf{217.8} & 49.6 & {\ul 79.1} \\
 YOLO-DTAD & 150.0 & 44.5 & 101.9 \\
 YOLOv9 & 102.2 & 251.6 & 130.7 \\
-YOLOv10 & 203.3 & 32 & 101.9 \\
-MFENet & 213.1 & 38.6 & 67.7 \\ \bottomrule
+YOLOv10 & 203.3 & {\ul 32.0} & 101.9 \\
+MFENet & {\ul 213.1} & 38.6 & \textbf{67.7} \\ \bottomrule
 \end{tabular}
 \caption{}
 \label{tbl7}
