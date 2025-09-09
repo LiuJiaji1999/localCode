@@ -136,7 +136,7 @@ ColorJitter & 20.90 & 0.93 & 0.14 \\ \bottomrule
 View & Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulator-di & mAP(\%) \\ \midrule
 \multirow{12}{*}{Singleview} & Faster R-CNN & 22.5 & 58.5 & 43.8 & 72.4 & 75.2 & 31.5 & 50.7 \\
  & Retina-Net & 11.7 & 54.2 & 37.8 & 70.7 & 65.9 & 22.9 & 43.9 \\
- & GFL & 17.5 & 59.6 & 45.5 & 75.6 & 64.6 & 24.5 & 47.9 \\
+ & GFL & 17.5 & 59.6 & 45.5 & \textbf{75.6} & 64.6 & 24.5 & 47.9 \\
  & TOOD & 22.1 & 62.2 & 44.8 & 70.0 & 69.1 & 23.9 & 48.7 \\
  & DETR &  &  &  &  &  &  &  \\
  & Deformable-DETR &  &  &  &  &  &  &  \\
@@ -146,7 +146,7 @@ View & Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulat
  & YOLOv9 & 15.3 & 53.9 & 37.4 & 56.2 & 71.7 & \textbf{41.3} & 46.0 \\
  & YOLOv10 & 19.0 & 55.6 & 39.1 & 62.9 & 66.2 & 21.2 & 44.0 \\
  & YOLOv11 & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
-Multiview & MFENet & \textbf{28.0} & \textbf{63.6} & \textbf{47.2} & \textbf{75.7} & \textbf{80.4} & 32.4 & \textbf{54.5} \\ \bottomrule
+Multiview & MFENet & \textbf{26.8} & \textbf{64.7} & \textbf{47.2} & 73.6 & \textbf{80.0} & 35.8 & \textbf{55.9} \\ \bottomrule
 \end{tabular}
 \caption{}
 \label{tbl2}
