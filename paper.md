@@ -126,7 +126,7 @@ Shear & 12.64 & 0.28 & 0.48 \\
 Affine & 8.65 & 0.19 & 0.63 \\
 ColorJitter & 20.90 & 0.93 & 0.14 \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Quality Evaluation Results for Multi-View Data Generation.}
 \label{tbl1}
 \end{table}
 
@@ -150,7 +150,7 @@ View & Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulat
  & YOLOv11 & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
 Multiview & MFENet & \textbf{26.8} & \textbf{64.7} & \textbf{47.2} & 73.6 & \textbf{80.0} & 35.8 & \textbf{55.9} \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Detection results of different models under the Private Power Data dataset (bold denotes the best performance).}
 \label{tbl2}
 \end{table}
 
@@ -165,7 +165,7 @@ YOLO-DTAD & 99.5 & 89.0 & 97.7 & 98.8 & 96.2 \\
 YOLOv11 & 99.5 & 89.5 & 97.0 & 98.2 & 96.0 \\
 MFENet & \textbf{99.5} & \textbf{90.3} & \textbf{97.9} & \textbf{99.4} & \textbf{96.7} \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Detection results of different models under the Public Power Data dataset (bold denotes the best performance).}
 \label{tbl3}
 \end{table}
 
@@ -180,7 +180,7 @@ YOLO-DTAD & 33.5 & 20.1 & 13.8 & 77.6 & 43.3 & 44.8 & 24.4 & 25.6 & 62.3 & 36.8 
 YOLOv11 & 39.7 & 21.3 & 16.5 & 80.7 & 46.7 & 53.9 & \textbf{29.9} & 25.6 & 65.5 & 42.3 & 42.2 \\
 MFENet & \textbf{40.7} & \textbf{22.0} & \textbf{19.3} & \textbf{81.5} & \textbf{47.8} & \textbf{55.0} & 29.1 & \textbf{26.3} & \textbf{67.7} & \textbf{44.0} & \textbf{43.3} \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Detection results of different models under the VisDrone2019 dataset (bold denotes the best performance).}
 \label{tbl4}
 \end{table}
 
@@ -197,7 +197,7 @@ eq & 20.5 & 61.6 & 48.5 & \textbf{71.5} & 76.0 & \textbf{40.8} & 53.1 \\
 eq & 26.1 & 62.8 & 49.3 & 69.9 & \textbf{76.9} & 37.1 & 53.7 \\
 eq & \textbf{28.6} & \textbf{67.0} & \textbf{54.5} & 68.2 & 76.0 & 30.8 & \textbf{54.2} \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Detection results across different views (bold denotes the best performance).}
 \label{tbl5}
 \end{table}
 
@@ -209,9 +209,9 @@ eq & \textbf{28.6} & \textbf{67.0} & \textbf{54.5} & 68.2 & 76.0 & 30.8 & \textb
 Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulator-di & mAP(\%) \\ \midrule
 Base & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
 Base+MV & 28.6 & 67.0 & 54.5 & 68.2 & 76.0 & 30.8 & 54.2 \\
-Base+MV+GL & 26.8 & 64.7 & 54.3 & \textbf{73.6} & \textbf{80.0} & \textbf{35.8} & \textbf{55.9} \\ \bottomrule
+Base+MV+GL & 26.8 & 64.7 & 54.3 & 73.6 & 80.0 & 35.8 & 55.9 \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Detection results of different modules.}
 \label{tbl6}
 \end{table}
 
@@ -233,7 +233,23 @@ YOLOv9 & 102.2 & 251.6 & 130.7 \\
 YOLOv10 & 203.3 & {\ul 32.0} & 101.9 \\
 MFENet & {\ul 213.1} & 38.6 & \textbf{67.7} \\ \bottomrule
 \end{tabular}
-\caption{}
+\caption{Computational complexity of different detection models (bold and underlined denote the best and second-best performance, respectively).}
 \label{tbl7}
 \end{table}
+```
+
+```text
+Table 1. Quality Evaluation Results for Multi-View Data Generation.
+Table 2. Detection results of different models under the Private Power Data dataset (bold denotes the best performance).
+Table 3. Detection results of different models under the Public Power Data dataset (bold denotes the best performance).
+Table 4. Detection results of different models under the VisDrone2019 dataset (bold denotes the best performance).
+Table 5. Detection results across different views (bold denotes the best performance).
+Table 6. Detection results of different modules.
+Table 7. Computational complexity of different detection models (bold and underlined denote the best and second-best performance, respectively).
+
+Figure 1. The architecture of the MFCONet.
+Figure 2. Multi-view Attention Heatmaps.
+Figure 3. Visualization of dual-view information consistency and complementarity.
+Figure 4. Category-wise P-R curves of different models.
+Figure 5. Visual comparison of detection results under the Private Power Data dataset: (a) Input, (b) YOLOv8, (c) YOLO-DTAD, (d) YOLOv10, (e) YOLOv11, (f) MFCONet. (Best viewed in color and with zooming in).
 ```
