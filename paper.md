@@ -117,7 +117,7 @@ $I_{o},I_{f},I_{n},I_{s},I_{a},I_{c}$
 # table1
 \begin{table}[]
 \centering
-\begin{tabular}{@{}cccc@{}}
+\begin{tabular}{@{}llll@{}}
 \toprule
 View & PSNR(↑) & SSIM(↑) & LPIPS(↓) \\ \midrule
 Far & 25.02 & 0.75 & 0.27 \\
@@ -133,7 +133,7 @@ ColorJitter & 20.90 & 0.93 & 0.14 \\ \bottomrule
 # table2
 \begin{table}[]
 \centering
-\begin{tabular}{@{}ccccccccc@{}}
+\begin{tabular}{@{}lllllllll@{}}
 \toprule
 View & Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulator-di & mAP(\%) \\ \midrule
 \multirow{12}{*}{Singleview} & Faster R-CNN & 22.5 & 58.5 & 43.8 & 72.4 & 75.2 & 31.5 & 50.7 \\
@@ -148,7 +148,29 @@ View & Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulat
  & YOLOv9 & 15.3 & 53.9 & 37.4 & 56.2 & 71.7 & \textbf{41.3} & 46.0 \\
  & YOLOv10 & 19.0 & 55.6 & 39.1 & 62.9 & 66.2 & 21.2 & 44.0 \\
  & YOLOv11 & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
-Multiview & MFENet & \textbf{26.8} & \textbf{64.7} & \textbf{47.2} & 73.6 & \textbf{80.0} & 35.8 & \textbf{55.9} \\ \bottomrule
+Multiview & MFCONet & \textbf{26.8} & \textbf{64.7} & \textbf{47.2} & 73.6 & \textbf{80.0} & 35.8 & \textbf{55.9} \\ \bottomrule
+\end{tabular}
+
+\end{table}
+
+
+\begin{table}[]
+\centering
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulator-di & mAP(\%) \\ \midrule
+Faster R-CNN & 22.5 & 58.5 & 43.8 & 72.4 & 75.2 & 31.5 & 50.7 \\
+Retina-Net & 11.7 & 54.2 & 37.8 & 70.7 & 65.9 & 22.9 & 43.9 \\
+GFL & 17.5 & 59.6 & 45.5 & \textbf{75.6} & 64.6 & 24.5 & 47.9 \\
+TOOD & 22.1 & 62.2 & 44.8 & 70.0 & 69.1 & 23.9 & 48.7 \\
+Deformable-DETR & 23.3 & 57.9 & 47.7 & 62.4 & 66.7 & 23.9 & 47.0 \\
+DINO & 26.3 & 63.5 & 50.9 & 56.5 & 69.0 & 28.7 & 49.1 \\
+YOLOv8 & 10.4 & 55.9 & 34.9 & 65.5 & 64.8 & 22.4 & 42.5 \\
+YOLO-DTAD & 17.4 & 63.7 & 41.1 & 72.5 & 72.4 & 22.3 & 48.2 \\
+YOLOv9 & 15.3 & 53.9 & 37.4 & 56.2 & 71.7 & \textbf{41.3} & 46.0 \\
+YOLOv10 & 19.0 & 55.6 & 39.1 & 62.9 & 66.2 & 21.2 & 44.0 \\
+YOLO11 & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
+MFCONet & \textbf{26.8} & \textbf{64.7} & \textbf{54.3} & 73.6 & \textbf{80.0} & 35.8 & \textbf{55.9} \\ \bottomrule
 \end{tabular}
 \caption{Detection results of different models under the Private Power Data dataset (bold denotes the best performance).}
 \label{tbl2}
@@ -157,13 +179,13 @@ Multiview & MFENet & \textbf{26.8} & \textbf{64.7} & \textbf{47.2} & 73.6 & \tex
 # table3
 \begin{table}[]
 \centering
-\begin{tabular}{@{}cccccc@{}}
+\begin{tabular}{@{}llllll@{}}
 \toprule
 Method & CPLID-defect & VPMBGI-defect & IDID-flashover & IDID-broken & mAP(\%) \\ \midrule
 YOLOv8 & 99.5 & 87.0 & 97.9 & 98.1 & 95.6 \\
 YOLO-DTAD & 99.5 & 89.0 & 97.7 & 98.8 & 96.2 \\
 YOLOv11 & 99.5 & 89.5 & 97.0 & 98.2 & 96.0 \\
-MFENet & \textbf{99.5} & \textbf{90.3} & \textbf{97.9} & \textbf{99.4} & \textbf{96.7} \\ \bottomrule
+MFCONet & \textbf{99.5} & \textbf{90.3} & \textbf{97.9} & \textbf{99.4} & \textbf{96.7} \\ \bottomrule
 \end{tabular}
 \caption{Detection results of different models under the Public Power Data dataset (bold denotes the best performance).}
 \label{tbl3}
@@ -172,13 +194,13 @@ MFENet & \textbf{99.5} & \textbf{90.3} & \textbf{97.9} & \textbf{99.4} & \textbf
 # table4
 \begin{table}[]
 \centering
-\begin{tabular}{@{}cccccccccccc@{}}
+\begin{tabular}{@{}llllllllllll@{}}
 \toprule
 Method & Ign-reg & ped & peo & bic & car & van & tru & tri & aw-tri & bus & mAP(\%) \\ \midrule
 YOLOv8 & 33.3 & 19.0 & 13.3 & 77.5 & 42.8 & 44.9 & 24.7 & 23.7 & 60.9 & 36.6 & 37.7 \\
 YOLO-DTAD & 33.5 & 20.1 & 13.8 & 77.6 & 43.3 & 44.8 & 24.4 & 25.6 & 62.3 & 36.8 & 38.2 \\
 YOLOv11 & 39.7 & 21.3 & 16.5 & 80.7 & 46.7 & 53.9 & \textbf{29.9} & 25.6 & 65.5 & 42.3 & 42.2 \\
-MFENet & \textbf{40.7} & \textbf{22.0} & \textbf{19.3} & \textbf{81.5} & \textbf{47.8} & \textbf{55.0} & 29.1 & \textbf{26.3} & \textbf{67.7} & \textbf{44.0} & \textbf{43.3} \\ \bottomrule
+MFCONet & \textbf{40.7} & \textbf{22.0} & \textbf{19.3} & \textbf{81.5} & \textbf{47.8} & \textbf{55.0} & 29.1 & \textbf{26.3} & \textbf{67.7} & \textbf{44.0} & \textbf{43.3} \\ \bottomrule
 \end{tabular}
 \caption{Detection results of different models under the VisDrone2019 dataset (bold denotes the best performance).}
 \label{tbl4}
@@ -187,7 +209,7 @@ MFENet & \textbf{40.7} & \textbf{22.0} & \textbf{19.3} & \textbf{81.5} & \textbf
 # table5
 \begin{table}[]
 \centering
-\begin{tabular}{@{}cccccccc@{}}
+\begin{tabular}{@{}llllllll@{}}
 \toprule
 View & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulator-di & mAP(\%) \\ \midrule
 \multicolumn{1}{l}{eq1} & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
@@ -204,7 +226,7 @@ eq & \textbf{28.6} & \textbf{67.0} & \textbf{54.5} & 68.2 & 76.0 & 30.8 & \textb
 # table6
 \begin{table}[]
 \centering
-\begin{tabular}{@{}cccccccc@{}}
+\begin{tabular}{@{}llllllll@{}}
 \toprule
 Method & pin-un & pin-ru & pin-de & Insulator-bu & Insulator-de & Insulator-di & mAP(\%) \\ \midrule
 Base & 20.0 & 57.5 & 44.7 & 71.2 & 74.4 & 39.7 & 51.2 \\
@@ -218,7 +240,7 @@ Base+MV+GL & 26.8 & 64.7 & 54.3 & 73.6 & 80.0 & 35.8 & 55.9 \\ \bottomrule
 # table7
 \begin{table}[]
 \centering
-\begin{tabular}{@{}cccc@{}}
+\begin{tabular}{@{}llll@{}}
 \toprule
 Method & FPS(f*s-1) & Params(M) & FLOPs(G) \\ \midrule
 Faster R-CNN & 33.2 & 41.4 & 199.9 \\
@@ -231,7 +253,7 @@ YOLOv8 & \textbf{217.8} & 49.6 & {\ul 79.1} \\
 YOLO-DTAD & 150.0 & 44.5 & 101.9 \\
 YOLOv9 & 102.2 & 251.6 & 130.7 \\
 YOLOv10 & 203.3 & {\ul 32.0} & 101.9 \\
-MFENet & {\ul 213.1} & 38.6 & \textbf{67.7} \\ \bottomrule
+MFCONet & {\ul 213.1} & 38.6 & \textbf{67.7} \\ \bottomrule
 \end{tabular}
 \caption{Computational complexity of different detection models (bold and underlined denote the best and second-best performance, respectively).}
 \label{tbl7}
