@@ -732,7 +732,8 @@ commit中存在大文件，出现的错误
     git reset HEAD~1 # 这个命令，老bug，网上找就好
 
 5. ssh_exchange_identification: read: Connection reset by peer fatal: 无法读取远程仓库。 请确认您有正确的访问权限并且仓库存在。
-
+    那就是服务器没网了，找空闲账号重新登录！(实习的友友 或者 互助群里 找出租号)
+    解决方法在👆
 ```
 
 ```bash
