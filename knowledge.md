@@ -641,7 +641,7 @@ ssh登录
 ###### 代码关联github
 ```bash
 Github官网: 手动 new repositories
-vscode : ner folder
+vscode : new folder
 cd XXX-folder
     git init
     # git config --global user.email "you@example.com"
