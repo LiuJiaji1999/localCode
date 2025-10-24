@@ -587,13 +587,13 @@ python run_gui.py
 · 直接导入权重pt文件即可显示网络结构(网页在线版)，<https://github.com/lutzroeder/Netron?tab=readme-ov-file>
 · 自己画图时，可参考的形状：<https://docs.google.com/presentation/d/11mR1nkIR9fbHegFkcFq8z9oDQ5sjv8E3JJp1LfLGKuk/edit#slide=id.g78327f1586_217_712>
 · 谷歌研究：https://research.google/blog/
-· VOSviewer: https://zhuanlan.zhihu.com/p/6129123772
+· VOSviewer: https://zhuanlan.zhihu.com/p/6129123772 
     Create a map based on bibliographic data
     Read data from bibliographic database files
         Web Of Science 库 -> Export -> Plain Text File -> Full Record and Cited References -> .txt
     Read data from reference manager files
         知网 -> Export -> Refworks/EndNote  -> .txt /.enw 目前显示不出时间线
-    Co-occurrence关键词分析（Co-authorship作者分析）：
+    分析网络：https://blog.csdn.net/m0_56184997/article/details/145536215
 ```
 ![Alt text](image.png)
 
