@@ -71,7 +71,9 @@ IO接口：Y50EA-1222(军标圆形连接器) 包含 CAN、串口、485各1路
 knowledge/AI模型大小与推理速度的深度分析研究.pdf
 knowledge/AI项目开发流程及边缘设备部署经验.pdf
 https://mp.weixin.qq.com/s/Buaze75R6YrwlpUdmW0HbQ: YOLO11和树莓派的完美搭配组合
-https://www.nvidia.cn/on-demand/featured-playlist/ 英伟达视频教程
+英伟达开发者平台:
+    视频教程 https://www.nvidia.cn/on-demand/featured-playlist/ 
+    技术博客 https://developer.nvidia.com/zh-cn/blog
 ```
 
 
