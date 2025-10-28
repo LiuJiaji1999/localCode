@@ -346,6 +346,10 @@ print(tensor[..., :-4])
 
 ### 图像分割
 ```bash
+超像素：一系列像素的集合，这些像素具有类似的颜色、纹理等特征，距离也比较近。
+语义分割：区分前景、背景的像素，为图像中每个像素级的分类，输出-天空、树、车、人
+实例分割：类似目标检测 只不过输出mask，且不需要对每个像素进行标记，它只需要找到感兴趣物体的边缘轮廓就行。仅关注前景，且区分实例，输出-人1、、人2、车1、车2
+全景分割：区分前景、背景的像素，且区分前景实例，输出-天空、树、人1、、人2、车1、车2
 原值为 png/jpg 形式的二值掩码图像，但可通过脚本转换为 YOLO格式标签，详见 https://docs.ultralytics.com/zh/datasets/segment/#visualize-dataset-annotations
 {   
     "id": 16,
@@ -367,6 +371,7 @@ iscrowd：
 labelImg： 矩形框标注
 labelme: 多边形标注
 ```
+![Alt text](image/分割.jpg)
 <img src="image/labelme.png" alt="LabelImg" width="500" height="300">
 <img src="image/labelimg.png" alt="LabelImg" width="500" height="300">
 
@@ -595,7 +600,7 @@ python run_gui.py
         知网 -> Export -> Refworks/EndNote  -> .txt /.enw 目前显示不出时间线
     分析网络：https://blog.csdn.net/m0_56184997/article/details/145536215
 ```
-![Alt text](image.png)
+![Alt text](image/vosviewer.png)
 
 ### command useless
 ```bash
