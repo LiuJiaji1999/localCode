@@ -78,4 +78,5 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
     dblp：🟥表示期刊论文、🟦表示会议论文、⬜️表示arxiv预印版论文（学者们会把自己预投稿的论文上传到该网站，可类比于为自己的创新点占坑）、 🟨表示书籍
 4.Github：https://github.com/，关注OpenMMLab、Meta Reasearch、Hugging Face、DeepSeek等常活跃的用户社区，时常关注AI热点！
     保持开源精神
+5.研究趋势：论文《Real Deep Research for AI, Robotics and Beyond》 https://realdeepresearch.github.io/
 ```
