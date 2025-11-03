@@ -644,7 +644,7 @@ ssh登录
 关机重启📴
 
 3️⃣ 侧边栏的 “文件夹”消失
-command+shift+p -> View: Reset View Locations
+Command+Shift+p -> View: Reset View Locations
 ```
 
 ### github🔗
