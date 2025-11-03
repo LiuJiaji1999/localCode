@@ -646,6 +646,8 @@ ssh登录
 3️⃣ 侧边栏的 “文件夹”消失
 Command+Shift+p -> View: Reset View Locations
 ```
+![Alt text](./image/explorer.png)
+
 
 ### github🔗
 
