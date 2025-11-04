@@ -5,7 +5,10 @@
 ·软硬件等系统的底层逻辑为C、C++语言：学习完《数据结构》会基本掌握C语言的大概核心知识；
 ·前后端开发常用java语言：建议直接从搭建完整系统开始，从而熟悉SSM、Spring-boot等框架，https://how2j.cn/stage/39.html
 ·算法设计常用python语言：API查询 https://docs.python.org/zh-cn/3.13/contents.html 熟悉和使用
-    之前自己学习python玩过：莫烦Python-https://mofanpy.com，派森编程-https://pycoding.com ，怎么说呢，纯玩了就🤣
+    之前自己学习python使用过：合适自己的就是最好的
+        莫烦Python-https://mofanpy.com，
+        派森编程-https://pycoding.com ，
+        B站教程-https://space.bilibili.com/243821484/upload/video、https://www.bilibili.com/video/BV1wD4y1o7AS/?spm_id_from=333.337.search-card.all.click&vd_source=8f43c3a38f673faa87fc5770fa2e2e30
 现在编程语言学习没那么难，bug大模型会帮改，但咱得知道 问题出在哪里？有个大概解决思路？然后再去问大模型！
 ```
 
@@ -71,12 +74,13 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
     ·先会议->后期刊：因为会议审稿快，需要审稿意见，根据意见修改，若被会议拒，就转投期刊！
         会议截稿可看：https://ccfddl.com/
     ·B刊->C刊：由高到低的投，但最近计算机论文投稿量巨大且审稿周期长，若没有很强的学术追求，建议投 Sci2区及以上的IEEE汇刊 或者 交叉学科期刊
+    ·A刊、A会：科研人的目标🎯！
 2.目前AI领域：https://sotapapers.com/research_areas、https://www.semanticscholar.org
     前几年纯 CV、NLP 领域热门，还相对好发论文！【目前阶段，如果倚靠项目并解决实际问题，也可冲高级别论文！】
     但近2年发展趋势为 知识图谱、模型可解释性、多模态、大模型等方向！
 3.高质量论文数据库：https://dblp.uni-trier.de、https://scholar.google.com/
     dblp：🟥表示期刊论文、🟦表示会议论文、⬜️表示arxiv预印版论文（学者们会把自己预投稿的论文上传到该网站，可类比于为自己的创新点占坑）、 🟨表示书籍
 4.Github：https://github.com/，关注OpenMMLab、Meta Reasearch、Hugging Face、DeepSeek等常活跃的用户社区，时常关注AI热点！
-    保持开源精神
-5.研究趋势：论文《Real Deep Research for AI, Robotics and Beyond》 https://realdeepresearch.github.io/
+    学会保持开源精神，把代码和数据留存，防止因软硬件问题导致丢失！
+5.AI研究趋势：论文《Real Deep Research for AI, Robotics and Beyond》 https://realdeepresearch.github.io/
 ```
