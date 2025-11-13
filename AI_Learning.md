@@ -49,7 +49,6 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
 ```
 ![Alt text](./image/machinelearning.png)
 
-
 ```bash
 3.1 《深度学习》俗称花书，计划4～5周  ##作为学习参考书，常看常新
     网页版：https://zh.d2l.ai/index.html
@@ -84,4 +83,9 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
 4.Github：https://github.com/，关注OpenMMLab、Meta Reasearch、Hugging Face、DeepSeek等常活跃的用户社区，时常关注AI热点！
     学会保持开源精神，把代码和数据留存，防止因软硬件问题导致丢失！
 5.AI研究趋势：论文《Real Deep Research for AI, Robotics and Beyond》 https://realdeepresearch.github.io/
+```
+### AI学习网站
+```bash
+https://www.jiangdabai.com
+https://www.datawhale.cn
 ```
