@@ -1,11 +1,10 @@
 ## 具身智能 Embodied AI
 ```bash
-knowledge/PRCV2024-大模型驱动的具身智能人形机器人（湖南大学-王耀南）.pdf
+
 ```
 
-### 领域实践
+### 自动驾驶 Autonomous Driving
 ```bash
-自动驾驶 Autonomous Driving
 https://github.com/JohnsonJiang1996/Awesome-VLA4AD?tab=readme-ov-file
 
 1. AD技术发展路线
@@ -71,29 +70,35 @@ Q3 多源数据的时序同步与时空一致性: VLA模型的有效运行依赖
     ·云端世界引擎负责大规模场景的物理规律建模与预训练，
     ·车端世界行为模型则基于实时感知数据进行快速决策。
 
-XXXX, Yann LeCun, Li Fei-Fei, Saining Xie 等《Cambrian-S Towards Spatial Supersensing in Video》2511
+📑 Yann LeCun, Li Fei-Fei, Saining Xie 等《Cambrian-S Towards Spatial Supersensing in Video》2511
+📑
 
-🚗理解道路+作出驾驶动作
-----------------------------------------------------------------
+🚗 ➡️ 理解道路+作出驾驶动作
+```
 
-电力巡检：《电力具身智能机器人发展白皮书》
-人形机器人
+
+### 人形机器人 Humanoid Robot
+```bash
+1️⃣ knowledge/PRCV2024-大模型驱动的具身智能人形机器人（湖南大学-王耀南）.pdf
+
+2️⃣ 技术发展
 ·VLA技术的应用，同上👆
 ·与AD的区别：
     控制难度：机器人的行走、保持平衡等动作，控制难度高于汽车；
-    感知：RGB、IMU、深度、触觉、力矩、指尖传感器等特殊传感器，需要更强的几何和物理理解；
+    感知：主要为RGB、深度、触觉、力矩、指尖传感器等特殊传感器，需要更强的几何和物理理解；
     执行任务类型：抓取、灭火等复杂任务，强依赖物理交互，侧重“操作与交互”；
     语言能力：精准理解指令，意图推理，多步规划；
     实时：容错率略高；
     数据来源：仿真模拟器大规模生成，Sim2Real难；
 
-🤖理解世界+执行复杂操作动作
+🤖 ➡️ 理解世界+执行复杂操作动作
 
-项目相关：
-    《DetectiumFire： A Comprehensive Multi-modal Dataset for Fire Understanding》NeurIPS2025
-
-
+电力巡检项目：
+📑《电力具身智能机器人发展白皮书》
+📑《DetectiumFire： A Comprehensive Multi-modal Dataset for Fire Understanding》NeurIPS2025
+📑
 ```
+----------------------------------------------------------------
 
 ### 强化学习 Reinforcement Learning
 ```bash
