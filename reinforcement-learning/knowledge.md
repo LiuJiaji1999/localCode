@@ -1,4 +1,7 @@
 ## 具身智能 Embodied AI
+```bash
+knowledge/PRCV2024-大模型驱动的具身智能人形机器人（湖南大学-王耀南）.pdf
+```
 
 ### 领域实践
 ```bash
