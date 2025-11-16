@@ -44,13 +44,13 @@ a.多模态输入与语言指令 (Multimodal Inputs and Language Commands)
         对话式推理：最新的研究已支持多轮对话和基于思维链（CoT）的复杂推理，甚至包括语音指令输入。
 b.核心架构模块 (Core Architectural Modules)
     视觉编码器 (Vision Encoder)： 该模块负责将原始图像和传感器数据转换为潜在表征。
-        通常使用如 DINOv2 或 CLIP 等大型自监督模型作为骨干网络。<Model1> 
-        许多系统采用 BEV投影技术，或通过 点云编码器（如PointVLA）来融合3D信息。<Model2>
+        通常使用如 DINOv2 或 CLIP 等大型自监督模型作为骨干网络。🚩<Model1> 
+        许多系统采用 BEV投影技术，或通过 点云编码器（如PointVLA）来融合3D信息。🚩<Model2>
     语言处理器 (Language Processor)： 该模块使用预训练的语言模型（如LLaMA2或GPT系列）来处理自然语言指令。
-        通过 指令微调 或 低秩适应LoRA 等轻量化微调策略，可以高效地让模型适应自动驾驶领域的特定知识。<Model3>
+        通过 指令微调 或 低秩适应LoRA 等轻量化微调策略，可以高效地让模型适应自动驾驶领域的特定知识。🚩<Model3>
     动作解码器 (Action Decoder)： 该模块负责生成最终的控制输出。其实现方式主要有三种：
         自回归令牌器：将连续的轨迹点或离散的动作（如“加速”、“左转”）作为Token，并依次生成。
-        扩散模型头 (Diffusion heads)：基于融合后的特征，通过采样生成连续的控制信号。<Model4>
+        扩散模型头 (Diffusion heads)：基于融合后的特征，通过采样生成连续的控制信号。🚩<Model4>
         分层控制器：由一个高阶的语言规划器生成子目标（如“超车”），再由一个低阶的比例-积分-微分控制器（Proportion Integral Differential，PID）、 模型预测控制（MPC）等车辆控制器来执行具体轨迹。
         【多Model的输出 -> controler的输入-> 👇】
 c.驾驶输出 (Driving Outputs), VLA模型的输出形式反映了其抽象层次和操作目标
@@ -100,7 +100,7 @@ Q3 长尾场景的泛化能力: 对长尾低频场景的泛化，例如夜间施
     执行任务类型：抓取、灭火等复杂任务，强依赖物理交互，侧重“操作与交互”；
     语言能力：精准理解指令，意图推理，多步规划；
     实时：容错率略高；
-    数据来源：仿真模拟器大规模生成，Sim2Real难；<>
+    数据来源：仿真模拟器大规模生成，Sim2Real难；🚩<Data1>
         ·仿真模拟器: Blender -https://www.blender.org/download/, Unity3D引擎 -https://unity.cn
         仿真/Control：AirSim: https://microsoft.github.io/AirSim/ 
         、Gazebo + PX4、MAVSDK、ROS 2（navigation stack、move_base、collision avoidance）。
