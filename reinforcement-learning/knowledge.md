@@ -95,15 +95,24 @@ Q3 长尾场景的泛化能力: 对长尾低频场景的泛化，例如夜间施
 2️⃣ 技术发展
 ·VLA技术的应用，同上👆
 ·与AD的区别：
-    控制难度：机器人的行走、保持平衡等动作，控制难度高于汽车；
-    感知：主要为RGB、深度、触觉、力矩、指尖传感器等特殊传感器，需要更强的几何和物理理解；
-    执行任务类型：抓取、灭火等复杂任务，强依赖物理交互，侧重“操作与交互”；
-    语言能力：精准理解指令，意图推理，多步规划；
-    实时：容错率略高；
-    数据来源：仿真模拟器大规模生成，Sim2Real难；🚩<Data1>
-        ·仿真模拟器: Blender -https://www.blender.org/download/, Unity3D引擎 -https://unity.cn
-        仿真/Control：AirSim: https://microsoft.github.io/AirSim/ 
-        、Gazebo + PX4、MAVSDK、ROS 2（navigation stack、move_base、collision avoidance）。
+  控制难度：机器人的行走、保持平衡等动作，控制难度高于汽车；
+  感知：主要为RGB、深度、触觉、力矩、指尖传感器等特殊传感器，需要更强的几何和物理理解；
+  执行任务类型：抓取、灭火等复杂任务，强依赖物理交互，侧重“操作与交互”；
+  语言能力：精准理解指令，意图推理，多步规划；
+  实时：容错率略高；
+  数据来源：仿真模拟器大规模生成，Sim2Real难；👇
+🚩<Data1>
+·可自建的仿真模拟器: Unity3D引擎  -https://unity.cn
+                  Blender -https://www.blender.org/download/, 
+·已有的仿真/Control平台:
+a.无人机飞行 
+    AirSim -https://microsoft.github.io/AirSim/ 
+    PX4_Gazebo -https://zhuanlan.zhihu.com/p/337919677
+b.机器人控制系统 
+    ROS2: https://www.ros.org/blog/getting-started/#  可模拟navigation stack、move_base、collision avoidance等
+·其他关于Vision-language的公开研究数据集
+    EGO-EXO4D：https://ego-exo4d-data.org/#
+    LEMMA：https://sites.google.com/view/lemma-activity
 
 🤖 ➡️ 理解世界+执行复杂操作动作
 
