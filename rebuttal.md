@@ -25,7 +25,7 @@ https://space.bilibili.com/562085182/search?keyword=rebuttal
 
 ```bash
 3.上海科技大学-https://www.zhangsongyang.com
-https://zhuanlan.zhihu.com/p/104298923
+知乎 魏秀参：https://zhuanlan.zhihu.com/p/104298923
 ```
 ![Alt text](./rebuttal/image-15.png)
 ![Alt text](./rebuttal/image-16.png)
