@@ -196,4 +196,4 @@ RL理解：https://mp.weixin.qq.com/s/Ukt2a1IC4sVbsGCLemk3xQ，https://lei-kun.g
 && Q-learning、PPO、SAC……看起来名字各不相同，其实都在重复这两个动作。唯一的区别，只是它们评估得方式不同、改进的速度不同、或者用到的数据不同。
 ```
 ![Alt text](./image/evaluation-improvement.png)
-![Alt text](image.png)
+![Alt text](./image/LLvsRL.png)
