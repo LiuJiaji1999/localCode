@@ -2,6 +2,12 @@
 
 ⛔️不能提交 huggingface中的 token，带密码口令的不可以
 
+## 松鼠搜索🐿️🌲Squirrel Search Algorithm
+```bash
+解释：https://blog.csdn.net/ChailangCompany/article/details/151875251
+
+```
+
 ### 小波变换（Wavelet Transform）
 ```bash
 在图像处理中是一种多尺度分析工具，通过局部化时频特性，克服了傅里叶变换在非平稳信号分析中的局限性。以下是其原理、目的及应用的详细说明：
