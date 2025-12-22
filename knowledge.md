@@ -2,7 +2,13 @@
 
 ⛔️不能提交 huggingface中的 token，带密码口令的不可以
 
-## 松鼠搜索🐿️🌲Squirrel Search Algorithm
+### AI绘图
+```bash
+《AI绘图总结》.pdf，扩散模型的本质
+GAN 像是一个才华横溢但情绪不稳定的天才画家，而扩散模型则是一个基本功扎实、耐心极致的工匠大师。在算力逐渐升级，且追求极致生成质量的今天，大师最终战胜了天才。
+```
+
+### 松鼠搜索🐿️🌲Squirrel Search Algorithm
 ```bash
 解释：https://blog.csdn.net/ChailangCompany/article/details/151875251
 
