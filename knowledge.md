@@ -597,6 +597,9 @@ python run_gui.py
 ```shell
 - CNN、Transformer等：https://poloclub.github.io/cnn-explainer/#article-input
 - 大模型：https://bbycroft.net/llm
+- 这个🎉，https://0809zheng.github.io/tags.html#深度学习，很通俗易懂，
+        CNN学习：https://0809zheng.github.io/2020/03/06/CNN.html
+
 ```
 
 ### 神经网络可视化工具汇总
