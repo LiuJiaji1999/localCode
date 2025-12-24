@@ -41,8 +41,8 @@ CCF会议：TF73 具身智能机器人的大模型与应用研发
         机器人实战路线，见下图2
     走向真实世界，双臂操作，银河太空舱
 ```
-![Alt text](image.png)
-![Alt text](image-1.png)
+![Alt text](./image/kin.png)
+![Alt text](./image/robot.png)
 
 ### 自动驾驶 Autonomous Driving
 ```bash
