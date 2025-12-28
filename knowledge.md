@@ -475,7 +475,7 @@ H264 H265，压缩相似帧的手段
     print(matrix_product)
 
 5.矩阵乘积 (np.matmul): 用于矩阵与矩阵、矩阵与向量的乘法，等价于 @ 运算符。
-    # 矩阵乘法
+    # 矩阵乘法 A:n*m,B:m*k/1
     matrix_product = np.matmul(A, B)
     print(matrix_product)
     # 等价于：
@@ -499,7 +499,7 @@ H264 H265，压缩相似帧的手段
     #  [3 8]]
 
 7.Hadamard 乘积: 两个矩阵逐元素乘积（与 * 运算符等价，常用于机器学习）。
-    # 两个矩阵逐元素乘积
+    # 两个矩阵逐元素乘积 A:n*m,B:n*m
     hadamard = A * B
     print(hadamard)
 
