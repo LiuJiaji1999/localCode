@@ -4,7 +4,7 @@
 ```bash
 🚗 ➡️ 理解道路+作出驾驶动作
 
-Paper：A Survey on Vision-Language-Action Models for Autonomous Driving （清华、小米、麦吉尔大学等）
+Paper：A Survey on Vision-Language-Action Models for Autonomous Driving （清华、小米、麦吉尔大学等），202506预印版
 Code：https://github.com/JohnsonJiang1996/Awesome-VLA4AD?tab=readme-ov-file
 
 1. AD技术发展路线
@@ -125,13 +125,13 @@ b.机器人控制系统
     EGO-EXO4D：https://ego-exo4d-data.org/#
     LEMMA：https://sites.google.com/view/lemma-activity
 
-3️⃣ knowledge/具身智能与自主测图-华东师范大学李军院士.pdf
+3️⃣ knowledge/具身智能与自主测图-华东师范大学李军院士.pdf，20251203
 
-4️⃣ CCF会议：TF73 具身智能机器人的大模型与应用研发-251106
+4️⃣ 20251106CCF会议：TF73 具身智能机器人的大模型与应用研发，20251220
 1.机器人及行业应用最新事件-联想研究院副总裁毛世杰
     图灵在70多年以前就已经洞见；
     GPT通过图灵测试、自动驾驶、具身智能投资热点
-    机器人的发展： 产线机械臂-扫地机器人-泛化Robot3.0 开放环境和多任务 -> Robot4.0通用任务（正在ing
+    机器人的发展： 产线机械臂- 扫地机器人- 泛化Robot3.0 开放环境和多任务 -> Robot4.0通用任务（正在ing
     传统AI驱动（CNN、SLAM）-> 基础大模型（RL、LLM、VLA。。)-> 世界模型
     ·本体： 机器人
         轮足、六足（稳定性和负载，极端地形和超级负重）、人形（可控环境下的交流互动）
