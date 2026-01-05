@@ -277,7 +277,7 @@ O:内生需求、技术发展、政策引领、市场规模
     主要技术：ORB-SLAM3、VINS-Fusion等
 ```
 
-![Alt text](slam-alg.png)
+![Alt text](./image/slam-alg.png)
 
 ```bash
 闭环流程 -> 数据采集-特征提取-位姿估计-地图更新
@@ -315,7 +315,7 @@ O:内生需求、技术发展、政策引领、市场规模
     最为经典的视觉惯导SLAM算法是vins-mono算法。
 
 ```
-![Alt text](nvigiator-example.png)
+![Alt text](./image/nvigiator-example.png)
 ----------------------------------------------------------------
 
 ### 强化学习 Reinforcement Learning
