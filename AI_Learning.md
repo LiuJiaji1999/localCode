@@ -1,7 +1,7 @@
 
 ### Python语言
 ```bash
-计算机本科入门C语言，后续java语言，选修python语言
+2016年的计算机本科生，入门C语言，后续java语言，选修python语言
 ·软硬件等系统的底层逻辑为C、C++语言：学习完《数据结构》会基本掌握C语言的大概核心知识；
 ·前后端开发常用java语言：建议直接从搭建完整系统开始，从而熟悉SSM、Spring-boot等框架，https://how2j.cn/stage/39.html
 ·算法设计常用python语言：API查询 https://docs.python.org/zh-cn/3.13/contents.html 熟悉和使用
@@ -9,7 +9,7 @@
         莫烦Python-https://mofanpy.com，
         派森编程-https://pycoding.com ，
         B站教程-https://space.bilibili.com/243821484/upload/video、https://www.bilibili.com/video/BV1wD4y1o7AS/?spm_id_from=333.337.search-card.all.click&vd_source=8f43c3a38f673faa87fc5770fa2e2e30
-现在编程语言学习没那么难，bug大模型会帮改，但咱得知道 问题出在哪里？有个大概解决思路？然后再去问大模型！
+现在编程语言学习没那么难，bug大模型会帮改，但咱得知道 问题出在哪里？有个大概解决思路，然后再去问大模型！
 ```
 
 ### Visual Studio code编辑器
