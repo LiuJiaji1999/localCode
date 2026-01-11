@@ -175,7 +175,29 @@ b.机器人控制系统
 
 ```bash
 5️⃣ 市面机器人
-天工：https://github.com/Open-X-Humanoid
+小尺寸：
+首选：宇树 G1，https://www.unitree.com/cn, 价格区间17W左右 
+    开源平台：https://www.unitree.com/cn/opensource （github社区活跃 
+    案例：人形机器人盲走和奔跑-https://www.bilibili.com/video/BV1mzigBAELZ/?share_source=copy_web&spm_id_from=333.788.comment.all.click&vd_source=2e19e27822584d7184e3aae2a14bc040
+        导航-https://github.com/AnjieCheng/NaVILA
+        VLP动作-https://vlp-humanoid.github.io/
+次选：加速进化，https://www.booster.tech/zh/,价格区间9W左右
+    开源平台： https://github.com/BoosterRobotics （github社区活跃 
+    论文研究有室内活动如打乒乓球、游戏、行走、足球
+
+全尺寸：
+首选：逐际动力, https://www.limxdynamics.com, 不同型号价格区间为16W、30W、70W左右
+    开源平台：https://github.com/limxdynamics/
+    案例：爬楼梯-https://www.bilibili.com/video/BV1UdiEBWEGg/?spm_id_from=333.1387.homepage.video_card.click&vd_source=8f43c3a38f673faa87fc5770fa2e2e30
+次选：天工 , https://x-humanoid.com/detail/jstg.html, 不同型号价格区间为40W、80W左右
+    开源平台：https://github.com/Open-X-Humanoid/  （github社区活跃
+    案例：电控柜质检操作-https://x-humanoid.com/yncj.html
+再选：智元 ,https://www.zhiyuan-robot.com, 不同型号价格区间为10W、20W、45W
+    案例：零部件产线部署-https://www.zhiyuan-robot.com/article/188/detail/119.html
+
+其他国产机器人：
+松延动力: https://noetixrobotics.com
+星海图机器人:https://galaxea-ai.com/cn/products/R1-Lite
 
 
 20251205CCF会议： ADL166 世界模型基础与应用
