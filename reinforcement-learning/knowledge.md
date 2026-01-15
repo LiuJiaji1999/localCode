@@ -288,7 +288,7 @@ b.机器人控制系统
 ```
 
 ![Alt text](./image/google-e2e.png)
-![Alt text](./image/insframe.png.png)
+![Alt text](./image/insframe.png)
 
 
 
