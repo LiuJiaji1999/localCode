@@ -339,7 +339,6 @@ B站视频解析
 2. 硅谷101
 
 ```
-![Alt text](image-1.png)
 
 <img src="./image/tradislam.png" alt="LabelImg" width="250" height="150">
 <img src="./image/vla.png" alt="LabelImg" width="200" height="100">
