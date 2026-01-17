@@ -343,7 +343,8 @@ B站视频解析
     沉浸式感知：URDFormer、UniDexGrasp等工作，非常重要‼️
     可研究点：3D感知与建模（NeRF、3D Gaussian)、空间推理与决策、动态交互与操作、移动操作
 2.人形机器人仿生从控制到具身智能-from 清华赵明国
-
+被动行走、控制（Model Predictive C、Whole-Body C）
+使 神经系统的运动控制 趋于人类的运动控制
 
 
 20250714CCF会议 ADL159：具身智能 20260114
