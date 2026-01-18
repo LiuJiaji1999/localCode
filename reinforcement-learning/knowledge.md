@@ -204,6 +204,8 @@ b.机器人控制系统
 星海图机器人:https://galaxea-ai.com/cn/products/R1-Lite
 ```
 
+![Alt text](./image/tech.png)
+
 ```bash
 6️⃣机器人开发技术栈 20250115
 来自 星海图联合创始人-许华哲
@@ -222,7 +224,7 @@ b.机器人控制系统
     技术方案：多模态大模型VLA+动作模块，常用的为 Transformer架构+diffusion/auto regressive 目标函数
     数据：最难采集
 
-3. 人形机器人
+1. 人形机器人
     适合探索的具身通用形态之一，但激进（难做）又保守（能行）
     适合场景：需要劳动力，人可做但不想做
 
@@ -369,12 +371,14 @@ B站视频解析
     action level必须给到机器人
     MotionLab、HuMo100M, motion tracking policy
     MegoHand、OpenMMEgo（第一人称视角
-6.《开放世界具身多模态基础模型与系统》 from北大 zhang仉尚航
+6.《开放世界具身多模态基础模型与系统》 from 北大zhang仉尚航
     VLA端到端、分层、世界模型
     快慢系统的长程闭关系统：任务规划VLM、区域感知、轨迹预测
     分层：ShareRobot，RoboBrain，RoboBrain2.0、RoboOS、RoboBench(大脑+小脑)、RealBench
     端到端：自回归预测、回归式拟合、扩散头生成，例如HybridVLA、FiS-VLA
 7.《视触觉感知的具身智能操作》 from 北邮方斌
+    VTLA将为研究爆发点
+8.《人形机器人规模化落地的机遇与挑战》from 众擎创始人赵同阳
     
 
 
