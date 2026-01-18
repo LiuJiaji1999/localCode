@@ -342,9 +342,52 @@ B站视频解析
     视觉+听觉+触觉
     沉浸式感知：URDFormer、UniDexGrasp等工作，非常重要‼️
     可研究点：3D感知与建模（NeRF、3D Gaussian)、空间推理与决策、动态交互与操作、移动操作
-2.人形机器人仿生从控制到具身智能-from 清华赵明国
-被动行走、控制（Model Predictive C、Whole-Body C）
-使 神经系统的运动控制 趋于人类的运动控制
+2.《人形机器人仿生从控制到具身智能》 from 清华赵明国
+    被动行走、控制（Model Predictive C、Whole-Body C）
+    使 中枢神经系统的运动控制（大脑、小脑、丘脑、脑干、脊髓） 趋于人类的运动控制
+    元器件和控制层面可研究优化，VLA等具身智能研究目前还在探索
+    智能水平的提升：L0:blinding-locomotion(现阶段大部分), L1:locomotion+SLAM(小部分), L2:locomotion+SLAM+WM, L3 behavior+team work, L4:team+competition
+3.《合成数据驱动的具身VLA大模型》 from 北大/银河王鹤
+    VLA:端到端多模态大语言模型
+    input:language\vision 占比80%\other sensor   output:action（顺时平移动作
+    （大脑）实时控制轨迹，反馈回路
+    难点1：如何训练？具身大模型可能需要数百亿数据才可以通用和泛化！
+        合成仿真数据+Sim2Real
+    GraspVLA  基于 1B 穷尽可能性构建合成数据 + 100M web data
+        输出标签：2D BBox -> 6D Grasp Pose -> Action
+    Uni-NaVid，导航
+    OpenWBT：全遥操
+4.《可泛化操作与运动智能》 from 上海人工智能实验室庞江淼
+    合成数据适合：本体泛化、场景泛化；真是数据适合：任务泛化
+    数据：SimBox、RoboSplat等具身数据合成，
+    模型：
+        导航大模型 NavDP、StreamVLN
+        操作大模型 Seer（视觉预测指导动作执行）、InstructVLA（保留VLM在机器人操作中的多模态推理能力）
+    评测：rank级别的客观评测，GenMani 仿真训测基准
+5.《Scaling up Humanoid Robot Learning with internet Videos》 from 北大卢宗青
+    互联网视频有人类运动先验，3D pose estimation -> retargeting to robot
+    action level必须给到机器人
+    MotionLab、HuMo100M, motion tracking policy
+    MegoHand、OpenMMEgo（第一人称视角
+6.《开放世界具身多模态基础模型与系统》 from北大 zhang仉尚航
+    VLA端到端、分层、世界模型
+    快慢系统的长程闭关系统：任务规划VLM、区域感知、轨迹预测
+    分层：ShareRobot，RoboBrain，RoboBrain2.0、RoboOS、RoboBench(大脑+小脑)、RealBench
+    端到端：自回归预测、回归式拟合、扩散头生成，例如HybridVLA、FiS-VLA
+7.《视触觉感知的具身智能操作》 from 北邮方斌
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 20250714CCF会议 ADL159：具身智能 20260114
