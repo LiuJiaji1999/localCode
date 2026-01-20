@@ -484,9 +484,10 @@ B站视频解析
         Galaxea Open-World Dataset(星海图)
 ```
 
-![Alt text](./image/vla-architecture.png)
 ![Alt text](./image/vla-technology.png)
+![Alt text](./image/vla-architecture.png)
 ![Alt text](./image/nvidia-Cosmos.png)
+
 
 ### 💡电力巡检项目
 ```bash
