@@ -469,8 +469,24 @@ B站视频解析
 10.赛博格机器人-ToB，重点在于工业负载（腿部电机）， 可持续化部署
     30年后可能实现一人3台：1台家庭照顾，1台出去打工，1台日常出行
     泛化能力：可持续化学习
-
+11.VLA技术路线
+    离散动作表征：机械臂
+     将连续动作空间离散化为有限的词元(tokens)，其原理类似于深度学习模型量化，模型能够以自回归方式生成动作序列；
+     特点:简单操控、实时性高，兼容LLM序列建模，但引入量化误差
+     代表模型:RT-1、RT-2、OpenVLA
+    连续动作表征：人形上多
+     VLA并不是生成token，而是一些列连续的值，比如关节的位置x、y、z
+     特点:生成高精度、平滑的动作轨迹(一系列连续动作值)，支持精细控制，但训练复杂
+     代表模型:ACT、Octo、π。
+    VLA开源数据集：
+        Open X-Embodiment(谷歌DeepMind联合全球21家损尖研究机构联合发布)
+        AgiBot WorldDataset(智元)
+        Galaxea Open-World Dataset(星海图)
 ```
+
+![Alt text](./image/vla-architecture.png)
+![Alt text](./image/vla-technology.png)
+![Alt text](./image/nvidia-Cosmos.png)
 
 ### 💡电力巡检项目
 ```bash
