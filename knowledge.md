@@ -723,9 +723,9 @@ git status --ignored #查看被忽略的文件
     git config --global --get http.proxy
     git config --global --get https.proxy
     # 配置代理
-    ## socks5 
-    git config --global http.proxy socks5 127.0.0.1:7890
-    git config --global https.proxy socks5 127.0.0.1:7890
+    # ## socks5  Clash Verge
+    # git config --global http.proxy socks5 127.0.0.1:7890
+    # git config --global https.proxy socks5 127.0.0.1:7890
     ## http
     git config --global http.proxy 127.0.0.1:7890
     git config --global https.proxy 127.0.0.1:7890
