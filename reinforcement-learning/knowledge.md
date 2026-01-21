@@ -482,6 +482,8 @@ B站视频解析
         Open X-Embodiment(谷歌DeepMind联合全球21家损尖研究机构联合发布)
         AgiBot WorldDataset(智元)
         Galaxea Open-World Dataset(星海图)
+12.诺亦腾机器人
+    遥操的动作捕捉、数据金字塔（真机少、人类交互、合成多）、
 ```
 
 ![Alt text](./image/vla-technology.png)
