@@ -497,6 +497,18 @@ Q7from新能源工作人员：学术的VLA上泛化可以？工业上VLA是否�
 ![Alt text](./image/vla-technology.png)
 ![Alt text](./image/vla-architecture.png)
 
+#### 学习
+```bash
+### 机器人学习
+关注的团队，足式：UC Berkly、[mit cheettach](https://biomimetics.mit.edu/)、苏黎世理工、[xbpeng.github.com](https://xbpeng.github.io)、 [Pieter Abbeel](https://people.eecs.berkeley.edu/-pabbeel/)
+
+### 论文学习
+PaLM-E: an embodied multimodal language model- ICLR 2023
+    https://palm-e.github.io/#demo
+$\pi_0 $: A Vision-Language-Action Flow Model for General Robot Control - RSS 2025
+$\pi^{*} _ {0.6}$: a VLA That Learns From Experience - arXiv 2511
+    https://www.pi.website/blog/pistar06
+```
 
 ### 💡电力巡检项目
 ```bash
