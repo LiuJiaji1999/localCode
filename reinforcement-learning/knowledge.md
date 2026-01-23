@@ -219,15 +219,12 @@ b.机器人控制系统
     大脑规划层：之前基于rule，现在一般为VLM，负责任务的分拆和规划等长程任务
     外接：数据采集的遥操系统   
 最后构成数据驱动的智能系统
-
 2.具身智能技术栈
     技术方案：多模态大模型VLA+动作模块，常用的为 Transformer架构+diffusion/auto regressive 目标函数
     数据：最难采集
-
 3. 人形机器人
     适合探索的具身通用形态之一，但激进（难做）又保守（能行）
     适合场景：需要劳动力，人可做但不想做
-
 4.一脑多形？一脑一形？
     终局为：一脑多形，1m2,1m6,1m8
     起点为：一脑一形
@@ -298,7 +295,7 @@ b.机器人控制系统
 ```bash 
 B站视频解析
 1. 投研部杨摸鱼 机器人解析 -《机器人产业链研究.PDF》
-# 运动系统：身体结构件、关节、电机、减速器、丝杆等组成自由度（活动关节）
+# 运动系统：身体结构件、关节、电机、减速器、丝杆等组成自由度(DOF,Degree of Freedom,表示活动关节）
 `旋转关节=电机+减速器，完成旋转运动 ，比如特斯拉有14个
 `线性关节=电机+丝杆，完成直线运动，比如特斯拉有14个
 `灵巧手，比如特斯拉有12个
@@ -312,7 +309,7 @@ B站视频解析
         滑动丝杠、行星滚珠丝杠
 # 感知系统：机器视觉、传感器、激光雷达等
 成像原理： 光学系统对图像采集 -> 光信号转换为电信号/数字信号 -> 计算单元对图形进行处理 👇
-光学下的三维信息的感知：飞行时间法TOF、激光雷达、多目立体视觉
+光学下的三维信息的感知：飞行时间法（Time of Flight，TOF）、激光雷达、多目立体视觉
     本质 计算传感器到物体表面的距离，大量距离信息形成‘点云’
     缺点：大雾天、大雨天下，测算不准确
 因此会借助其他传感器，毫米波雷达/超声波雷达 ～= 飞行时间法
@@ -454,7 +451,7 @@ Q7from新能源工作人员：学术的VLA上泛化可以？工业上VLA是否�
   全身控制： 基于模型的控制 WBC ->全身强化学习  -》
 5.灵心-灵巧手，已经实现 ‘一人遥操多机’
 6.‘书不尽言，言不尽意’-易经。目标：通用+性能+自主，10-20年内遥操为主，人机比降低
-   **将知识内嵌到被学习的对象中（引入先验知识、结构）**
+   ** 将知识内嵌到被学习的对象中（引入先验知识、结构）**
 7.ALOHA（2023），可作为具身智能的发展开端，预计<=5年（2028）达到成熟期
 8.优必选可以实现自主充电；
 9.云天励飞是一家芯片企业，参考海外企业的头部做法，例如特斯拉的Otmasta
@@ -503,11 +500,21 @@ Q7from新能源工作人员：学术的VLA上泛化可以？工业上VLA是否�
 关注的团队，足式：UC Berkly、[mit cheettach](https://biomimetics.mit.edu/)、苏黎世理工、[xbpeng.github.com](https://xbpeng.github.io)、 [Pieter Abbeel](https://people.eecs.berkeley.edu/-pabbeel/)
 
 ### 论文学习
-PaLM-E: an embodied multimodal language model- ICLR 2023
+`PaLM-E: an embodied multimodal language model- ICLR 2023
     https://palm-e.github.io/#demo
-$\pi_0 $: A Vision-Language-Action Flow Model for General Robot Control - RSS 2025
-$\pi^{*} _ {0.6}$: a VLA That Learns From Experience - arXiv 2511
+`pi_0: A Vision-Language-Action Flow Model for General Robot Control - RSS 2025
+    混合数据：pi自己灵巧的操作数据集、网络数据、OXE开源数据。
+    流动匹配VLM模型由：组成
+        一个较大的VLM主干：由PaliGemma初始化，用于处理图像和文本的输入输出。
+        一个较小的动作专家：用于处理机器人的状态和动作。（损失权重称为动作专家）
+    优化损失：
+        Token相关的连续输出通过‘流匹配损失’监督(P5)
+        Token相关的离散输出通过‘交叉熵损失’监督
+`pi_0.6: a VLA That Learns From Experience - arXiv 2511
     https://www.pi.website/blog/pistar06
+    ** https://github.com/Physical-Intelligence/openpi **
+`Mimickit: A Reinforcement Learning Framework for Motion lmitationand Control - arXiv 2510
+    
 ```
 
 ### 💡电力巡检项目
