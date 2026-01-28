@@ -520,7 +520,12 @@ Q7from新能源工作人员：学术的VLA上泛化可以？工业上VLA是否�
     https://www.pi.website/blog/pistar06
     ** https://github.com/Physical-Intelligence/openpi **
 `Mimickit: A Reinforcement Learning Framework for Motion lmitationand Control - arXiv 2510
-    
+
+# code
+https://github.com/roboterax/models.git
+https://github.com/unitreerobotics/unitree_rl_gym.git
+https://github.com/leggedrobotics/rsl_rl.git
+
 ```
 
 ### 💡电力巡检项目
