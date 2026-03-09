@@ -567,6 +567,7 @@ O:内生需求、技术发展、政策引领、市场规模
 📑《DetectiumFire： A Comprehensive Multi-modal Dataset for Fire Understanding》NeurIPS2025
 📑
 
+VLA+世界模型：https://mp.weixin.qq.com/s/kv7J95lcyjccJJq9JWZ8SQ?scene=0&subscene=90
 ```
 
 
