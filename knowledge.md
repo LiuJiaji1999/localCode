@@ -52,7 +52,7 @@ podcast-《Star Talk》 来自辛顿：
 在CV中，图像相似性通常依赖颜色、形状与纹理等“属性匹配”。
 但现实世界中，不同物体可能共享相同的“变化逻辑”与“结构关系”。
 # Adobe Research的研究，探讨为何现有模型难以理解这种相似性。
-【】Nguyen T, Mo S, Singh K K, et al. Relational Visual Similarity[J]. arXiv preprint arXiv:2512.07833, 2025.
+【】Nguyen T, Mo S, Singh K K, et al. Relational Visual Similarity[J]. arXiv preprint arXiv:2512.07833, 2025. 【CVPR 2026】
 1.现有问题：
 目前现有相似性数据集都在问同一个问题：这张图里有什么？涉及了物体、场景、属性、语义。没有任何一个数据集在问：这张图传达了什么逻辑？
 这就是根本症结所在，AI被训练成看图说话的专家，却从未被要求理解图像背后的关系结构。
