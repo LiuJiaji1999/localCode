@@ -72,8 +72,9 @@ Adobe研究团队提出的新数据集，不涉及任何特定物体，只描述
 ```
 
 
-### AI绘图
+### AI
 ```bash
+👀AI绘图
 《AI绘图总结》.pdf，扩散模型的本质
 第一阶段-GAN： 像是一个才华横溢但情绪不稳定的天才画家，
     机械地拟合像素的概率分布；
@@ -112,8 +113,10 @@ U-Net可以预测噪声，但不知道具体每一步该减去多少噪声（Den
     调度器(Scheduler):执行解算，利用数学公式+Denosing Strength，计算出具体减去的数值！
 --- 预测噪声-》减去噪声-》VAE解码还原高清美图
 
+👀AI工具
+    AI辅助编程工程，如下图所示，在右侧边栏打开copilot会话框；
 ```
-
+![Alt text](./image/colilot.png)
 
 ### 松鼠搜索🐿️🌲Squirrel Search Algorithm
 ```bash
