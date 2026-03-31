@@ -142,6 +142,10 @@ https://cspaper.org/reviews 常见的期刊和会议（照icme经验来讲，确
 3.缺乏规模化构建方法
     研究团队表示，目前还没有一种有效手段在大规模架构上实现上述组件的联合训练。他们提出了一种受进化机制启发的双层优化方法，联合学习元控制模型与 System A、System B 的初始状态，以实现鲁棒的真实世界性能。
 
+8️⃣ 大模型排名
+持续更新：https://artificialanalysis.ai/?media-leaderboards=text-to-image
+
+
 ```
 
 
