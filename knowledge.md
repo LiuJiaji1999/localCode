@@ -143,6 +143,9 @@ https://cspaper.org/reviews 常见的期刊和会议（照icme经验来讲，确
 
 8️⃣ AI大模型排名
 持续更新：https://artificialanalysis.ai/?media-leaderboards=text-to-image
+VLM-视觉语言模型之所以令人印象深刻，并不是因为它们比旧模型“看得更清楚”。事实上，有时它们在原始像素级别的视觉能力，技术上还不如为特定任务训练的专业分类器。
+它们令人印象深刻，是因为它们能更好地进行比较*对比学习*，能将事物的外观与词语的含义联系起来。
+    开放词汇识别、零样本学习
 
 
 9️⃣绘图
@@ -182,6 +185,9 @@ U-Net可以预测噪声，但不知道具体每一步该减去多少噪声（Den
     采样器(Sampler): 规划节奏，根据总Steps，安排每一Step的Denosing Strength；
     调度器(Scheduler):执行解算，利用数学公式+Denosing Strength，计算出具体减去的数值！
 --- 预测噪声-》减去噪声-》VAE解码还原高清美图
+
+🔟
+
 ```
 
 ```text
