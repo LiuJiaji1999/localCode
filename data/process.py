@@ -12,7 +12,7 @@ from tqdm import tqdm
 # =========================
 # 这里改成你的数据路径
 # =========================
-DATASET_ROOT = Path("/Users/rl/Documents/PhD-student/Untitled_Folder/knowledge/data/data_e")   # 改成你的根目录
+DATASET_ROOT = Path("/Users/rl/Documents/PhD-student/Untitled_Folder/dataset/data_e")   # 改成你的根目录
 ANNOTATIONS_DIR = DATASET_ROOT / "xml"
 IMAGES_DIR = DATASET_ROOT / "image"
 
@@ -30,8 +30,8 @@ ALL_CLASSES = [
 
 # 仅用于 YOLO 转换和可视化的类别
 TARGET_CLASSES = [
-    "nail_bad_invalid",
     "nail_bad_drop",
+    "nail_bad_invalid"
 ]
 
 # YOLO 类别映射
@@ -89,7 +89,23 @@ def voc_box_to_yolo(img_w, img_h, xmin, ymin, xmax, ymax):
     y_center = ((ymin + ymax) / 2.0) / img_h
     width = (xmax - xmin) / img_w
     height = (ymax - ymin) / img_h
+    
     return x_center, y_center, width, height
+
+    # dw = 1.0 / img_w
+    # dh = 1.0 / img_h
+
+    # x = (xmin + xmax) / 2.0
+    # y = (ymin + ymax) / 2.0 
+    # w = xmax - xmin
+    # h = ymax - ymin
+
+    # x = x * dw
+    # y = y * dh
+    # w = w * dw
+    # h = h * dh
+
+    # return x, y, w, h
 
 
 def get_color_by_class(class_name):
@@ -309,7 +325,7 @@ def main():
             vis_image = draw_boxes(image.copy(), item["objects"])
             save_path = VIS_SAMPLES_DIR / item["img_path"].name
             cv2.imwrite(str(save_path), vis_image)
-
+# # 
     # 保存统计 CSV
     statistics_csv = OUTPUT_DIR / "statistics.csv"
     with open(statistics_csv, "w", newline="", encoding="utf-8-sig") as f:
