@@ -58,6 +58,7 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
 参考学习：（知识形象些
     前馈神经网络的图文解释：https://playground.tensorflow.org/
     卷积神经网络的图文解释：https://poloclub.github.io/cnn-explainer/
+    大模型的图文解释：https://bbycroft.net/llm
 3.3 《深入浅出人工智能》艾博士 马少平
 
 4  《Deep Reinforcement Learning》 # 强化学习入门，机器人研究必备
