@@ -1,5 +1,3 @@
-
-
 # conda activate base
 # cd knowledge/multimodal/
 # python 7zfile.py
