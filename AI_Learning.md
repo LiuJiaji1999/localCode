@@ -68,6 +68,7 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
  迁移学习:《迁移学习》杨强、《迁移学习导论》王晋东 【作者主页 https://github.com/jindongwang/transferlearning】
  *NLP: 《自然语言处理入门》何晗等【作者主页 https://hankcs.com/】
  *LLM: 《》等
+ https://huggingface.co/learn : LLM、RL、CV、Agent等在线课程
 ```
 
 ### 人工智能
