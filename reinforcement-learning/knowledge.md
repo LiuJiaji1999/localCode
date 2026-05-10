@@ -727,6 +727,8 @@ RL理解：https://mp.weixin.qq.com/s/Ukt2a1IC4sVbsGCLemk3xQ，https://lei-kun.g
         模型会倾向于选择那些带来更高期望回报的动作。但为了避免一下子“改过头”，很多算法会加上约束或正则项，
         比如让新策略不能偏离旧策略太多（这就是 PPO 的思想），或者在策略里保留一定的探索性（这就是 SAC 中熵正则的作用）。
 && Q-learning、PPO、SAC……看起来名字各不相同，其实都在重复这两个动作。唯一的区别，只是它们评估得方式不同、改进的速度不同、或者用到的数据不同。
+
+PPO 本质上是一个带有信任域掩码、经过重要性加权的策略梯度方法。
 ```
 ![Alt text](./image/evaluation-improvement.png)
 ![Alt text](./image/LLvsRL.png)
