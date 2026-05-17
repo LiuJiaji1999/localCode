@@ -1,7 +1,7 @@
 
 ### Python语言
 ```bash
-2016年的计算机本科生，入门C语言，后续java语言，选修python语言
+2016年入学的计算机本科生，入门C语言，后续java语言，选修python语言
 ·软硬件等系统的底层逻辑为C、C++语言：学习完《数据结构》会基本掌握C语言的大概核心知识；
 ·前后端开发常用java语言：建议直接从搭建完整系统开始，从而熟悉SSM、Spring-boot等框架，https://how2j.cn/stage/39.html
 ·算法设计常用python语言：API查询 https://docs.python.org/zh-cn/3.13/contents.html 熟悉和使用
