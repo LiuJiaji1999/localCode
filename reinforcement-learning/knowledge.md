@@ -563,7 +563,9 @@ Classical Robotics Approach: Perception → State Estimation → Planning → Co
     挑战：每个模块都需要专家进行调优、误差会在流程中累积、难以适应新的任务/机器人、需要精确的世界模型
 Learning-Based Approach: Raw Sensors → Neural Network → Actions
     优势：从数据中学习（利用演示和经验）、端到端训练（协同优化整个流程）、跨任务通用化（在不同目标之间共享知识）、适应新的机器人（跨平台迁移洞察）
-
+·强化学习——机器人如何通过试错学习最优行为；
+·模仿学习——机器人如何通过观察人类演示进行学习；
+·基础模型——大规模模型如何构建通用机器人智能
 ```
 ![Alt text](./image/temporal-windows.png)
 ![Alt text](./image/Robot-Motion-Approaches.png)
