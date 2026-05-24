@@ -509,7 +509,8 @@ Q7from新能源工作人员：学术的VLA上泛化可以？工业上VLA是否�
 ![Alt text](./image/vla-architecture.png)
 
 ```bash
-9️⃣ https://huggingface.co/learn/robotics-course
+9️⃣ https://huggingface.co/learn/robotics-course, 
+Francesco Capuano, Caroline Pascal, Adil Zouitine, Thomas Wolf, Michel Aractingi (2026). "Robot Learning: A Tutorial".[https://huggingface.co/spaces/lerobot/robot-learning-tutorial]
 1.StreamingLeRobotDataset VS LeRobotDataset : 
     StreamingLeRobotDataset allows you to process large datasets without downloading them locally.
     Data is streamed from the Hugging Face Hub without downloading, saving storage space.
@@ -566,6 +567,8 @@ Learning-Based Approach: Raw Sensors → Neural Network → Actions
 ·强化学习——机器人如何通过试错学习最优行为；
 ·模仿学习——机器人如何通过观察人类演示进行学习；
 ·基础模型——大规模模型如何构建通用机器人智能
+
+
 ```
 ![Alt text](./image/temporal-windows.png)
 ![Alt text](./image/Robot-Motion-Approaches.png)
