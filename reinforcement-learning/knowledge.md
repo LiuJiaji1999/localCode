@@ -604,6 +604,9 @@ https://github.com/roboterax/models.git
 https://github.com/unitreerobotics/unitree_rl_gym.git
 https://github.com/leggedrobotics/rsl_rl.git
 
+NVIDIA Physical AI系列 https://gallery.pai-ml.com/#/preview/deepLearning/cv/isaac_sim
+PAI Physical AI 系列
+
 ```
 
 ### 💡电力巡检项目
