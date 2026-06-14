@@ -1,3 +1,5 @@
+# conda activate BaseException
+# cd knowledge/imageProcess
 import subprocess
 from pathlib import Path
 
@@ -22,4 +24,4 @@ def webm_to_mp4(input_path, output_path=None):
     print(f"转换完成：{output_path}")
 
 if __name__ == "__main__":
-    webm_to_mp4("录屏 2026-06-11 15-54-03.webm")
+    webm_to_mp4("录屏 2026-06-14 16-05-59.webm")
