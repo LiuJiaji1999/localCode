@@ -294,6 +294,56 @@ tokenizer可以处理的原子操作：分词、转换为 ID 、 ID 转换回字
 ```
 ![Alt text](./image/copilot.png)
 
+### epoch\batch\iteration
+```bash
+# 1.epoch：模型完整遍历一次训练集。
+假设你的训练集有 N = 10000 张图像，那么：
+    1 epoch = 理论上 10000 张图像都被模型训练使用过一次
+在 YOLO 这种检测模型中，一张训练样本通常是：
+    一张图像 + 该图像里的所有 bbox + 类别标签
+    但要注意，YOLO 训练中常用 Mosaic、MixUp、随机缩放、颜色扰动等数据增强，所以“看过一次”不代表每次看到的是完全相同的原图，而是某种增强后的视图。
+从优化角度讲，epoch 控制的是全局训练进度。很多训练策略，比如学习率衰减、蒸馏权重变化、复习比例变化，都应该以 epoch 为单位设计。一般资料中也将 epoch 定义为训练算法完整通过训练集的次数。
+
+# 2.batch ：用于一次梯度计算的数据集合。
+也就是说，如果训练集有 10000 张图，batch size = 10000，那么模型每次用全部数据算一次梯度，然后更新一次参数。
+但是在 PyTorch、Ultralytics YOLO、MMDetection 等现代框架里，大家说
+    batch = mini-batch =16 不是说一次用完整训练集，而是说每次迭代取 16 张图像。
+
+# 3.mini-batch：每次送进模型的一小批样本
+从训练集中取出的一小批样本，用于一次前向传播和反向传播。
+    N = 10000
+    mini-batch size B = 16
+    那么每个 epoch 大约有：ceil(10000 / 16) = 625 个 mini-batch
+每个 mini-batch 会产生一次 loss，然后反向传播。资料中通常把 batch size 定义为参数更新前要处理的样本数量；当这个数量大于 1 且小于整个训练集时，就是 mini-batch gradient descent。
+    在 YOLO 检测任务中，一个 mini-batch 的形式大概是：
+    images: [B, 3, H, W]
+    labels: [num_boxes, 6]
+            其中每一行可能是：
+            [batch_index, class_id, x_center, y_center, width, height]
+    例如 B=16 时，一次送入 16 张增强后的图像，每张图像可能有不同数量的目标框。
+
+# 4. iteration：一次 mini-batch 训练步骤
+取一个 mini-batch
+→ 前向传播 → 计算 loss → 反向传播 → 更新参数
+
+EXAMPLE
+# from ultralytics import YOLO
+# model = YOLO("yolo26n.pt")
+# model.train(
+#     data="mydata.yaml",
+#     epochs=300,
+#     batch=16,
+#     imgsz=640
+# )
+epoch数 E = 300
+mini-batch_size B = 16
+每个epoch的iteration数： I = ceil(12000 / 16) = 750
+总iteration数： T = 300 × 750 = 225000
+整个训练中，模型会执行大约 225000 次 mini-batch 训练步骤。
+
+epoch 决定“什么时候复习”，iteration 决定“每一步怎么复习”，mini-batch 决定“复习样本和当前样本如何混合”，loss function 决定“学生到底复习教师的哪些知识”。
+```
+
 ### 松鼠搜索🐿️🌲Squirrel Search Algorithm
 ```bash
 解释：https://blog.csdn.net/ChailangCompany/article/details/151875251
