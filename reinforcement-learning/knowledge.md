@@ -323,6 +323,16 @@ r_t = w1 r_track - w2 r_energy - w3 r_jitter - w4 r_tilt
 
 
 ### NVIDIA Physical AI
+| 缩写         | 全称                                          | 一句话理解                |
+| ---------- | ------------------------------------------- | -------------------- |
+| **VNC**    | Virtual Network Computing                   | 远程桌面连接技术             |
+| **DSW**    | Data Science Workshop                       | 阿里云 PAI 的云端 AI 开发工作台 |
+| **DLC**    | Deep Learning Containers                    | 阿里云 PAI 的深度学习训练任务平台  |
+| **NAS**    | Network Attached Storage / File Storage NAS | 云上的共享文件存储            |
+| **CPFS**   | Cloud Parallel File Storage                 | 高性能并行文件存储            |
+| **OSS**    | Object Storage Service                      | 阿里云对象存储，用来放数据、文件、模型等 |
+| **Viewer** | 查看器/客户端                                     | 本地打开，用来连接远程桌面的软件     |
+| **Client** | 客户端                                         | 发起连接的软件或设备           |
 ```bash
 NVIDIA Isaac Sim 【 https://developer.nvidia.com/ 】是基于 NVIDIA Omniverse 构建的参考应用，支持开发者在物理仿真环境中模拟和测试AI驱动的机器人解决方案。核心功能是仿真本身：它采用高保真、基于 GPU 的 PhysX 引擎，能够支持工业级的多传感器 RTX 渲染。
 Isaac Sim 直接访问 GPU，使其能够模拟多种传感器，包括摄像头、LiDAR 和接触传感器，从而支持数字孪生仿真，让端到端的机器人开发流程在无需启动真实机器人之前就能运行。Isaac Sim 提供了一整套工具，包括：
@@ -362,6 +372,13 @@ Isaac工作流
     世界模型训练: 基于生成的数据训练 X-Mobility，一个以世界模型为基础的通用导航与运动控制策略。
     仿真部署与验证: 将训练好的模型通过 ROS2 集成到 Isaac Sim 中，进行端到端的闭环导航验证。
 案例4: 遥操数据采集&扩增以及Isaac-GR00T微调&评估全流程
+    采集数据: 如何通过摇操设备采集数据。
+        LeRobot格式-RGB视频、关节状态和传感器数据、机器人控制指令动作
+        图形可视化，SE(2)线性x-y速度金额偏航角速度,SE(3)姿态变化的6维向量
+    增广数据: 如何使用 Mimic 工作流增广数据
+    模型微调: 如何使用自己的数据微调GR00T模型
+    模型评测: 如何评估微调后的模型性能（开环、闭环）
+
 
 ```
 
