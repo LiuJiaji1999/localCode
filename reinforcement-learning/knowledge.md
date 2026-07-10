@@ -322,7 +322,7 @@ r_t = w1 r_track - w2 r_energy - w3 r_jitter - w4 r_tilt
 ```
 
 
-### NVIDIA Physical AI
+### [NVIDIA Physical AI](https://gallery.pai-ml.com/#/?category=all&pageNum=1)
 | 缩写         | 全称                                          | 一句话理解                |
 | ---------- | ------------------------------------------- | -------------------- |
 | **VNC**    | Virtual Network Computing                   | 远程桌面连接技术             |
