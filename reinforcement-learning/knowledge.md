@@ -322,65 +322,7 @@ r_t = w1 r_track - w2 r_energy - w3 r_jitter - w4 r_tilt
 ```
 
 
-### [NVIDIA Physical AI](https://gallery.pai-ml.com/#/?category=all&pageNum=1)
-| 缩写         | 全称                                          | 一句话理解                |
-| ---------- | ------------------------------------------- | -------------------- |
-| **VNC**    | Virtual Network Computing                   | 远程桌面连接技术             |
-| **DSW**    | Data Science Workshop                       | 阿里云 PAI 的云端 AI 开发工作台 |
-| **DLC**    | Deep Learning Containers                    | 阿里云 PAI 的深度学习训练任务平台  |
-| **NAS**    | Network Attached Storage / File Storage NAS | 云上的共享文件存储            |
-| **CPFS**   | Cloud Parallel File Storage                 | 高性能并行文件存储            |
-| **OSS**    | Object Storage Service                      | 阿里云对象存储，用来放数据、文件、模型等 |
-| **Viewer** | 查看器/客户端                                     | 本地打开，用来连接远程桌面的软件     |
-| **Client** | 客户端                                         | 发起连接的软件或设备           |
-```bash
-NVIDIA Isaac Sim 【 https://developer.nvidia.com/ 】是基于 NVIDIA Omniverse 构建的参考应用，支持开发者在物理仿真环境中模拟和测试AI驱动的机器人解决方案。核心功能是仿真本身：它采用高保真、基于 GPU 的 PhysX 引擎，能够支持工业级的多传感器 RTX 渲染。
-Isaac Sim 直接访问 GPU，使其能够模拟多种传感器，包括摄像头、LiDAR 和接触传感器，从而支持数字孪生仿真，让端到端的机器人开发流程在无需启动真实机器人之前就能运行。Isaac Sim 提供了一整套工具，包括：
-    Replicator：用于合成数据采集
-    Omnigraph：用于编排仿真环境
-    PhysX 参数调优：匹配现实物理特性
-    Isaac Lab：支持**强化学习（RL）**等方法的控制智能体训练 （旧版本：Isaac Gym）
-NVIDIA Cosmos【https://www.nvidia.com/en-us/ai/cosmos/】是一个先进的生成式世界基础模型（WFM）平台，该平台专为支持世界模型训练而构建，旨在加速自动驾驶汽车（AV）和机器人在物理人工智能（Physical AI）领域的发展。平台集成了多个项目：
-    Cosmos-Predict:
-        通用模型，可基于多模态输入进行世界生成和运动预测,该模型在9,000万亿（9,000T）标记的机器人与自动驾驶数据上训练，并专为后训练优化，包含了DIT/AR结构的生成框架、分词器Tokenizer、数据处理、安全防护等模块;
-    Cosmos-Transfer:
-        具备物理感知能力的世界生成，可基于真实数据和3D输入进行条件生成，输入包括分割图、深度信号、LiDAR扫描、关键点、轨迹、高清地图，以及来自NVIDIA Omniverse的真实模拟数据，以实现可控的合成数据生成;
-    Cosmos-Reason:
-        完全可定制的多模态推理模型，具备时空理解能力，可用于规划响应，通过视觉-语言模型微调和强化学习进行训练，以支持链式思维推理
-    Guardrails:
-        为Cosmos WFM开发预设安全防护机制，包括预过滤（pre-guard）以筛除不安全输入，以及后处理防护（post-guard）以确保输出的一致性和安全性。
-Isaac工作流 
-案例1： 操作动作数据合成、增强、模仿学习
-    数据扩增: 使用 Isaac Lab Mimic 从少量专家演示生成大规模仿真数据集；
-    视觉增强: 通过 Cosmos-Transfer1 对视频数据进行增强，提升数据多样性；
-    模仿学习: 基于 robomimic 训练 BC-RNN 视觉运动策略模型；
-案例2： 基于GR00T-Dreams的机器人训练数据生成
-    世界模型后训练: 使用 Cosmos-Predict2 在 GR1 机器人数据集上进行微调，提升模型对机器人任务的理解能力；
-    视频生成: 通过 Cosmos-Predict2 根据 文本指令 生成具有物理真实感的机器人操作视频；
-    拒绝采样（可选）：生成多个候选视频，通过Cosmos-Reason1评分过滤低质量视频，选择评分最高的视频作为最终输出
-        评分将从以下几个方面进行考量：
-            运动连贯性: 物体移动是否自然流畅
-            时间一致性: 帧与帧之间是否存在突兀变化
-            物理合理性: 重力、光影、材质是否符合物理规律
-            视觉质量: 是否存在伪影、模糊、扭曲等问题
-            内容逻辑: 场景元素之间的关系是否合理
-    动作提取: 利用 IDM（逆动力学模型）从生成视频中提取精确的机器人动作序列；
-    质量评估: 通过 DreamGen Benchmark 评估生成视频的指令跟随能力和物理一致性；
-案例3： 基于世界模型的通用导航与运动控制
-    数据生成: 使用 Isaac Sim 5.0 和 MobilityGen 自动化生成大规模导航演示数据。
-    视觉增强: 利用 Cosmos-Transfer1 对仿真数据进行风格迁移，提升其真实感和多样性。
-    世界模型训练: 基于生成的数据训练 X-Mobility，一个以世界模型为基础的通用导航与运动控制策略。
-    仿真部署与验证: 将训练好的模型通过 ROS2 集成到 Isaac Sim 中，进行端到端的闭环导航验证。
-案例4: 遥操数据采集&扩增以及Isaac-GR00T微调&评估全流程
-    采集数据: 如何通过摇操设备采集数据。
-        LeRobot格式-RGB视频、关节状态和传感器数据、机器人控制指令动作
-        图形可视化，SE(2)线性x-y速度金额偏航角速度,SE(3)姿态变化的6维向量
-    增广数据: 如何使用 Mimic 工作流增广数据
-    模型微调: 如何使用自己的数据微调GR00T模型
-    模型评测: 如何评估微调后的模型性能（开环、闭环）
 
-
-```
 
 ### (人形)机器人 (Humanoid) Robot
 ```bash
@@ -847,11 +789,10 @@ Classical Robotics Approach: Perception → State Estimation → Planning → Co
     挑战：每个模块都需要专家进行调优、误差会在流程中累积、难以适应新的任务/机器人、需要精确的世界模型
 Learning-Based Approach: Raw Sensors → Neural Network → Actions
     优势：从数据中学习（利用演示和经验）、端到端训练（协同优化整个流程）、跨任务通用化（在不同目标之间共享知识）、适应新的机器人（跨平台迁移洞察）
+
 ·强化学习——机器人如何通过试错学习最优行为；
 ·模仿学习——机器人如何通过观察人类演示进行学习；
 ·基础模型——大规模模型如何构建通用机器人智能
-
-
 ```
 ![Alt text](./image/temporal-windows.png)
 ![Alt text](./image/Robot-Motion-Approaches.png)
@@ -889,9 +830,64 @@ https://github.com/leggedrobotics/rsl_rl.git
 
 NVIDIA Physical AI系列 ： https://gallery.pai-ml.com/#/preview/deepLearning/cv/isaac_sim
 PAI Physical AI 系列 ：https://blog.csdn.net/weixin_48534929/article/details/160375274 阿里云大数据AI平台
+```
 
-
-
+### [NVIDIA Physical AI](https://gallery.pai-ml.com/#/?category=all&pageNum=1)
+| 缩写         | 全称                                          | 一句话理解                |
+| ---------- | ------------------------------------------- | -------------------- |
+| **VNC**    | Virtual Network Computing                   | 远程桌面连接技术             |
+| **DSW**    | Data Science Workshop                       | 阿里云 PAI 的云端 AI 开发工作台 |
+| **DLC**    | Deep Learning Containers                    | 阿里云 PAI 的深度学习训练任务平台  |
+| **NAS**    | Network Attached Storage / File Storage NAS | 云上的共享文件存储            |
+| **CPFS**   | Cloud Parallel File Storage                 | 高性能并行文件存储            |
+| **OSS**    | Object Storage Service                      | 阿里云对象存储，用来放数据、文件、模型等 |
+| **Viewer** | 查看器/客户端                                     | 本地打开，用来连接远程桌面的软件     |
+| **Client** | 客户端                                         | 发起连接的软件或设备           |
+```bash
+NVIDIA Isaac Sim 【 https://developer.nvidia.com/ 】是基于 NVIDIA Omniverse 构建的参考应用，支持开发者在物理仿真环境中模拟和测试AI驱动的机器人解决方案。核心功能是仿真本身：它采用高保真、基于 GPU 的 PhysX 引擎，能够支持工业级的多传感器 RTX 渲染。
+Isaac Sim 直接访问 GPU，使其能够模拟多种传感器，包括摄像头、LiDAR 和接触传感器，从而支持数字孪生仿真，让端到端的机器人开发流程在无需启动真实机器人之前就能运行。Isaac Sim 提供了一整套工具，包括：
+    Replicator：用于合成数据采集
+    Omnigraph：用于编排仿真环境
+    PhysX 参数调优：匹配现实物理特性
+    Isaac Lab：支持**强化学习（RL）**等方法的控制智能体训练 （旧版本：Isaac Gym）
+NVIDIA Cosmos【https://www.nvidia.com/en-us/ai/cosmos/】是一个先进的生成式世界基础模型（WFM）平台，该平台专为支持世界模型训练而构建，旨在加速自动驾驶汽车（AV）和机器人在物理人工智能（Physical AI）领域的发展。平台集成了多个项目：
+    Cosmos-Predict:
+        通用模型，可基于多模态输入进行世界生成和运动预测,该模型在9,000万亿（9,000T）标记的机器人与自动驾驶数据上训练，并专为后训练优化，包含了DIT/AR结构的生成框架、分词器Tokenizer、数据处理、安全防护等模块;
+    Cosmos-Transfer:
+        具备物理感知能力的世界生成，可基于真实数据和3D输入进行条件生成，输入包括分割图、深度信号、LiDAR扫描、关键点、轨迹、高清地图，以及来自NVIDIA Omniverse的真实模拟数据，以实现可控的合成数据生成;
+    Cosmos-Reason:
+        完全可定制的多模态推理模型，具备时空理解能力，可用于规划响应，通过视觉-语言模型微调和强化学习进行训练，以支持链式思维推理
+    Guardrails:
+        为Cosmos WFM开发预设安全防护机制，包括预过滤（pre-guard）以筛除不安全输入，以及后处理防护（post-guard）以确保输出的一致性和安全性。
+Isaac工作流 
+案例1： 操作动作数据合成、增强、模仿学习
+    数据扩增: 使用 Isaac Lab Mimic 从少量专家演示生成大规模仿真数据集；
+    视觉增强: 通过 Cosmos-Transfer1 对视频数据进行增强，提升数据多样性；
+    模仿学习: 基于 robomimic 训练 BC-RNN 视觉运动策略模型；
+案例2： 基于GR00T-Dreams的机器人训练数据生成
+    世界模型后训练: 使用 Cosmos-Predict2 在 GR1 机器人数据集上进行微调，提升模型对机器人任务的理解能力；
+    视频生成: 通过 Cosmos-Predict2 根据 文本指令 生成具有物理真实感的机器人操作视频；
+    拒绝采样（可选）：生成多个候选视频，通过Cosmos-Reason1评分过滤低质量视频，选择评分最高的视频作为最终输出
+        评分将从以下几个方面进行考量：
+            运动连贯性: 物体移动是否自然流畅
+            时间一致性: 帧与帧之间是否存在突兀变化
+            物理合理性: 重力、光影、材质是否符合物理规律
+            视觉质量: 是否存在伪影、模糊、扭曲等问题
+            内容逻辑: 场景元素之间的关系是否合理
+    动作提取: 利用 IDM（逆动力学模型）从生成视频中提取精确的机器人动作序列；
+    质量评估: 通过 DreamGen Benchmark 评估生成视频的指令跟随能力和物理一致性；
+案例3： 基于世界模型的通用导航与运动控制
+    数据生成: 使用 Isaac Sim 5.0 和 MobilityGen 自动化生成大规模导航演示数据。
+    视觉增强: 利用 Cosmos-Transfer1 对仿真数据进行风格迁移，提升其真实感和多样性。
+    世界模型训练: 基于生成的数据训练 X-Mobility，一个以世界模型为基础的通用导航与运动控制策略。
+    仿真部署与验证: 将训练好的模型通过 ROS2 集成到 Isaac Sim 中，进行端到端的闭环导航验证。
+案例4: 遥操数据采集&扩增以及Isaac-GR00T微调&评估全流程
+    采集数据: 如何通过摇操设备采集数据。
+        LeRobot格式-RGB视频、关节状态和传感器数据、机器人控制指令动作
+        图形可视化，SE(2)线性x-y速度金额偏航角速度,SE(3)姿态变化的6维向量
+    增广数据: 如何使用 Mimic 工作流增广数据
+    模型微调: 如何使用自己的数据微调GR00T模型
+    模型评测: 如何评估微调后的模型性能（开环、闭环）
 ```
 
 ### 💡电力巡检项目
