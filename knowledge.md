@@ -300,6 +300,7 @@ SFT 的核心理念在于，我们并非从零开始教模型新的知识，而�
     这类模型能够提供更真实的答案，减少虚假信息，并且其响应更能体现人类的价值观和伦理道德。总而言之，经过偏好对齐的模型展现出更高的连贯性、相关性和响应质量。
 
 https://huggingface.co/blog/zh/vlms
+https://huggingface.co/blog/zh/vlms-2025
 
 VLMs can be applied to tasks such as:
     图像描述：为图像生成描述
