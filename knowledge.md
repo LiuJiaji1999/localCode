@@ -327,7 +327,7 @@ Claude Skills = Employee Handbook + Toolbox
 复杂上下文解决能力评测基准构建是基础！
     context、problem
     CL-Bench：衡量模型的上下文学习、记忆、
-安全性：沙箱
+安全性：沙箱隔离（mac minin等物理工作站隔离? 动态权限设计？
 
 2.从单体智能到群体智能 来自香港大学-黄超
 大道至简：
