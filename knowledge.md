@@ -311,10 +311,39 @@ VLMs can be applied to tasks such as:
 ```
 ![Alt text](./image/vlm.png)
 
+```bash
+AI Agent背后的技术解构
+1.大模型工具使用 来自复旦大学-张奇
+难点：指令与工具匹配、工具的泛化性、多步推理与决策优化、错误识别与自我修复
+    例如：ToolHoop多挑工具、TL-Traning
+LLM need  skills？
+Claude Skills = Employee Handbook + Toolbox
+“员工手册”告诉AI当面对某类任务时，应如何处理、分几步完成、以及每一步该使用哪些工具
+“工具箱”为AI提供完成任务所需的脚本与参考资料
+一个Skill对应一个独立的文件夹，通常包含以下三类内容:
+    SKILL.md文件:以自然语言编写的使用说明，阐述该Skill的用途、适用场景、使用方式与注意事项。
+    脚本文件:由Python、JavaScript 等语言编写的可执行脚本，当AI需要实际操作时，将调用这些脚本完成任务。
+    资源文件:包括参考文档、模板或配置文件，供AI在任务执行过程中查阅与调用。
+复杂上下文解决能力评测基准构建是基础！
+    context、problem
+    CL-Bench：衡量模型的上下文学习、记忆、
+安全性：沙箱
+
+2.从单体智能到群体智能 来自香港大学-黄超
+大道至简：
+tool-use loop 反馈《-》执行,
+user-in-the-loop
+memory(交互历史)、skills
+openclaw 43万行代码 -> nanabot 4k行代码 -> mochat（1+1>=2）
+
+3. 来自阿里云无影云产品-朱淼
+
+```
+![Alt text](./image/nanobot.png)
+
 ```text
 👀AI工具
     AI辅助编程工程，如下图所示，在右侧边栏打开copilot会话框；
-
 
 ```
 ![Alt text](./image/copilot.png)
