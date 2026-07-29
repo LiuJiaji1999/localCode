@@ -601,6 +601,9 @@ X 是 Y 的原因，当且仅当在其他相关条件适当控制后，对 X 施
 
 ### Machine learning
 ```text
+香农熵(Shannon Entropy)衡量一个概率分布自身的不确定性。
+交叉熵(Cross-Entropy)衡量用一个"预测”的概率分布来表示另一个“真实”的概率分布时，所需要的平均信息量。
+交叉熵 = 香农熵 + KL散度
 石溪的知乎回答：https://www.zhihu.com/question/26665048/answer/1696549744
 1.马尔可夫链，首先常见的随机过程有以下2类
     伯努利过程和泊松过程：是无记忆性的，也就是说未来的状态不依赖于过去的状态，新的“成功”或“到达”不依赖于该过程过去的历史情况。
@@ -694,11 +697,12 @@ $$
 总结：由于object-query和image-feature间（位置上的和语义上的）不对⻬，导致decoder中的Cross-attention-layer难以精确地匹配到待检测物体所对应的特征区域，object-query也因此采集到了很多除⽬标物体以外的⽆关特征，最终导致DETR收敛缓慢。上⾯介绍的⼏个⼯作都是通过不同的⽅式限制了object-query的采样区域，使得⽹络能够更快的地聚焦于物体区域，所以加速了训练。
 -----
 <Solving Transformer by Hand A Step-by-Step Math Example.pdf>
-    
 
-    
 大模型理解transformer架构：https://mp.weixin.qq.com/s/Kmuj9xAft3P7L84Gtmy-3w 
 Q是提问，K是标签，V是答案；通过Q和K的匹配，决定从V中拿多少答案出来。
+
+ViT https://www.bilibili.com/video/BV1gnWdzSEzY/?vd_source=8f43c3a38f673faa87fc5770fa2e2e30
+图片->patch->+位置编码->Transfromer->计算输出
 ```
 ![Alt text](./image/qkv.png)
 

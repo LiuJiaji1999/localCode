@@ -807,6 +807,8 @@ Learning-Based Approach: Raw Sensors → Neural Network → Actions
 
 让大模型去理解世界，让控制理论去丈量世界。这种深度的融合，或许才是通往通用机器人的必经之路
 
+
+
 ### 论文学习
 `PaLM-E: an embodied multimodal language model- ICLR 2023
     https://palm-e.github.io/#demo
