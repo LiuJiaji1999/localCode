@@ -16,13 +16,19 @@
 #     print('Ultralytics-YOLO 解压成功')
 
 
-# DEIM
-import py7zr
-with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/DEIM-494882733.7z", mode='r', password='vz3wyu7CTV3r6YvySgfwoiQRd867372e') as z:
-    z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
-    print('DEIM 解压成功')
-# # pycocoeval
+# # DEIM
+# import py7zr
+# with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/DEIM-494882733.7z", mode='r', password='vz3wyu7CTV3r6YvySgfwoiQRd867372e') as z:
+#     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
+#     print('DEIM 解压成功')
+# # # pycocoeval
 # import py7zr
 # with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/pycocoeval-494882733.7z", mode='r', password='vz3wyu7CTV3r6YvySgfwoiQRd867372e') as z:
 #     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
 #     print('pycocoeval 解压成功')
+
+# YOLOV
+import py7zr
+with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/YOLOVOmodal-494882733.7z", mode='r', password='BixycBGvUfFvHs38hcKW0Jsx38b23a2f') as z:
+    z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
+    print('YOLOVOmodal解压成功')
