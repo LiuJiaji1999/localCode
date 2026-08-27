@@ -35,10 +35,6 @@ python uav_dispatch.py plan --nest-xlsx 机巢ZB.xlsx --tower-xlsx 线路ZB.xlsx
 # 同时模拟3类任务
 python uav_dispatch.py plan --nest-xlsx 机巢ZB.xlsx --tower-xlsx 线路ZB.xlsx --task-types 通道巡视 精细化巡视 仿线飞行 --start-date 2026-08-26 --days 30 --outdir output_plan
 
-
-重要：
-plan 模式内的航速/架次上限/单塔作业时长均为 DEMO 参数；
-上线时必须替换为真实机型与作业模板参数。
 """
 
 from dataclasses import dataclass, field
@@ -114,7 +110,10 @@ class DispatchConfig:
 # =========================
 # 2. 数据读取
 # =========================
-
+# 机巢数据：当前机巢数据共计约60个点位，其中：
+# 已安装机巢：12个；拟安装机巢：48个。
+# 每个机巢当前主要包括： 机巢名称、经度、 纬度、建设状态。
+# 当前调度程序只把状态为：**“已安装”**的机巢作为真正可以执行任务的机巢。
 def load_nests(path: str) -> pd.DataFrame:
     """
     机巢文件当前结构：
@@ -130,7 +129,7 @@ def load_nests(path: str) -> pd.DataFrame:
     df["nest_id"] = [f"N{i+1:03d}" for i in range(len(df))]
     return df[["nest_id", "nest_name", "longitude", "latitude", "status"]]
 
-
+# 从杆塔名称中提取杆塔号，
 def _parse_tower_no(name: str) -> Optional[int]:
     if pd.isna(name):
         return None
@@ -140,7 +139,9 @@ def _parse_tower_no(name: str) -> Optional[int]:
         m = re.search(r"(\d+)\s*$", s)
     return int(m.group(1)) if m else None
 
-
+# 2.2 杆塔数据
+# 当前杆塔数据包括约：17,845基杆塔、312条线路。
+# 每基杆塔包括：线路名称、电压等级、杆塔名称、经度、纬度。
 def load_towers(path: str) -> pd.DataFrame:
     df = pd.read_excel(path, sheet_name="Sheet1")
     df = df.rename(columns={
@@ -179,6 +180,7 @@ def haversine_matrix_km(
     """
     返回 shape=(len(lat1), len(lat2)) 的球面距离矩阵。
     对当前 17845 x 60 数据规模完全可行。
+    17,845*12 距离矩阵
     """
     lat1 = np.radians(np.asarray(lat1, dtype=float))[:, None]
     lon1 = np.radians(np.asarray(lon1, dtype=float))[:, None]
@@ -321,6 +323,7 @@ def assign_tasks_to_nests(
     不做永久归属。每个任务从 Top-K 候选机巢中选择：
         cost = distance_km + load_penalty_km * 当前相对负载
     是一个可解释、在线可更新的贪心基线算法。
+
     """
     cand_map = {
         tid: g.sort_values(["rank", "distance_km"]).to_dict("records")
