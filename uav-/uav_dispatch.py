@@ -49,7 +49,7 @@ import numpy as np
 
 # =========================
 # 1. 配置
-# =========================
+
 
 TASK_TEMP = "临时任务"
 TASK_IR = "红外测温"
@@ -58,7 +58,7 @@ TASK_LINE = "仿线飞行"
 TASK_CHANNEL = "通道巡视"
 
 PERIODIC_TASKS = [TASK_DETAIL, TASK_CHANNEL, TASK_LINE]
-
+# 一个“层级编码”，基础优先级上形成层级关系
 BASE_PRIORITY = {
     TASK_TEMP: 400.0,
     TASK_IR: 300.0,
@@ -70,20 +70,20 @@ BASE_PRIORITY = {
 @dataclass
 class DispatchConfig:
     # --- 空间参数 ---
-    candidate_top_k: int = 3
+    candidate_top_k: int = 3 #每基杆塔最多保留3个候选机巢。
     active_nest_status: Tuple[str, ...] = ("已安装",)
 
     # 可选硬半径；None 表示只计算候选，不因半径判不可达。
     # 真实值必须来自机型/规程。
     max_one_way_km: Optional[float] = None
 
-    # --- 以下均为 DEMO 仿真参数，必须用真实参数替换 ---
-    cruise_speed_kmh: float = 36.0
-    max_sortie_minutes: float = 45.0
-    max_sortie_distance_km: float = 18.0
-    reserve_minutes: float = 8.0
+    # --- 以下均为仿真参数，必须用真实参数替换 ---
+    cruise_speed_kmh: float = 36.0 #假定无人机巡航速度为36km/h；
+    max_sortie_minutes: float = 45.0 # 单架次最大时间45分钟；
+    max_sortie_distance_km: float = 18.0 #最大航程18km；
+    reserve_minutes: float = 8.0 #至少预留8分钟的安全余量。
 
-    # 不同任务的单塔/单节点服务时间（DEMO）
+    # 无人机到达杆塔之后，不同任务需要不同的作业时间 
     service_minutes: Dict[str, float] = field(default_factory=lambda: {
         TASK_CHANNEL: 0.7,
         TASK_DETAIL: 3.0,
@@ -92,7 +92,7 @@ class DispatchConfig:
         TASK_TEMP: 3.0,
     })
 
-    # 每个机巢默认 1 架无人机，每日可调度窗口（DEMO）
+    # 每个机巢默认 1 架无人机，每日可调度窗口
     day_start_hour: int = 8
     day_end_hour: int = 17
     turnaround_minutes: float = 15.0
@@ -109,7 +109,7 @@ class DispatchConfig:
 
 # =========================
 # 2. 数据读取
-# =========================
+
 # 机巢数据：当前机巢数据共计约60个点位，其中：
 # 已安装机巢：12个；拟安装机巢：48个。
 # 每个机巢当前主要包括： 机巢名称、经度、 纬度、建设状态。
@@ -118,6 +118,9 @@ def load_nests(path: str) -> pd.DataFrame:
     """
     机巢文件当前结构：
     第1行标题，第2行真实表头。
+    返回：
+        N001 石滩  经度  纬度  已安装
+        N002 杜市  经度  纬度  已安装   
     """
     raw = pd.read_excel(path, sheet_name="Sheet1", header=None)
     # 当前文件第 2 行(索引1)是列名
@@ -141,7 +144,8 @@ def _parse_tower_no(name: str) -> Optional[int]:
 
 # 2.2 杆塔数据
 # 当前杆塔数据包括约：17,845基杆塔、312条线路。
-# 每基杆塔包括：线路名称、电压等级、杆塔名称、经度、纬度。
+# 每基杆塔包括：线路名称、电压等级、杆塔名称 、经度、纬度。
+# 万马线#31 中提取 #31 作为tower_no，构建线路拓扑的依据
 def load_towers(path: str) -> pd.DataFrame:
     df = pd.read_excel(path, sheet_name="Sheet1")
     df = df.rename(columns={
@@ -168,10 +172,8 @@ def load_towers(path: str) -> pd.DataFrame:
 
 
 # =========================
-# 3. 空间计算
-# =========================
-
-EARTH_RADIUS_KM = 6371.0088
+# 3. 空间计算，输出结果为两个地理点之间的球面距离
+EARTH_RADIUS_KM = 6371.0088 #地球半径
 
 def haversine_matrix_km(
     lat1: np.ndarray, lon1: np.ndarray,
@@ -180,7 +182,7 @@ def haversine_matrix_km(
     """
     返回 shape=(len(lat1), len(lat2)) 的球面距离矩阵。
     对当前 17845 x 60 数据规模完全可行。
-    17,845*12 距离矩阵
+    
     """
     lat1 = np.radians(np.asarray(lat1, dtype=float))[:, None]
     lon1 = np.radians(np.asarray(lon1, dtype=float))[:, None]
@@ -192,7 +194,7 @@ def haversine_matrix_km(
     a = np.sin(dlat / 2.0) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2.0) ** 2
     return 2 * EARTH_RADIUS_KM * np.arcsin(np.sqrt(a))
 
-
+# Top-3候选机巢
 def build_candidate_nests(
     towers: pd.DataFrame,
     nests: pd.DataFrame,
@@ -239,14 +241,14 @@ def build_candidate_nests(
     nearest = candidates[candidates["rank"] == 1].copy()
     return candidates, nearest
 
-
+# 形成17845*12 距离矩阵，得到每基杆塔到所有当前可用机巢的距离。
 def build_spatial_summary(
     towers: pd.DataFrame,
     nests: pd.DataFrame,
     nearest: pd.DataFrame,
 ) -> pd.DataFrame:
     active = nests[nests["status"].eq("已安装")].copy()
-
+     #  使用预计工作分钟数或预计无人机占用小时数作为负载
     load = nearest.groupby(["nest_id", "nest_name"], as_index=False).agg(
         assigned_towers=("tower_id", "count"),
         mean_distance_km=("distance_km", "mean"),
@@ -262,9 +264,7 @@ def build_spatial_summary(
 
 
 # =========================
-# 4. 任务生成
-# =========================
-
+# 4. 巡视任务生成 ，只能生成初始化任务
 def build_initial_tasks(
     towers: pd.DataFrame,
     task_types: List[str],
@@ -311,9 +311,8 @@ def build_initial_tasks(
 
 
 # =========================
-# 5. 候选机巢分配（带简单负载惩罚）
-# =========================
-
+# 5. 任务到机巢的 候选机巢分配（带简单负载惩罚）
+#   距离合理的前提下兼顾机巢任务/资源均衡
 def assign_tasks_to_nests(
     tasks: pd.DataFrame,
     candidates: pd.DataFrame,
@@ -322,8 +321,19 @@ def assign_tasks_to_nests(
     """
     不做永久归属。每个任务从 Top-K 候选机巢中选择：
         cost = distance_km + load_penalty_km * 当前相对负载
+            杆塔i到机巢j的距离 + 负载惩罚系数 * 当前机巢已经承担的任务量；
     是一个可解释、在线可更新的贪心基线算法。
-
+    任务分配流程：
+        读取某个任务
+            ↓
+        找到该杆塔的Top-K候选机巢
+            ↓
+        剔除空间不可达机巢
+            ↓
+     计算：
+        距离成本+负载成本
+            ↓
+        选择综合成本最低机巢
     """
     cand_map = {
         tid: g.sort_values(["rank", "distance_km"]).to_dict("records")
@@ -344,7 +354,7 @@ def assign_tasks_to_nests(
                 "assignment_status": "NO_FEASIBLE_NEST",
             })
             continue
-
+       
         mean_load = (sum(loads.values()) / max(len(loads), 1)) if loads else 0.0
         best = None
         best_cost = float("inf")
@@ -369,9 +379,8 @@ def assign_tasks_to_nests(
 
 
 # =========================
-# 6. 架次构造
-# =========================
-
+# 6.无人机飞行 架次构造 任务-》架次、
+#  一个架次通常应该包含多个任务：  08:00从 A机巢起飞→ #31→ #32→ #33→ #34→ A机巢 这是一次完整无人机飞行。
 def haversine_pair_km(lat1, lon1, lat2, lon2):
     p1, p2 = math.radians(lat1), math.radians(lat2)
     dp = math.radians(lat2 - lat1)
@@ -411,7 +420,7 @@ def estimate_route(
         coords[-1][0], coords[-1][1],
         float(nest_row.latitude), float(nest_row.longitude)
     )
-
+    # 飞行时间 + 作业时间
     flight_min = total_km / config.cruise_speed_kmh * 60.0
     total_min = flight_min + service_min
     return total_km, total_min
@@ -426,6 +435,24 @@ def build_sorties(
     """
     按 nest + line + task_type 分组，按杆塔号连续切分。
     每次尝试增加一基塔；若加入后超过最大航时/距离，则关闭当前架次。
+    比如 ：当前架次为空
+        加入#31
+        ↓
+        计算航程和时间
+        ↓
+        没有超限
+        ↓
+        继续加入#32
+        ↓
+        重新计算
+        ↓
+        没有超限
+        ↓
+        加入#33
+        ↓
+        ……
+        当加入某一个杆塔以后超过限制：
+    新杆塔放到下一个架次。    
     """
     tasks = assigned_tasks[assigned_tasks["assignment_status"].eq("ASSIGNED")].copy()
 
@@ -449,8 +476,9 @@ def build_sorties(
             if not indices:
                 return
             chunk = g.iloc[indices]
+            # ，时间
             km, mins = estimate_route(nest_row, chunk, tower_lookup, config)
-            # 预留 reserve_minutes，安全边界显式体现
+            # 预留 reserve_minutes，安全边界显式体现 现场环境影响
             usable_limit = config.max_sortie_minutes - config.reserve_minutes
             feasible = (mins <= usable_limit) and (km <= config.max_sortie_distance_km)
 
@@ -490,9 +518,7 @@ def build_sorties(
 
 
 # =========================
-# 7. 优先级 + 公平进度调度
-# =========================
-
+# 7. 任务优先级 + 公平进度调度
 def schedule_sorties(
     sorties: pd.DataFrame,
     start_date: pd.Timestamp,
@@ -504,6 +530,14 @@ def schedule_sorties(
     基础优先级：
         临时 > 红外 > 精细=仿线=通道
     对精细/仿线/通道加入“进度赤字”奖励，防止某一类长期没有进展。
+        假设当前：
+            精细化完成率 = 60%
+            通道巡视完成率 = 70% 最高进度 = 70%
+            仿线飞行完成率 = 20%
+
+            精细赤字 = 70%-60%=10%
+            通道赤字 = 0%
+            仿线赤字 = 70%-20%=50%
 
     当前初始化任务无真实 deadline，因此不添加虚构的逾期/紧迫度。
     若以后接入 deadline，可在 score 中直接加入。
@@ -554,14 +588,15 @@ def schedule_sorties(
             )
 
             def score(r):
+                # 1基础业务优先级
                 s = BASE_PRIORITY.get(r["task_type"], 0.0)
 
-                # 三类同级任务：落后越多，奖励越高
+                # 2三类同级任务：落后越多，奖励越高.
                 if r["task_type"] in fair_present:
-                    deficit = target_progress - progress[r["task_type"]]
+                    deficit = target_progress - progress[r["task_type"]] # 进度赤字
                     s += config.fairness_weight * max(deficit, 0.0)
 
-                # 同分时更偏好单位时间任务数多的架次
+                # 3同分时更偏好单位时间任务数多的架次
                 eff = r["task_count"] / max(r["estimated_minutes"], 1.0)
                 s += config.route_efficiency_weight * eff
                 return s
@@ -591,8 +626,8 @@ def schedule_sorties(
 
 
 # =========================
-# 8. CLI
-# =========================
+# 8. 输入和输出
+
 
 def run_spatial(args):
     cfg = DispatchConfig(
@@ -707,3 +742,16 @@ if __name__ == "__main__":
     parser = build_parser()
     args = parser.parse_args()
     args.func(args)
+
+"""
+目前重点在于  一个静态任务池在当前资源条件下应该怎么分配和排序
+> 首先基于机巢和杆塔经纬度建立空间关系，为每基杆塔计算多个候选执行机巢，而不是简单固定到最近机巢；
+> 随后结合任务类型、线路杆塔顺序和机巢负载完成任务资源分配。对于同一线路连续杆塔，系统进一步按照无人机最大航程、最大飞行时间和安全余量自动切分为若干飞行架次，并计算每个架次的预计航程和执行时间。
+> 在任务编排阶段，首先严格满足“临时任务优先于红外，红外优先于其他周期任务”的业务规则；对于精细化巡视、仿线飞行和通道巡视三类同级任务，则引入任务完成进度差异，根据落后程度动态提高调度权重，从而避免系统长期只执行某一种任务，实现多种巡视任务同步推进。
+> 后续接入天气、巡视历史和实时飞行状态后，将进一步采用滚动重调度机制，在天气变化、临时任务或设备故障发生时，仅重新优化尚未执行的剩余任务，形成“自动生成任务—自动编排—自动执行—状态反馈—动态重排”的闭环调度体系。
+
+# 缺少
+    1.天气影响因子
+    2.临时任务编排
+    3.无人机真正调度：系统层、飞控层
+ """
