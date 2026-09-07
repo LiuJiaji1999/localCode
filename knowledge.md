@@ -266,9 +266,35 @@ U-Net可以预测噪声，但不知道具体每一步该减去多少噪声（Den
 --- 预测噪声-》减去噪声-》VAE解码还原高清美图
 
 🔟 开放词汇 OVOD /开放世界 OWOD
-开放词汇目标检测（Open-Vocabulary Object Detection, OVOD）关注：能不能检测“我用文本指定的新类别”。
-开放世界目标检测（Open-World Object Detection, OWOD）关注：能不能发现“训练时没见过、我也没提前告诉你的未知物体”，并在之后逐步学习它。
-    OVOD 描述为检测超出预定义类别的对象；OWOD 则强调在动态环境中识别已知类、发现未知类，并在获得新标签后增量学习；
+🚩开放词汇目标检测（Open-Vocabulary Object Detection, OVOD）关注：能不能检测“我用文本指定的新类别”。只要用户能够通过自然语言给出目标概念，模型就有机会检测这个目标，即使这个类别没有出现在目标检测训练标签中。
+    利用开放语言空间，把 detection vocabulary 从固定标签集合扩展到大量语义概念。
+    Base Classes：检测训练阶段具有 bbox 标注的类别：
+    Novel ：检测训练阶段没有 bbox 标注的类别，没有被直接监督过，但不一定意味着模型一生从来没有见过这个概念。（比如CLIP/GroundingDINO 在网络规模的图文数据中可能早就知道其他类别）
+Zero-shot detection 的思想是：没有 novel class bbox training example，但通过 semantic information 检测 novel classes。后来VLM出现后，逐渐发展为：OVOD
+
+🚩开放世界目标检测（Open-World Object Detection, OWOD）关注：能不能发现“训练时没见过、我也没提前告诉你的未知物体”，并在之后逐步学习它。
+    更接近真正的现实世界。
+    比如：模型有「car,person,bus」，测试场景出现[excavator]：
+    如果用户没有告诉模型“excavator”这个词，先检测：这里存在未知物体。模型输出：unknown
+    如果用户给Prompt,模型可能输出 excavator：0.76
+    Open World = Unknown Detection + Incremental Learning
+
+OVOD 描述为检测超出预定义类别的对象；OWOD 则强调在动态环境中识别已知类、发现未知类，并在获得新标签后增量学习；
+
+假设无人机执行搜救任务。
+训练阶段有：person, car, truck
+突然图像中出现：新型救援机器人。
+～Closed-set detector：可能漏掉。
+～OVD：用户输入：rescue robot"，模型根据文本尝试检测。
+～Visual-Prompt OVD：用户给无人机系统一张救援机器人的照片：“找这种东西。”模型尝试检测。
+～OWD：即使没有任何 Prompt，模型自己发现“这里存在一个未知目标。”
+完整 Open-World System
+    无人机进一步：发现未知目标，要不要把它注册为 rescue robot？”
+    人类确认之后：Unknown→Known
+后面所有 UAV 都可以识别它。
+这就不是单纯 detector，而开始变成：持续学习的自主感知系统。
+
+
 1.数据：
 OVOD 训练数据通常包括：
 ·有框标注数据，如 COCO、LVIS base classes	，用于学习定位和基础检测能力
