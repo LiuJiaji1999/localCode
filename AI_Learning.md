@@ -1,4 +1,3 @@
-
 ### Python语言
 ```bash
 2016年入学的计算机本科生，入门C语言，后续java语言，选修python语言
@@ -89,6 +88,7 @@ https://www.bilibili.com/video/BV1bM411u7Ki/?spm_id_from=333.1387.favlist.conten
     学会保持开源精神，把代码和数据留存，防止因软硬件问题导致丢失！
 5.AI研究趋势：论文《Real Deep Research for AI, Robotics and Beyond》 https://realdeepresearch.github.io/
 ```
+
 ### AI学习网站
 ```bash
 https://www.jiangdabai.com
