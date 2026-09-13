@@ -446,11 +446,13 @@ epoch 决定“什么时候复习”，iteration 决定“每一步怎么复习�
  1. 数学基础
    - 小波函数：
 ```
-   由母小波（Mother Wavelet）\(\psi(t)\)通过平移和缩放生成：
+
+由母小波（Mother Wavelet）\(\psi(t)\)通过平移和缩放生成：
 \[
 \psi_{a,b}(t) = \frac{1}{\sqrt{a}} \psi\left(\frac{t-b}{a}\right)
 \]
 其中，\(a\)为尺度参数（控制频率），\(b\)为平移参数（控制位置）。
+
 
 ```bash
    - 离散小波变换（DWT）：对图像进行多级分解，常用滤波器组（如Haar、Daubechies）实现。
