@@ -2,33 +2,33 @@
 # cd knowledge/multimodal/
 # python 7zfile.py
 
-# MutilModel
-# import py7zr
-# with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/MutilModel-494882733.7z", mode='r', password='XK3KUAtEFLnXPhW8915PROP353b2b4ee') as z:
-#     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
-#     print('MutilModel 解压成功')
+# MutilModel 0903
+import py7zr
+with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/MutilModel-494882733.7z", mode='r', password='XK3KUAtEFLnXPhW8915PROP353b2b4ee') as z:
+    z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
+    print('MutilModel 解压成功')
 
 
-# # Ultralytics-YOLO
+# Ultralytics-YOLO 1012
 # import py7zr
 # with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/Ultralytics-YOLO-494882733.7z", mode='r', password='JPDUw8Y8d5vPYvjYj1Pl4Oxe5a85c4d9') as z:
 #     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
 #     print('Ultralytics-YOLO 解压成功')
 
 
-# # DEIM
+# DEIM 1012
 # import py7zr
 # with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/DEIM-494882733.7z", mode='r', password='vz3wyu7CTV3r6YvySgfwoiQRd867372e') as z:
 #     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
 #     print('DEIM 解压成功')
-# # # pycocoeval
+# # pycocoeval
 # import py7zr
 # with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/pycocoeval-494882733.7z", mode='r', password='vz3wyu7CTV3r6YvySgfwoiQRd867372e') as z:
 #     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
 #     print('pycocoeval 解压成功')
 
-# YOLOV
-import py7zr
-with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/YOLOVOmodal-494882733.7z", mode='r', password='BixycBGvUfFvHs38hcKW0Jsx38b23a2f') as z:
-    z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
-    print('YOLOVOmodal解压成功')
+# # YOLOV 1010
+# import py7zr
+# with py7zr.SevenZipFile("/Users/rl/Documents/PhD-student/Untitled_Folder/YOLOVOmodal-494882733.7z", mode='r', password='BixycBGvUfFvHs38hcKW0Jsx38b23a2f') as z:
+#     z.extractall("/Users/rl/Documents/PhD-student/Untitled_Folder/")
+#     print('YOLOVOmodal解压成功')
