@@ -229,6 +229,7 @@ https://huggingface.co/blog/zh/vlms-2025
 
 
 9️⃣绘图
+/knowledge/chapgpt-export.md
 《AI绘图总结》.pdf，扩散模型的本质
 第一阶段-GAN： 像是一个才华横溢但情绪不稳定的天才画家，
     机械地拟合像素的概率分布；
