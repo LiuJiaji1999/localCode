@@ -2,6 +2,7 @@
 
 ⛔️不能提交 huggingface中的 token，带密码口令的不可以
 
+
 ### 图图、图文
 ```bash
 传统目标检测：
@@ -1215,6 +1216,9 @@ git status --ignored #查看被忽略的文件
 *** git-question
 服务器老报错！
 ** 具体步骤在goodnotes上有标明！
+
+121.195.169.152
+e706@pai
 
 1. fatal: unable to access 'XX': Failed to connect to github.com port 443: 拒绝连接
     sudo vi /etc/hosts
