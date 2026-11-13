@@ -65,4 +65,10 @@ python selfcheck.py
 # check passed
 tri 三模态
 
+1.单模态的混合专家改进（neck\head
+2.单模态 -> lora多模态微调(可生成信模态) fusion\moe_fusuion
+
+lora 新的训练方法，
+几个模态几个检测
+
 ```
